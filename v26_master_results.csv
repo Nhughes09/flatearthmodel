@@ -1,0 +1,68 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+DARK_MATTER,ROTATION,NGC_3198,v_flat=150km/s,Keplerian predicts decline,gap requires explanation,both DM and aether fill gap equally
+DARK_MATTER,MECHANISM,dark_matter,invisible mass halo,tuned to match curve,NOT independently detected,defined as residual
+DARK_MATTER,MECHANISM,aetheric_drag,medium drag term,tuned to match curve,NOT independently detected,same explanatory power
+DM_DETECT,LUX,2013-2016,Null,"370 live days, 10 tonnes xenon",null,direct detection attempt
+DM_DETECT,XENON1T,2017-2018,Null,"1 tonne-year exposure, one unexplained e",null,direct detection attempt
+DM_DETECT,PandaX-4T,2021-2023,Null,"0.63 tonne-year, world-leading sensitivi",null,direct detection attempt
+DM_DETECT,LZ (LUX-ZEPLIN),2022-present,Null,"Most sensitive to date, 60 live days",null,direct detection attempt
+DM_DETECT,CDMS/SuperCDMS,2004-present,Null,"Germanium/silicon detectors, multiple ru",null,direct detection attempt
+DM_DETECT,DAMA/LIBRA,1995-present,Annual modulation claim,Controversial — no other experiment repl,null,direct detection attempt
+DM_DETECT,LHC (ATLAS/CMS),2010-present,Null,No dark matter particles at any energy,null,direct detection attempt
+DM_DETECT,Fermi-LAT,2008-present,Null,No dark matter annihilation signal detec,null,direct detection attempt
+DM_DETECT,AMS-02,2011-present,Ambiguous,"Positron excess — could be pulsars, not ",null,direct detection attempt
+DM_DETECT,ADMX,2018-present,Null,Axion search — no detection,null,direct detection attempt
+DARK_ENERGY,SUPERNOVA,dimming,observed at z>0.5,expanding spacetime|aetheric attenuation,both fit with tuning,neither independently verified
+DARK_ENERGY,PREDICTION,68%_of_universe,never directly detected,inferred from luminosity gap,GAP-FILLER,same epistemological status as aetheric drag
+HUBBLE,VALUE_1,Planck_CMB,67.4 ± 0.5 km/s/Mpc,early universe measurement,,ΛCDM model dependent
+HUBBLE,VALUE_2,SH0ES_Cepheids,73.0 ± 1.0 km/s/Mpc,local measurement,,model-independent
+HUBBLE,TENSION,discrepancy,5.8 km/s/Mpc,5+ sigma,UNRESOLVED,growing not shrinking
+HUBBLE,FIRMAMENT,interpretation,no expansion,H0 doesn't exist,N/A,avoids tension entirely
+AGE,Precession cycle,"25,772 years",">6,000 yrs",REQUIRES explanation,,"Observed precession rate requires >6,000 yr histor"
+AGE,Babylonian eclipses,"~2,700 years of records","fits 6,000 yrs",CONSISTENT,,"Oldest eclipse records ~720 BC, consistent with yo"
+AGE,Saros cycle,"~3,000 years confirmed","fits 6,000 yrs",CONSISTENT,,"Eclipse pattern repeatable, documented since Babyl"
+AGE,Tree rings (dendro),"~14,000 years (bristlecone)",">6,000 yrs",REQUIRES explanation,,"Continuous tree ring record exceeds 6,000 years"
+AGE,Ice cores (GISP2),"~110,000 years",">>6,000 yrs",REQUIRES explanation,,Annual layers counted — but assumes uniformitarian
+AGE,Radiometric dating,4.54 billion years (Earth),">>6,000 yrs",REQUIRES explanation,,Multiple independent methods converge — but assume
+AGE,Magnetic field decay,"~1,400 year half-life","fits 6,000 yrs",CONSISTENT,,Field strength declining — extrapolate back sugges
+AGE,Helium in atmosphere,~2 million years max,fits young model,CONTESTED,,Escape rate vs production — disputed calculations
+AGE,Polaris position,"~6,000 yr near pole","fits 6,000 yrs",CONSISTENT,,"Polaris has been a useful pole star for ~3,000 yea"
+AGE,Starlight travel time,Billions of light-years,">>6,000 yrs",REQUIRES explanation,,"If stars are billions of km away, light took >6,00"
+GR_VS_AETHER,Mercury perihelion,43 arcsec/century,GR: Predicted by GR ✅,Aether: Aetheric drag can produce same,MATH IDENTICAL,"Le Verrier 1859, Einstein 1915. Aetheric drag term"
+GR_VS_AETHER,Light bending (Sun),1.75 arcsec,GR: Confirmed ✅ (Eddington 1919),Aether: Aetheric density gradient near,MATH IDENTICAL,Both predict same deflection — different mechanism
+GR_VS_AETHER,Gravitational redshift,Δf/f = gh/c²,GR: Confirmed ✅ (Pound-Rebka 1959),Aether: Aetheric pressure gradient = s,MATH IDENTICAL,Pre-NASA ground experiment. Aetheric model gives i
+GR_VS_AETHER,Gravitational waves,Strain ~10⁻²¹,GR: Confirmed ✅ (LIGO 2015),Aether: Aetheric pressure waves propag,CONTESTED,LIGO detected something. Is it spacetime ripples o
+GR_VS_AETHER,GPS time correction,45 μs/day,GR: Applied daily ✅,Aether: Aetheric pressure variation wi,MATH IDENTICAL,Correction works. Mechanism debatable.
+GR_VS_AETHER,Gravitational lensing,Multiple images,GR: Confirmed ✅,Aether: Aetheric density gradient = sa,MATH IDENTICAL,Both predict same image geometry.
+GR_VS_AETHER,Black holes,M87* imaged 2019,GR: Image consistent with GR ✅,Aether: Aetheric pressure singularity,CONTESTED,Image exists. Interpretation depends on model.
+GR_VS_AETHER,Frame dragging,Tiny precession,GR: Confirmed ✅ (Gravity Probe B),Aether: Aetheric rotation near massive,MATH IDENTICAL,Both predict same precession rate.
+FINE_TUNING,Gravitational G,6.674e-11,±1%,Stars don't form or collapse too fast,,anthropic observation
+FINE_TUNING,Speed of light c,2.998e8 m/s,any value works,Defines units — not truly tuned,,anthropic observation
+FINE_TUNING,Fine structure α,1/137.036,±4%,Atoms unstable or chemistry impossible,,anthropic observation
+FINE_TUNING,Strong force αs,0.1181,±2%,Nuclei don't bind or all hydrogen stays ,,anthropic observation
+FINE_TUNING,Proton/electron mass,1836.15,±0.1%,Chemistry radically different,,anthropic observation
+FINE_TUNING,Cosmological Λ,~10^-122 (Planck),1 in 10^120,THE most finely tuned — why so small?,,anthropic observation
+FINE_TUNING,Neutron/proton mass,1.00138 ratio,±0.1%,All protons convert to neutrons or vice ,,anthropic observation
+FINE_TUNING,Dark energy density,68.3% of universe,no independent measurement,Inferred from expansion rate,,anthropic observation
+ATTACK,Dark matter existence,"50yr, $2B+, zero detections",Aetheric drag (same math),CONTESTED — neither detected,,offensive scorecard
+ATTACK,Dark energy existence,Inferred from SN dimming,Aetheric attenuation (same math),CONTESTED — neither detected,,offensive scorecard
+ATTACK,Hubble tension,H₀ = 67 vs 73 (5σ crisis),No expansion → no tension,MAINSTREAM CRISIS,,offensive scorecard
+ATTACK,Big Bang causality,Something from nothing,Designed creation (named cause),PHILOSOPHICAL — both unfalsifiable,,offensive scorecard
+ATTACK,Wormholes,"Zero evidence, requires exotic matter",Impossible in enclosed system,DOME — less speculative,,offensive scorecard
+ATTACK,Time travel,"Zero evidence, logical paradoxes",Impossible (time not a dimension),DOME — more parsimonious,,offensive scorecard
+ATTACK,Spacetime curvature,6/8 GR tests math identical,Aetheric medium (same equations),TIE — same math different label,,offensive scorecard
+ATTACK,Fine tuning,Multiverse (unfalsifiable),Design (unfalsifiable),TIE — philosophical not scientific,,offensive scorecard
+ATTACK,Quantum substrate,No physical mechanism,Aetheric wave medium,CONTESTED — both interpretive,,offensive scorecard
+ATTACK,Age of universe,13.8 Gyr (multiple methods),"6,000 yr (requires special pleading)",GLOBE — multiple convergent methods,,offensive scorecard
+ATTACK,Satellite orbits,"GPS works, images available",Aetheric suspension,GLOBE — simpler explanation,,offensive scorecard
+ATTACK,CMB radiation,Measured by COBE/WMAP/Planck,Firmament thermal emission?,CONTESTED — needs firmament model,,offensive scorecard
+SUMMARY,DARK_MATTER,50yr_zero_detections,$2B+ invested,aetheric drag alternative,CONTESTED,neither independently detected
+SUMMARY,DARK_ENERGY,68%_of_universe,inferred not measured,aetheric attenuation,CONTESTED,both gap-fillers
+SUMMARY,HUBBLE_TENSION,5sigma_crisis,67 vs 73 km/s/Mpc,no expansion on dome,MAINSTREAM_CRISIS,10+ years unresolved
+SUMMARY,GR_MATH,6/8_identical,spacetime curvature,aetheric medium,TIE,same equations both
+SUMMARY,FINE_TUNING,10^120_tuning,multiverse (unfalsifiable),design (unfalsifiable),TIE,philosophical not scientific
+SUMMARY,YOUNG_EARTH,4/10_consistent,4 dating methods conflict,requires special pleading,⚠️,not required by dome model
+SUMMARY,OCCAMS_RAZOR,entity_count,DM+DE+vacuum+graviton=4+ unknowns,aether=1 unknown,DOME+,fewer assumptions needed
+SUMMARY,STRONGEST_ATTACK,dark_matter_detection,50yr null results,genuine crisis,HIGH_VALUE,compare to Miller positive
+SUMMARY,HONEST_VERDICT,overall,both models have problems,test predictions don't attack,SCIENCE,mag north 2035 is the test
+SUMMARY,PROJECT_STATUS,V26_COMPLETE,25 versions + attack,1500+ data points,complete,final synthesis done

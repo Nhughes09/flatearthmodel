@@ -1,0 +1,9 @@
+city,lat,sigma_oct_elev,predicted,error
+Sydney,-33.87,35.03,33.87,1.16
+Cape Town,-33.92,35.08,33.92,1.16
+Buenos Aires,-34.6,35.76,34.6,1.16
+Auckland,-36.85,38.01,36.85,1.16
+Santiago,-33.45,34.61,33.45,1.16
+São Paulo,-23.55,24.71,23.55,1.16
+Lima,-12.05,13.21,12.05,1.16
+Johannesburg,-26.2,27.36,26.2,1.16

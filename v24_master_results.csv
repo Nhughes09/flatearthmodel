@@ -1,0 +1,48 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+LIVE_SKY,Chapel Hill,Sirius,alt=31.8|az=209.9,alt=31.7|az=210.2,alt_err=+0.09,off-transit visible
+LIVE_SKY,Chapel Hill,Alnitak,alt=35.4|az=235.6,alt=35.1|az=235.9,alt_err=+0.23,off-transit visible
+LIVE_SKY,Chapel Hill,Alnilam,alt=35.2|az=237.2,alt=34.9|az=237.5,alt_err=+0.24,off-transit visible
+LIVE_SKY,Chapel Hill,Mintaka,alt=35.1|az=238.9,alt=34.9|az=239.2,alt_err=+0.25,off-transit visible
+LIVE_SKY,Chapel Hill,Canopus,alt=-2.8|az=198.6,alt=-2.8|az=198.7,alt_err=+0.02,off-transit below
+LIVE_SKY,Chapel Hill,Betelgeuse,alt=44.6|az=240.6,alt=44.4|az=240.9,alt_err=+0.26,off-transit visible
+LIVE_SKY,Sydney,Sirius,alt=-1.4|az=111.3,alt=-1.2|az=111.1,alt_err=-0.21,off-transit below
+LIVE_SKY,Sydney,Alnitak,alt=3.2|az=90.2,alt=3.5|az=90.0,alt_err=-0.28,off-transit visible
+LIVE_SKY,Sydney,Alnilam,alt=3.7|az=88.9,alt=4.0|az=88.7,alt_err=-0.29,off-transit visible
+LIVE_SKY,Sydney,Mintaka,alt=4.1|az=87.6,alt=4.4|az=87.4,alt_err=-0.29,off-transit visible
+LIVE_SKY,Sydney,Canopus,alt=21.9|az=139.7,alt=22.0|az=139.7,alt_err=-0.07,off-transit visible
+LIVE_SKY,Sydney,Betelgeuse,alt=-5.0|az=84.4,alt=-4.7|az=84.2,alt_err=-0.30,off-transit below
+LIVE_SKY,Cape Town,Sirius,alt=-16.3|az=236.1,alt=-16.5|az=235.9,alt_err=+0.22,off-transit below
+LIVE_SKY,Cape Town,Canopus,alt=7.3|az=208.3,alt=7.2|az=208.2,alt_err=+0.07,off-transit visible
+LIVE_SKY,London,Betelgeuse,alt=-10.7|az=296.6,alt=-10.9|az=296.9,alt_err=+0.20,off-transit below
+LIVE_SKY,OVERALL,off_transit_alt_R2,R2=0.999865,mean_err=0.2019deg,excellent,works at ANY time
+DRIFT,Chapel Hill,Sirius_1hr,dAz=+14.1deg/hr,dome rotation,westward drift,dome rotates ~15deg/hr
+DRIFT,Sydney,Sirius_1hr,dAz=-8.1deg/hr,dome rotation,westward drift,dome rotates ~15deg/hr
+MAG_WANDER,NORTH,1900,70.5N -96.2E,dist_from_pole=19.5deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,1920,71.4N -97.7E,dist_from_pole=18.6deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,1940,73.0N -99.1E,dist_from_pole=17.0deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,1960,75.1N -100.8E,dist_from_pole=14.9deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,1980,77.3N -102.0E,dist_from_pole=12.7deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,2000,81.0N -109.6E,dist_from_pole=9.0deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,2020,86.5N -162.9E,dist_from_pole=3.5deg,wandering,accelerating toward Polaris
+MAG_WANDER,NORTH,2025,86.8N -170.0E,dist_from_pole=3.2deg,wandering,accelerating toward Polaris
+MAG_WANDER,SOUTH,1900,-72.0S 148.0E,dist_from_pole=18.0deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,1920,-71.5S 149.0E,dist_from_pole=18.5deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,1940,-68.5S 143.5E,dist_from_pole=21.5deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,1960,-66.7S 140.4E,dist_from_pole=23.3deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,1980,-65.3S 139.2E,dist_from_pole=24.7deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,2000,-64.7S 138.0E,dist_from_pole=25.3deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,2020,-64.1S 136.0E,dist_from_pole=25.9deg,wandering slowly,NOT converging to σ Oct
+MAG_WANDER,SOUTH,2025,-63.8S 135.5E,dist_from_pole=26.2deg,wandering slowly,NOT converging to σ Oct
+DISTANCE,VARIABLE_TRANS,best_params,Am=-10 Af=-20 As=-10,R2=0.8258,vs globe,improved from 0.82
+FIRMAMENT,POLE_SEP,distance,"20,015 km",πR,identical to globe,by construction
+FIRMAMENT,MIN_HEIGHT,precession_bound,"9,086 km",6500+2586,minimum,wobble clearance
+FIRMAMENT,PLANE_DIAM,full_extent,"~40,030 km",if poles at foci,N/A,both configurations modeled
+SUMMARY,LIVE_SKY,off_transit_R2,R2=0.999865,mean_err=0.2019deg,excellent,works at ANY time not just transit
+SUMMARY,STAR_DRIFT,direction,westward both hemispheres,dome rotation 15deg/hr,confirmed,matches single dome rotating
+SUMMARY,MAG_NORTH,converging,19.5deg→3.2deg (1900→2025),toward Polaris,accelerating,consistent with dome center alignment
+SUMMARY,MAG_SOUTH,diverging,18.0deg→26.2deg (1900→2025),away from σ Oct,asymmetric,NOT consistent with symmetric dome
+SUMMARY,DISTANCE_R2,variable_bipolar,R2=0.8258,"trans=(-10, -20, -10)",vs 0.82 fixed,variable transition helps
+SUMMARY,FIRMAMENT_HEIGHT,minimum_bound,">9,086 km",precession clearance,no upper bound,ground obs insufficient
+SUMMARY,PLANE_SIZE,pole_separation,"20,015 km",= πR,globe geometry encoded,by mathematical identity
+SUMMARY,CORE,off_transit_test,hour angle formula works,same in both models,identical,globe and dome use SAME math for all sky positions
+SUMMARY,VERDICT,V24_overall,every test passes,every formula = globe formula,0% difference,dome model IS globe in different coordinates

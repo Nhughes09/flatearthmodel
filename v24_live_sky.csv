@@ -1,0 +1,41 @@
+city,body,alt,az,visible
+Chapel Hill,Sirius,31.78,209.87,YES
+Chapel Hill,Alnitak,35.38,235.58,YES
+Chapel Hill,Alnilam,35.16,237.22,YES
+Chapel Hill,Mintaka,35.1,238.91,YES
+Chapel Hill,Polaris,36.0,359.24,YES
+Chapel Hill,Sigma_Oct,-37.03,180.36,no
+Chapel Hill,Canopus,-2.81,198.58,no
+Chapel Hill,Betelgeuse,44.65,240.56,YES
+Chapel Hill,jupiter,67.41,240.76,YES
+Chapel Hill,moon,24.12,115.29,YES
+Sydney,Sirius,-1.43,111.34,no
+Sydney,Alnitak,3.21,90.17,YES
+Sydney,Alnilam,3.73,88.92,YES
+Sydney,Mintaka,4.1,87.58,YES
+Sydney,Polaris,-33.45,0.55,no
+Sydney,Sigma_Oct,34.81,180.82,YES
+Sydney,Canopus,21.9,139.72,YES
+Sydney,Betelgeuse,-5.0,84.42,no
+Sydney,jupiter,-27.28,79.53,no
+Sydney,moon,-52.62,188.06,no
+Cape Town,Sirius,-16.28,236.08,no
+Cape Town,Alnitak,-37.91,234.89,no
+Cape Town,Alnilam,-39.23,234.47,no
+Cape Town,Mintaka,-40.6,234.25,no
+Cape Town,Polaris,-34.54,359.99,no
+Cape Town,Sigma_Oct,33.77,178.62,YES
+Cape Town,Canopus,7.27,208.26,YES
+Cape Town,Betelgeuse,-41.71,246.97,no
+Cape Town,jupiter,-35.86,275.34,no
+Cape Town,moon,39.8,298.04,YES
+London,Sirius,-22.42,271.04,no
+London,Alnitak,-20.42,294.23,no
+London,Alnilam,-20.44,295.67,no
+London,Mintaka,-20.28,297.14,no
+London,Polaris,50.92,359.67,YES
+London,Sigma_Oct,-52.0,178.31,no
+London,Canopus,-49.07,239.93,no
+London,Betelgeuse,-10.66,296.59,no
+London,jupiter,11.69,292.26,YES
+London,moon,30.32,207.95,YES

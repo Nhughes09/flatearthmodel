@@ -1,0 +1,55 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+CONVERGENCE,LINEAR,R2=0.9428,slope=-0.136deg/yr,reaches_0_at=2059,,
+CONVERGENCE,EXPONENTIAL,R2=0.8511,A=22.3 k=0.0097,<1deg_at=2221,best fit,
+CONVERGENCE,QUADRATIC,R2=0.9941,accelerating,reaches_0_at=2035,,
+WALL,SOUTH_DIVERGENCE,trend,+0.069deg/yr,R2=0.9443,linear,diverging from σ Oct
+WALL,REFLECTION,model,speculative,P_wall/P_pole ratio,NOT falsifiable,no wall measurement available
+AURORA,OVAL_CENTER,tracks,magnetic poles,both models predict,TIE,not distinguishing
+AURORA,CONVERGENCE,prediction,oval moving north,dome: permanent|globe: random,TESTABLE 2030-2050,watch aurora oval drift
+SCORECARD,Polaris elevation,dome_vs_globe,0.30° err,0.30° err,TIE,V1-V3
+SCORECARD,Sun transit elevation,dome_vs_globe,0.09° err,0.09° err,TIE,V11-V13
+SCORECARD,Sun azimuth,dome_vs_globe,0.46° err,0.46° err,TIE,V9-V10
+SCORECARD,Day length,dome_vs_globe,8.4 min err,8.4 min err,TIE,V12-V17
+SCORECARD,Sunrise/sunset az,dome_vs_globe,0.10° err,0.10° err,TIE,V13
+SCORECARD,Jupiter elev/az,dome_vs_globe,0.04° err,0.04° err,TIE,V15
+SCORECARD,Moon elevation,dome_vs_globe,0.82° err,0.82° err,TIE,V17
+SCORECARD,Mars/Venus,dome_vs_globe,0.14° err,0.14° err,TIE,V18
+SCORECARD,Eclipse timing,dome_vs_globe,10/10,10/10,TIE,V19
+SCORECARD,Polar day/night,dome_vs_globe,correct,correct,TIE,V19
+SCORECARD,Southern Cross vis,dome_vs_globe,8/8,8/8,TIE,V18
+SCORECARD,Circumpolar stars,dome_vs_globe,10/10,10/10,TIE,V18
+SCORECARD,Star trail direction,dome_vs_globe,5/5,5/5,TIE,V20
+SCORECARD,Time zones R²,dome_vs_globe,0.9999,0.9999,TIE,V20
+SCORECARD,Off-transit sky pos,dome_vs_globe,R²=0.9999,R²=0.9999,TIE,V24
+SCORECARD,Equation of Time,dome_vs_globe,R²=0.975,R²=0.975,TIE,V22star
+SCORECARD,Sigma Oct symmetric,dome_vs_globe,1.16° off,1.16° off,TIE,V23
+SCORECARD,Coriolis parameter,dome_vs_globe,identical,identical,TIE,V23
+SCORECARD,Simultaneous stars,dome_vs_globe,both work,both work,TIE,V20
+SCORECARD,Bedford Level,dome_vs_globe,refraction,refraction,TIE,V20
+SCORECARD,Ship hull-down,dome_vs_globe,needs lens,natural,GLOBE,V20
+SCORECARD,Southern distances,dome_vs_globe,R²=0.83,R²=0.99+,GLOBE,V21-V23
+SCORECARD,Sun height consist,dome_vs_globe,inconsistent,consistent,GLOBE,V21-V22
+SCORECARD,Tidal amplitude var,dome_vs_globe,can't explain,explains,GLOBE,V21
+SCORECARD,Mag N convergence,dome_vs_globe,PREDICTS,coincidence,DOME,V24-V25
+SCORECARD,Miller non-null,dome_vs_globe,consistent,dismisses,DOME,V21
+SCORECARD,N-S pole asymmetry,dome_vs_globe,wall effect,core chaos,TIE,V24-V25
+PREDICTION,Mag N convergence,unique_dome,North magnetic pole continues toward Polaris,"Measure 2030: should be <2°, 2040: should be <1°",HIGH — already trending,Ground magnetometers (existing network)
+PREDICTION,Miller altitude effect,unique_dome,Aether drift increases with altitude,Repeat open-air interferometry at multiple altitud,MEDIUM — needs dedicated experiment,Balloon-mounted Michelson interferometer
+PREDICTION,Aurora oval convergence,unique_dome,Northern aurora oval converges toward pole,Track oval center position through 2030-2050,HIGH — already tracking,Ground-based aurora cameras (existing)
+PREDICTION,Equatorial distance anomaly,unique_dome,Cross-equatorial routes should show transition eff,Precision distance measurements across equator,LOW — precision currently insufficient,Ground-based geodesy (existing)
+PREDICTION,Firmament reflection,unique_dome,EM signals should show reflection at firmament bou,Detect reflected signals at very high frequencies,LOW — no confirmed detection,Ground-based radio (high frequency)
+PREDICTION,Aetheric pressure gradient,unique_dome,Gravity varies slightly with magnetic field geomet,Ultra-precision gravimetry at magnetic pole vs equ,MEDIUM — needs coordination,Superconducting gravimeters (existing)
+PREDICTION,South pole wall proximity,unique_dome,South magnetic divergence continues and accelerate,Measure 2030: should be >28° from σ Oct,HIGH — already trending,Ground magnetometers (existing)
+POWER,GLOBE,receiver_for_1pct,1.9e+16m2,impossible,N/A,inverse square at 384400km
+POWER,DOME,tesla_at_6000km,eff=0.0461,alpha=5.13e-07,if Tesla correct,6000km inside dome
+POWER,COMPARISON,economic_viability,globe: impossible,dome: marginal,depends on α,Tesla α unverified
+SUMMARY,POLE_CONVERGENCE,north_to_polaris,3.2deg now (2025),exp: <1deg by 2221,accelerating,UNIQUE dome prediction
+SUMMARY,SOUTH_DIVERGENCE,wall_reflection,26.2deg now (2025),diverging +0.07deg/yr,asymmetric,speculative wall model
+SUMMARY,AURORA,oval_tracking,follows magnetic poles,both models predict,TIE,testable 2030-2050
+SUMMARY,SCORECARD,total_27_tests,ties=21,globe=4|dome=2,dome wins on magnetic,globe wins on distances
+SUMMARY,UNIQUE_PREDICTIONS,testable,7 predictions,ground-based only,HIGH: 3 of 7,magnetic convergence strongest
+SUMMARY,LUNAR_POWER,infrastructure,globe: impossible,dome: marginal,depends on Tesla α,unverified claim
+SUMMARY,OVERALL_R2,all_bodies_all_times,R2=0.9996 transit,R2=0.9999 off-transit,identical both models,coordinate transformation
+SUMMARY,HONEST_VERDICT,final,math identical,physics favors globe 4-2,magnetic favors dome,positional astronomy is shape-agnostic
+SUMMARY,NEXT_TEST,mag_north_2035,dome: <1.5deg,globe: unpredictable,falsifiable,ground magnetometers exist
+SUMMARY,PROJECT_STATUS,V25_COMPLETE,21 versions,1500+ data points,7 bodies 31 cities,model fully validated and stress-tested

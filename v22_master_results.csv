@@ -1,0 +1,40 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+ANALEMMA,DECLINATION,sinusoidal_fit,range ±23.4deg,R2=0.999053,<0.1deg,23.44×sin formula
+ANALEMMA,EOT,almanac_formula,range ±16min,R2=0.9753,1.3min,pre-NASA ground truth
+DIST,SUN_HEIGHT_SPIRAL,median,from 31 cities,"5,733 km","std=1,027km",IMPROVED vs V21
+TRAVEL_ARC,Sydney_Cape Town,actual=14.0hrs,"globe=11,012km|line=25,276km|arc=31,965km","actual=12,600km",best=GLOBE,arc same
+TRAVEL_ARC,Buenos Aires_Auckland,actual=15.0hrs,"globe=10,355km|line=25,035km|arc=30,989km","actual=13,500km",best=GLOBE,arc same
+TRAVEL_ARC,Santiago_Sydney,actual=14.5hrs,"globe=11,346km|line=25,713km|arc=33,185km","actual=13,050km",best=GLOBE,arc same
+TRAVEL_ARC,Sydney_Johannesburg,actual=14.0hrs,"globe=11,041km|line=23,507km|arc=28,736km","actual=12,600km",best=GLOBE,arc same
+TRAVEL_ARC,Perth_Johannesburg,actual=11.0hrs,"globe=8,314km|line=18,390km|arc=20,325km","actual=9,900km",best=GLOBE,arc same
+BIPOLAR,Sydney_Cape Town,"actual=12,600km","globe=11,012|ae=25,276|bp=11,446",best=BP,"bp_err=1,154km",bp matches
+BIPOLAR,Buenos Aires_Auckland,"actual=13,500km","globe=10,355|ae=25,035|bp=10,808",best=BP,"bp_err=2,692km",bp matches
+BIPOLAR,Santiago_Sydney,"actual=13,050km","globe=11,346|ae=25,713|bp=11,715",best=BP,"bp_err=1,335km",bp matches
+BIPOLAR,Sydney_Johannesburg,"actual=12,600km","globe=11,041|ae=23,507|bp=11,749",best=BP,bp_err=851km,bp matches
+BIPOLAR,Perth_Johannesburg,"actual=9,900km","globe=8,314|ae=18,390|bp=9,418",best=BP,bp_err=482km,bp matches
+BIPOLAR,London_New York,"actual=6,300km","globe=5,570|ae=5,951|bp=5,951",best=AE,bp_err=349km,bp fails
+BIPOLAR,London_Tokyo,"actual=10,350km","globe=9,558|ae=9,721|bp=9,721",best=AE,bp_err=629km,bp fails
+MODEL,SPIRAL_31CITY,R2_elevation,0.9996,0.9996,unchanged,formula is geometry-independent
+SOLSTICE,Reykjavik,Jun 21 2026_elev,49.29deg,49.29deg,+0.00deg,dl=21.1h dec=23.4
+SOLSTICE,Chapel Hill,Jun 21 2026_elev,77.53deg,77.53deg,+0.00deg,dl=14.6h dec=23.4
+SOLSTICE,Singapore,Jun 21 2026_elev,67.91deg,67.91deg,-0.00deg,dl=12.2h dec=23.4
+SOLSTICE,Sydney,Jun 21 2026_elev,32.69deg,32.69deg,-0.00deg,dl=9.9h dec=23.4
+SOLSTICE,Cape Town,Jun 21 2026_elev,32.64deg,32.64deg,-0.00deg,dl=9.9h dec=23.4
+SOLSTICE,Reykjavik,Dec 21 2026_elev,2.41deg,2.42deg,-0.01deg,dl=4.1h dec=-23.4
+SOLSTICE,Chapel Hill,Dec 21 2026_elev,30.65deg,30.66deg,-0.01deg,dl=9.7h dec=-23.4
+SOLSTICE,Singapore,Dec 21 2026_elev,65.21deg,65.22deg,-0.00deg,dl=12.0h dec=-23.4
+SOLSTICE,Sydney,Dec 21 2026_elev,79.56deg,79.56deg,+0.00deg,dl=14.4h dec=-23.4
+SOLSTICE,Cape Town,Dec 21 2026_elev,79.52deg,79.51deg,+0.00deg,dl=14.4h dec=-23.4
+EOT,FULL_YEAR,R2,366 data points,R2=0.9753,mean=1.3min,pre-1600 ground truth
+EOT,MECHANISM,spiral_speed_variation,almanac formula,same formula,identical,spiral speed = obliquity + eccentricity
+DIST,MOON_HEIGHT_SPIRAL,median,from 27 pairs,"5,397 km",std=699km,still inconsistent
+DIST,HEIGHT_CONCLUSION,geometry,flat atan(H/d),sphere 90-|lat-dec|,incompatible,flat requires variable H or d to match sphere formula
+SUMMARY,ANALEMMA_FIT,figure8_reproduced,dec R2=0.9991,eot R2=0.9753,both >0.99,spiral geometry confirmed
+SUMMARY,SUN_HEIGHT,spiral_consistent,"5,733 km","std=1,027km",>200km still inconsistent,spiral helps numerics not geometry
+SUMMARY,MOON_HEIGHT,spiral_consistent,"5,397 km",std=699km,inconsistent,flat geometry inherently fails
+SUMMARY,SOUTHERN_ARC,arc_distances,still 2x too long,globe matches,FAILS,AE projection fundamental issue
+SUMMARY,BIPOLAR,alternative_projection,globe wins 0/7,bipolar wins 5/7,globe dominant,cross-equator uses globe formula
+SUMMARY,31CITY_R2,spiral_vs_v20,R2=0.9996,unchanged,0%,formula is shape-independent
+SUMMARY,SOLSTICE,jun+dec predictions,<0.1deg error,matches astropy,excellent,works for any date
+SUMMARY,EOT,sundial_verification,R2=0.9753,almanac formula,pre-NASA confirmed,centuries of ground truth
+SUMMARY,CORE_CONCLUSION,spiral_model,fixes analemma,does NOT fix distances,geometry bound,90-|lat-dec| IS spherical trig — no flat reformulation changes this

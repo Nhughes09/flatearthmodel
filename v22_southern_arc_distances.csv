@@ -1,0 +1,6 @@
+route,globe_km,ae_line_km,ae_arc_km,actual_km,best_fit
+Sydney→Cape Town,11012,25276,31965,12600,GLOBE
+Buenos Aires→Auckland,10355,25035,30989,13500,GLOBE
+Santiago→Sydney,11346,25713,33185,13050,GLOBE
+Sydney→Johannesburg,11041,23507,28736,12600,GLOBE
+Perth→Johannesburg,8314,18390,20325,9900,GLOBE

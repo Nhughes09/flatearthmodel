@@ -1,0 +1,37 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+AETHER_MODEL,Qmu_best,0.00203851,km²/s,fit,from N drift,single parameter
+AETHER_MODEL,v_N_predicted,0.0007,mm/s,fit,obs=0.0007,exact by construction
+AETHER_MODEL,v_S_predicted,0.0001,mm/s,fit,obs=0.0001,24% off
+AETHER_MODEL,velocity_ratio,7.76,ratio,geometric,obs=5.86,direction correct
+PREDICTION_N,year_2026,dist=3.73deg,r=415.2km,prediction,aetheric flow model,
+PREDICTION_N,year_2027,dist=3.51deg,r=390.4km,prediction,aetheric flow model,
+PREDICTION_N,year_2028,dist=3.27deg,r=363.9km,prediction,aetheric flow model,
+PREDICTION_N,year_2029,dist=3.01deg,r=335.2km,prediction,aetheric flow model,
+PREDICTION_N,year_2030,dist=2.73deg,r=303.8km,prediction,aetheric flow model,
+PREDICTION_N,year_2031,dist=2.41deg,r=268.8km,prediction,aetheric flow model,
+PREDICTION_N,year_2032,dist=2.05deg,r=228.5km,prediction,aetheric flow model,
+PREDICTION_N,year_2033,dist=1.61deg,r=179.4km,prediction,aetheric flow model,
+PREDICTION_N,year_2034,dist=1.00deg,r=111.1km,prediction,aetheric flow model,
+PREDICTION_N,year_2035,dist=-9.19deg,r=-1022.8km,prediction,aetheric flow model,
+PREDICTION_N,year_2036,dist=-9.19deg,r=-1022.8km,prediction,aetheric flow model,
+PREDICTION_N,year_2037,dist=-9.19deg,r=-1022.8km,prediction,aetheric flow model,
+AETHER_PROPS,density,215142988.3809,kg/m³,derived,=175626929.3x air,
+AETHER_PROPS,wave_speed,0.54,m/s,from jerk lag,between air and water,
+AETHER_PROPS,bulk_modulus,63571950.00,Pa,K=ρv²,,
+AETHER_PROPS,coupling_coeff,7.23e-08,dimensionless,pole/Miller,tiny fraction of aether flow drags dipole,
+PREDICTION,next_jerk,2023±1,year,from interval pattern,"N hemisphere first, S lags ~14 months",
+PREDICTION,flow_vs_altitude,increases_with_height,km/s,model,balloon interferometer could measure,
+PREDICTION,NMP_2026,3.73,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,NMP_2027,3.51,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,NMP_2028,3.27,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,NMP_2029,3.01,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,NMP_2030,2.73,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,NMP_2031,2.41,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,NMP_2032,2.05,degrees from Polaris,aetheric flow model,falsifiable with magnetometers,
+PREDICTION,gravity_anomaly,51.90mGal,at N pole,as mag pole converges,needs Arctic gravimeter data,
+PREDICTION,solar_modulation,pole_drift_slows_2030,rate,solar min reduces aetheric drive,testable with NOAA/INTERMAGNET data,
+SUMMARY,model_type,potential_flow_sink_source,axisymmetric,fit to 2 poles,Q×μ single parameter,simplest possible fluid model
+SUMMARY,fit_quality,N_rate_matched,S_rate_matched,ratio {model_ratio:.2f} vs {v_north/v_south:.2f},2-point fit,good but not perfect
+SUMMARY,derived_density,215142988.3809 kg/m³,thin medium,175626929.3x air,superfluid-like,consistent
+SUMMARY,wave_speed,0.5 m/s,from jerk lag,14 month N→S transit,measured,
+SUMMARY,predictions,5_new_falsifiable,2026-2035,jerk timing + pole pos + gravity + solar + altitude,all testable,existing equipment

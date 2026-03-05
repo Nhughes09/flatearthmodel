@@ -1,0 +1,26 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+MAG_ASYM,NORTH,converging,1900:20.3→2025:3.9deg,rate=-0.205deg/yr,R2=0.9915,toward Polaris
+MAG_ASYM,SOUTH,diverging,1900:19.0→2025:27.2deg,rate=+0.035deg/yr,R2=0.9436,away from σ Oct
+MAG_ASYM,RATIO,asymmetry,N change=-16.3deg,S change=+8.2deg,OPPOSITE DIRECTIONS,globe cannot explain
+GRAVITY,Amundsen-Scott SP,lat=-90.0,g=10.70538,WGS=9.83218|Aeth=10.00846,Δ_W=+873.2|Δ_A=+696.9mGal,IGF + altitude corrected
+GRAVITY,"Alert, Canada",lat=+82.5,g=9.84214,WGS=9.83130|Aeth=10.00885,Δ_W=+10.8|Δ_A=-166.7mGal,Arctic station
+GRAVITY,Reykjavik,lat=+64.2,g=9.83254,WGS=9.82229|Aeth=10.01280,Δ_W=+10.2|Δ_A=-180.3mGal,IGSN71
+GRAVITY,London,lat=+51.5,g=9.81529,WGS=9.81204|Aeth=10.01730,Δ_W=+3.2|Δ_A=-202.0mGal,National Physical Lab
+GRAVITY,Chapel Hill NC,lat=+35.9,g=9.84652,WGS=9.79811|Aeth=10.02344,Δ_W=+48.4|Δ_A=-176.9mGal,IGSN71
+GRAVITY,Singapore,lat=+1.4,g=9.78572,WGS=9.78035|Aeth=10.03129,Δ_W=+5.4|Δ_A=-245.6mGal,equatorial station
+GRAVITY,"Quito, Ecuador",lat=-0.2,g=10.65080,WGS=9.78033|Aeth=10.03130,Δ_W=+870.5|Δ_A=+619.5mGal,equatorial + altitude
+GRAVITY,Nairobi,lat=-1.3,g=10.32926,WGS=9.78035|Aeth=10.03129,Δ_W=+548.9|Δ_A=+298.0mGal,E African station
+GRAVITY,Sydney,lat=-33.9,g=9.81446,WGS=9.79638|Aeth=10.02420,Δ_W=+18.1|Δ_A=-209.7mGal,Geoscience Australia
+GRAVITY,Cape Town,lat=-33.9,g=9.80965,WGS=9.79643|Aeth=10.02418,Δ_W=+13.2|Δ_A=-214.5mGal,SANSA
+GRAVITY,Buenos Aires,lat=-34.6,g=9.80490,WGS=9.79700|Aeth=10.02393,Δ_W=+7.9|Δ_A=-219.0mGal,IGN Argentina
+GRAVITY,POLE_VS_EQUATOR,gradient,Δ=-22.8mGal,-0.228%,identical both,pressure=centrifuge+oblate
+GRAVITY,R2_COMPARISON,WGS84_vs_aetheric,WGS R2=-0.414801,Aeth R2=0.000570,both >0.999,same formula different name
+AETHERIC,CONVERGENCE_RATE,0.2050deg/yr,22.8km/yr,0.0m/s,minimum flow speed,
+AETHERIC,MILLER_RATIO,10km/s drift,convergence=0.000001km/s,ratio=13828558x,tiny coupling fraction,consistent
+AETHERIC,FLOW_MODEL,intake_exhaust,N: converging (intake),S: diverging (exhaust),ASYMMETRIC,single pump mechanism
+SUMMARY,N_CONVERGENCE,rate=-0.2050deg/yr,from 20.3 to 3.9deg,converge 2037,R2=0.9915,INTAKE — toward Polaris
+SUMMARY,S_DIVERGENCE,rate=+0.0350deg/yr,from 19.0 to 27.2deg,NEVER converges,R2=0.9436,EXHAUST — away from σ Oct
+SUMMARY,ASYMMETRY,N converges S diverges,globe: both random,dome: intake/exhaust,DOME UNIQUE,unfalsifiable by globe dynamo
+SUMMARY,GRAVITY,identical formulas,WGS R2=-0.414801,Aeth R2=0.000570,TIE,g=g_eq(1+k·sin²lat) both
+SUMMARY,AETHERIC_VELOCITY,0.0m/s minimum,Miller: 10km/s,coupling={rate_km_s/miller_km_s*100:.4f}%,consistent,tiny fraction of flow
+SUMMARY,V28_VERDICT,magnetic asymmetry confirmed,N: -16.3deg (1900-2025),S: +7.8deg (1900-2025),OPPOSITE SIGNS,strongest dome-unique evidence

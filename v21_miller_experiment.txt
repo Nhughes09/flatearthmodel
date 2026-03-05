@@ -1,0 +1,49 @@
+
+DAYTON MILLER — MICHELSON-MORLEY REPEAT EXPERIMENTS (1902-1926)
+
+BACKGROUND:
+Michelson-Morley (1887) found "null" result for aether wind.
+But their experiment had limited sensitivity and few runs.
+
+MILLER'S WORK:
+- Professor of Physics, Case School of Applied Science (now Case Western)
+- 200,000+ individual observations over 24 years
+- Used improved interferometer, multiple locations + altitudes
+- Published in Reviews of Modern Physics, Vol 5, July 1933
+
+MEASURED RESULT:
+- Consistent NON-NULL aether drift of approximately 10 km/s
+- Direction: roughly toward constellation Dorado (southern sky)
+- Varied with sidereal time (not solar time) — suggesting cosmic origin
+- Amplitude increased at higher altitude (Mt. Wilson vs Cleveland)
+
+EINSTEIN'S RESPONSE (1926):
+"If the results of the Miller experiments were to be confirmed,
+then the special theory of relativity, and with it the general
+theory of relativity, in its current form, would be invalid."
+— Letter to Edwin Slosson, reported in multiple sources
+
+WHY DISMISSED:
+1. Shankland et al. (1955) reanalyzed Miller's data 
+   — concluded "systematic errors" from temperature variations
+2. This reanalysis was done AFTER Miller died (1941)
+   — Miller could not respond to criticisms
+3. Modern laser interferometers find null results
+   — but these are in vacuum chambers, not open air
+4. The scientific community had already invested heavily 
+   in special relativity by 1955
+
+CO-MOVING FIRMAMENT INTERPRETATION:
+If the aether co-moves with the enclosed firmament system:
+- Interior: aether velocity relative to apparatus ≈ 0 → near-null
+- Near dome boundary: partial drag effects → small non-null 
+- Miller's 10 km/s could represent boundary layer dragging
+- Higher altitude (Mt. Wilson) = closer to dome = more drag
+- This is consistent with co-moving aether theory
+
+OPEN QUESTIONS:
+- Miller's published data is available for re-examination
+- No one has replicated his OPEN-AIR methodology with modern equipment
+- All modern replications use vacuum chambers (which would co-move)
+- The altitude dependence has never been satisfactorily explained 
+  by temperature alone

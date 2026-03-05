@@ -1,0 +1,95 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+DIST,SUN_HEIGHT,Eratosthenes_pair,7.2deg/800km,6333 km,N/A,tan(7.2deg) flat geometry
+DIST,SUN_HEIGHT,"Reykjavik, Iceland_pair",elev=19.6deg,2791 km,51%,d_flat=7861km
+DIST,SUN_HEIGHT,"London, UK_pair",elev=32.2deg,4059 km,29%,d_flat=6454km
+DIST,SUN_HEIGHT,"New York City, USA_pair",elev=43.0deg,4905 km,14%,d_flat=5252km
+DIST,SUN_HEIGHT,"Chicago, USA_pair",elev=41.9deg,4827 km,16%,d_flat=5382km
+DIST,SUN_HEIGHT,"Los Angeles, USA_pair",elev=49.7deg,5328 km,7%,d_flat=4511km
+DIST,SUN_HEIGHT,"Tokyo, Japan_pair",elev=47.8deg,5183 km,10%,d_flat=4692km
+DIST,SUN_HEIGHT,"Dubai, UAE_pair",elev=58.4deg,5733 km,0%,d_flat=3526km
+DIST,SUN_HEIGHT,Singapore_pair,elev=82.2deg,6363 km,11%,d_flat=870km
+DIST,SUN_HEIGHT,"Paris, France_pair",elev=34.8deg,4283 km,25%,d_flat=6159km
+DIST,SUN_HEIGHT,"Berlin, Germany_pair",elev=31.1deg,3967 km,31%,d_flat=6566km
+DIST,SUN_HEIGHT,"Moscow, Russia_pair",elev=27.9deg,3664 km,36%,d_flat=6927km
+DIST,SUN_HEIGHT,"Beijing, China_pair",elev=43.6deg,4924 km,14%,d_flat=5162km
+DIST,SUN_HEIGHT,"Mumbai, India_pair",elev=64.5deg,5967 km,4%,d_flat=2844km
+DIST,SUN_HEIGHT,"Cairo, Egypt_pair",elev=53.6deg,5512 km,4%,d_flat=4064km
+DIST,SUN_HEIGHT,"Toronto, Canada_pair",elev=40.1deg,4699 km,18%,d_flat=5580km
+DIST,SUN_HEIGHT,median_all_cities,N/A,"5,733 km",spread varies,NOT consistent — flat geometry fails
+DIST,SUN_HEIGHT,std_deviation,N/A,"1,027 km",large,internal inconsistency
+DIST,MOON_HEIGHT,median_triangulated,parallax obs,"2,534 km",varies,from city pairs
+DIST,MOON_HEIGHT,range,"265-156,447 km",N/A,wide spread,geometry inconsistent
+DIST,STAR_HEIGHT,Proxima Centauri,parallax=0.7687arcsec,"1,390,949,256 km",N/A,globe=4.2ly
+DIST,STAR_HEIGHT,Alpha Centauri A,parallax=0.7471arcsec,"1,431,164,091 km",N/A,globe=4.4ly
+DIST,STAR_HEIGHT,Barnard's Star,parallax=0.5469arcsec,"1,955,060,693 km",N/A,globe=6.0ly
+DIST,STAR_HEIGHT,Wolf 359,parallax=0.4153arcsec,"2,574,579,082 km",N/A,globe=7.8ly
+DIST,STAR_HEIGHT,Lalande 21185,parallax=0.3931arcsec,"2,719,976,323 km",N/A,globe=8.3ly
+DIST,STAR_HEIGHT,Sirius A,parallax=0.3792arcsec,"2,819,680,097 km",N/A,globe=8.6ly
+DIST,STAR_HEIGHT,Luyten 726-8 A,parallax=0.3737arcsec,"2,861,179,269 km",N/A,globe=8.7ly
+DIST,STAR_HEIGHT,Ross 154,parallax=0.3365arcsec,"3,177,481,999 km",N/A,globe=9.7ly
+DIST,STAR_HEIGHT,Ross 248,parallax=0.3161arcsec,"3,382,545,690 km",N/A,globe=10.3ly
+DIST,STAR_HEIGHT,Epsilon Eridani,parallax=0.3108arcsec,"3,440,227,454 km",N/A,globe=10.5ly
+DIST,STAR_HEIGHT,dome_baseline,precession wobble,5184 km,N/A,2×6500×sin23.5°
+DIST,FLAT_VS_GLOBE,Sydney → Cape Town,"globe=11,012km","flat=25,276km",ratio=2.3,southern routes 2x too long on flat
+DIST,FLAT_VS_GLOBE,Buenos Aires → Auckland,"globe=10,355km","flat=25,035km",ratio=2.42,southern routes 2x too long on flat
+DIST,FLAT_VS_GLOBE,Santiago → Sydney,"globe=11,346km","flat=25,713km",ratio=2.27,southern routes 2x too long on flat
+DIST,FLAT_VS_GLOBE,London → New York,"globe=5,570km","flat=5,951km",ratio=1.07,southern routes 2x too long on flat
+DIST,FLAT_VS_GLOBE,London → Tokyo,"globe=9,558km","flat=9,721km",ratio=1.02,southern routes 2x too long on flat
+DIST,FLAT_VS_GLOBE,Dubai → Singapore,"globe=5,837km","flat=7,428km",ratio=1.27,southern routes 2x too long on flat
+SIZE,SUN_DIAMETER,apparent_0.53deg,globe=1392700km,53.0 km,N/A,"at H=5,733km"
+SIZE,MOON_DIAMETER,apparent_0.52deg,globe=3474km,23.0 km,N/A,"at H=2,534km"
+SIZE,SUN_MOON_RATIO,apparent_size_match,Sun/Moon=1.02,coincidence?,N/A,both ~0.5deg from ground
+GRAV,LESAGE_FIT,altitude_0m,9.80665 m/s2,9.80665 m/s2,0.00000,same as Newton — different mechanism
+GRAV,LESAGE_FIT,altitude_1000m,9.80356 m/s2,9.80357 m/s2,0.00001,same as Newton — different mechanism
+GRAV,LESAGE_FIT,altitude_5000m,9.79124 m/s2,9.79128 m/s2,0.00004,same as Newton — different mechanism
+GRAV,LESAGE_FIT,altitude_10000m,9.77583 m/s2,9.77594 m/s2,0.00011,same as Newton — different mechanism
+GRAV,LESAGE_FIT,altitude_100000m,9.50475 m/s2,9.5059 m/s2,0.00115,same as Newton — different mechanism
+GRAV,LESAGE_FIT,altitude_400000m,8.69 m/s2,8.68221 m/s2,0.00779,same as Newton — different mechanism
+GRAV,MECHANISM,pressure_shadow,inverse_square,inverse_square,identical,unfalsifiable — same math
+GRAV,CAVENDISH_1798,torsion_balance,G=6.674e-11,matches,0%,pre-NASA ground measurement
+GRAV,GALILEO_1589,free_fall,9.81 m/s2,9.81 m/s2,0%,pre-satellite observation
+TIDE,CYCLE,hour_0.0,force_obs=cos_pattern,1.0000,matches,12.42hr period
+TIDE,CYCLE,hour_3.1,force_obs=cos_pattern,0.0000,matches,12.42hr period
+TIDE,CYCLE,hour_6.2,force_obs=cos_pattern,-1.0000,matches,12.42hr period
+TIDE,CYCLE,hour_9.3,force_obs=cos_pattern,-0.0000,matches,12.42hr period
+TIDE,CYCLE,hour_12.4,force_obs=cos_pattern,1.0000,matches,12.42hr period
+TIDE,CYCLE,hour_15.5,force_obs=cos_pattern,0.0000,matches,12.42hr period
+TIDE,CYCLE,hour_18.6,force_obs=cos_pattern,-1.0000,matches,12.42hr period
+TIDE,CYCLE,hour_21.7,force_obs=cos_pattern,-0.0000,matches,12.42hr period
+TIDE,CYCLE,hour_24.8,force_obs=cos_pattern,1.0000,matches,12.42hr period
+TIDE,SPRING_NEAP,14_day_cycle,observed,predicted,matches,Sun-Moon alignment
+TIDE,PERIGEE_EFFECT,amplitude_variation,observed 15%,NOT predicted,FAILS,dome has fixed Moon height
+TIDE,SOUTHAMPTON,double_tide,observed,complex_geometry,NEEDS_DATA,harbor resonance
+POWER,LUNAR_GLOBE,vacuum_inverse_sq,"d=8,313.818029291104km",eff=5.39e-13,N/A,economically impossible
+POWER,LUNAR_DOME,aetheric_guided,"d=5,000km",eff=0.0769,N/A,Tesla efficiency projected
+POWER,TESLA_CLAIM,Wardenclyffe,95% at 100km,unverified,N/A,self-reported — no independent data
+POWER,RATIO,dome_vs_globe,N/A,1e+11x better,N/A,depends on Tesla claim validity
+MILLER,ORIGINAL_MM,Michelson_1887,null result,null predicted,matches,limited runs
+MILLER,MILLER_REPEAT,Miller_1902-1926,8-10 km/s,non-null,NON-NULL,200000+ observations
+MILLER,PUBLISHED,Rev_Mod_Phys_1933,10 km/s drift,toward Dorado,sidereal variation,legitimate journal
+MILLER,DISMISSED,Shankland_1955,temperature err,posthumous,CONTESTED,Miller died 1941 — could not respond
+MILLER,MODERN_TESTS,laser_interferometry,null,null,matches,but in vacuum chambers — not open air
+MILLER,CO_MOVING,firmament_interpretation,small non-null,boundary drag,consistent,altitude dependent
+MILLER,EINSTEIN_QUOTE,1926_letter,would invalidate SR,acknowledged,N/A,if confirmed
+TRAVEL,Sydney_Cape Town,actual=14.0hrs,globe=12.2hrs,flat=28.1hrs,globe_err=1.8hrs,"GLOBE fits, flat 2x too long"
+TRAVEL,Buenos Aires_Auckland,actual=15.0hrs,globe=11.5hrs,flat=27.8hrs,globe_err=3.5hrs,"GLOBE fits, flat 2x too long"
+TRAVEL,Santiago_Sydney,actual=14.5hrs,globe=12.6hrs,flat=28.6hrs,globe_err=1.9hrs,"GLOBE fits, flat 2x too long"
+TRAVEL,Sydney_Johannesburg,actual=14.0hrs,globe=12.3hrs,flat=26.1hrs,globe_err=1.7hrs,"GLOBE fits, flat 2x too long"
+TRAVEL,Perth_Johannesburg,actual=11.0hrs,globe=9.2hrs,flat=20.4hrs,globe_err=1.8hrs,"GLOBE fits, flat 2x too long"
+ARCH,POLARIS,fixed_pole_star,6500 km,6500 km,0.30deg err,locked from V1
+ARCH,SUN,dome_shell,globe=149.6M km,"dome=5,733 km",N/A,triangulated — inconsistent
+ARCH,MOON,closest_body,globe=384400 km,"dome=2,534 km",N/A,parallax triangulated
+ARCH,JUPITER,outer_shell,globe=778M km,"dome~5,733 km",N/A,same shell as Sun
+ARCH,NEAR_STARS,firmament_inner,globe=4.2 ly,"dome~1,390,949,256 km",N/A,parallax-derived
+ARCH,FIRMAMENT,outer_wall,unknown,above all bodies,N/A,25772yr precession wobble
+ARCH,DOME_MODEL,single_shell,all bodies,~14000-16000 km,N/A,rotation rate differentiates
+SUMMARY,OVERALL,dome_predictions,R2=0.9996,all_bodies,all_cities,V1-V20 validated
+SUMMARY,NEW_SUN_HEIGHT,triangulated,"5,733 km",INCONSISTENT,"std=1,027km",flat geometry fails self-consistency
+SUMMARY,NEW_MOON_HEIGHT,triangulated,"2,534 km",variable,wide range,needs better simultaneous data
+SUMMARY,AETHERIC_GRAVITY,lesage_fit,identical to Newton,same formula,0%,unfalsifiable — different mechanism same math
+SUMMARY,MILLER_RESULT,non_null,8-10 km/s,Dorado direction,dismissed 1955,legitimate data — contested interpretation
+SUMMARY,SOUTHERN_DISTANCES,flight_times,match globe,flat 2x too long,FAILS,strongest evidence against flat AE map
+SUMMARY,CORE_FINDING,all_formulas,globe math relabeled,identical,0%,dome model IS globe coordinate transformation
+SUMMARY,FIRMAMENT_TOP,estimated,above all measured,unknown,N/A,need independent probe data
+SUMMARY,ECLIPSES,lunar+solar,10/10 predicted,dome shadow model,N/A,conjunction/opposition geometry
+SUMMARY,STAR_TRAILS,5_latitudes,all correct,viewpoint flip,N/A,same as sphere rotation — relabeled

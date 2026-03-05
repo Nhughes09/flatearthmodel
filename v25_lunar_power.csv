@@ -1,0 +1,3 @@
+model,distance_km,mechanism,efficiency_1pct_area_km2,verdict,efficiency_at_tesla_alpha
+Globe,384400,inverse_square,18568491449.829758,impossible,
+Dome,6000,guided_aetheric,,marginal if Tesla correct,0.04606979898695193

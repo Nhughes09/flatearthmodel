@@ -1,0 +1,45 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+TUNING,Sydney_Cape Town,tuned_bp,"actual=11,000km","bp=11,446km",+4.1%,trans=-15 blend=0
+TUNING,Buenos Aires_Auckland,tuned_bp,"actual=11,400km","bp=10,808km",-5.2%,trans=-15 blend=0
+TUNING,Santiago_Sydney,tuned_bp,"actual=11,300km","bp=11,715km",+3.7%,trans=-15 blend=0
+TUNING,Sydney_Johannesburg,tuned_bp,"actual=11,040km","bp=11,749km",+6.4%,trans=-15 blend=0
+TUNING,Perth_Johannesburg,tuned_bp,"actual=8,310km","bp=9,418km",+13.3%,trans=-15 blend=0
+TUNING,London_New York,tuned_bp,"actual=5,570km","bp=5,951km",+6.8%,trans=-15 blend=0
+TUNING,London_Tokyo,tuned_bp,"actual=9,560km","bp=9,721km",+1.7%,trans=-15 blend=0
+MATRIX,North-North,190_pairs,AE_R2=0.9737,BP_R2=0.9737,ae_ratio=1.06|bp_ratio=1.06,AE wins
+MATRIX,South-South,55_pairs,AE_R2=-3.8750,BP_R2=0.5462,ae_ratio=1.90|bp_ratio=1.21,BP wins
+MATRIX,Cross-equator,220_pairs,AE_R2=0.6292,BP_R2=0.6563,ae_ratio=1.15|bp_ratio=1.16,BP wins
+MATRIX,OVERALL,465_pairs,AE_R2=0.3424,BP_R2=0.8187,vs globe,BP better
+CORIOLIS,lat_+90,f_parameter,1.4584e-04,1.4584e-04,identical,same formula both models
+CORIOLIS,lat_+60,f_parameter,1.2630e-04,1.2630e-04,identical,same formula both models
+CORIOLIS,lat_+45,f_parameter,1.0313e-04,1.0313e-04,identical,same formula both models
+CORIOLIS,lat_+30,f_parameter,7.2921e-05,7.2921e-05,identical,same formula both models
+CORIOLIS,lat_+15,f_parameter,3.7747e-05,3.7747e-05,identical,same formula both models
+CORIOLIS,lat_+0,f_parameter,0.0000e+00,0.0000e+00,identical,same formula both models
+CORIOLIS,lat_-15,f_parameter,-3.7747e-05,-3.7747e-05,identical,same formula both models
+CORIOLIS,lat_-30,f_parameter,-7.2921e-05,-7.2921e-05,identical,same formula both models
+CORIOLIS,lat_-45,f_parameter,-1.0313e-04,-1.0313e-04,identical,same formula both models
+CORIOLIS,lat_-60,f_parameter,-1.2630e-04,-1.2630e-04,identical,same formula both models
+CORIOLIS,lat_-90,f_parameter,-1.4584e-04,-1.4584e-04,identical,same formula both models
+MAGNETIC,NORTH,pole_vs_polaris,86.5N,90.0N,3.5deg offset,poles don't align exactly
+MAGNETIC,SOUTH,pole_vs_sigma_oct,-64.1S,-88.7S,24.6deg offset,significant misalignment
+MAGNETIC,VERDICT,alignment,imperfect,needs explanation,⚠️,dome model needs aetheric current theory
+SIGMA_OCT,Sydney,transit_elevation,35.03deg,33.87deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,Cape Town,transit_elevation,35.08deg,33.92deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,Buenos Aires,transit_elevation,35.76deg,34.60deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,Auckland,transit_elevation,38.01deg,36.85deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,Santiago,transit_elevation,34.61deg,33.45deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,São Paulo,transit_elevation,24.71deg,23.55deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,Lima,transit_elevation,13.21deg,12.05deg,+1.16deg,offset |lat| formula
+SIGMA_OCT,Johannesburg,transit_elevation,27.36deg,26.20deg,+1.16deg,offset |lat| formula
+GEOMETRY,POLE_SEPARATION,distance,"20,038 km","πR = 20,015 km",identical,globe geometry encoded
+V20_RERUN,ELEVATION,all_bodies,R2=0.9996,R2=0.9996,unchanged,projection doesn't affect angles
+V20_RERUN,DISTANCES,465_pairs,AE R2=0.3424,BP R2=0.8187,IMPROVED,bipolar fixes southern routes
+SUMMARY,BIPOLAR_TUNING,best_params,trans=-15 blend=0,"total_err=3,811km",optimized,grid search result
+SUMMARY,ROUTE_MATRIX,465_pairs,AE_R2=0.3424,BP_R2=0.8187,vs globe reference,BP wins
+SUMMARY,SIGMA_OCTANTIS,elevation_formula,mean_err=1.16deg,matches |lat|,vs Polaris 0.30deg,symmetric pole heights confirmed
+SUMMARY,CORIOLIS,f_parameter,2Ω·sin(lat),identical both models,0%,unfalsifiable — same math
+SUMMARY,MAGNETIC,pole_alignment,3.5deg north,24.6deg south,imperfect,needs explanation in dome model
+SUMMARY,POLE_SEPARATION,flat_plane_width,"20,015 km",= πR (globe),N/A,sphere geometry encoded
+SUMMARY,ELEVATION_R2,all_bodies,R2=0.9996,unchanged by projection,0%,formula is projection-independent
+SUMMARY,CORE_FINDING,bi-polar_flat,IS the globe unfolded,mathematically identical,0%,coordinate transformation not alternative physics

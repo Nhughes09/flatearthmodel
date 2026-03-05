@@ -1,0 +1,9 @@
+test,observed,gr,aetheric,verdict,notes
+Mercury perihelion,43 arcsec/century,Predicted by GR ✅,Aetheric drag can produce same value,MATH IDENTICAL,"Le Verrier 1859, Einstein 1915. Aetheric drag term calculable but ad hoc."
+Light bending (Sun),1.75 arcsec,Confirmed ✅ (Eddington 1919),Aetheric density gradient near mass,MATH IDENTICAL,Both predict same deflection — different mechanism.
+Gravitational redshift,Δf/f = gh/c²,Confirmed ✅ (Pound-Rebka 1959),Aetheric pressure gradient = same formula,MATH IDENTICAL,Pre-NASA ground experiment. Aetheric model gives identical math.
+Gravitational waves,Strain ~10⁻²¹,Confirmed ✅ (LIGO 2015),Aetheric pressure waves propagating through medium,CONTESTED,LIGO detected something. Is it spacetime ripples or medium waves?
+GPS time correction,45 μs/day,Applied daily ✅,Aetheric pressure variation with altitude,MATH IDENTICAL,Correction works. Mechanism debatable.
+Gravitational lensing,Multiple images,Confirmed ✅,Aetheric density gradient = same refraction,MATH IDENTICAL,Both predict same image geometry.
+Black holes,M87* imaged 2019,Image consistent with GR ✅,Aetheric pressure singularity,CONTESTED,Image exists. Interpretation depends on model.
+Frame dragging,Tiny precession,Confirmed ✅ (Gravity Probe B),Aetheric rotation near massive body,MATH IDENTICAL,Both predict same precession rate.

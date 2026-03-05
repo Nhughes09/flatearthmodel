@@ -1,0 +1,12 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+PHASE,lit_side_direction,always_faces_Sun,verified by observation,visual,anyone,reflector: lit side faces Sun. self-luminous: no constraint
+PHASE,earthshine,visible_on_dark_side,faint glow on unlit portion,visual,binoculars,Earth reflects sunlight onto Moon's dark side
+EARTHSHINE,visibility,crescent_dark_side,faint glow visible,visual,binoculars,da Vinci 1510 — pre-NASA by 450 years
+EARTHSHINE,correlation,Earth_cloud_cover,more clouds = brighter earthshine,measured,ground observation,self-luminous body has no reason for this
+ECLIPSE,color,dark_red_during_totality,Moon dims dramatically,visual,2500 years of records,self-luminous body shouldn't dim
+ECLIPSE,correlation,atmospheric_dust,darker after volcanic eruptions,Danjon scale,Pinatubo 1991,no reason for self-luminous body
+SELF_LUMINOUS,lit_faces_Sun,always,no exception observed,visual,anyone,self-luminous: no reason for this
+SELF_LUMINOUS,eclipse_dimming,goes_dark,near-black during totality,visual,2500yr history,self-luminous: should stay bright
+SELF_LUMINOUS,earthshine,varies_with_Earth,clouds affect brightness,visual,binoculars,self-luminous: no connection to Earth weather
+SELF_LUMINOUS,other_bodies,all_face_Sun,Jupiter moons Venus etc,telescope,amateur,all lit sides face Sun — universal
+SELF_LUMINOUS,Genesis_1_16,two_great_lights,true both ways,text,scripture,"light = function, mechanism not specified"

@@ -1,0 +1,36 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+SPECTRAL,Fraunhofer H (Ca II),lambda=396.8nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,absorption line — Moon reproduces Sun's spectrum
+SPECTRAL,Fraunhofer K (Ca II),lambda=393.4nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,same depth ratio as sunlight
+SPECTRAL,Fraunhofer G (Fe I + Ca I),lambda=430.8nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,iron/calcium absorption
+SPECTRAL,Fraunhofer D (Na I),lambda=589.0nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,sodium doublet — same ratio
+SPECTRAL,Fraunhofer C (Hα),lambda=656.3nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,hydrogen – same equivalent width
+SPECTRAL,Fraunhofer F (Hβ),lambda=486.1nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,hydrogen – same equivalent width
+SPECTRAL,Fraunhofer b (Mg I),lambda=518.4nm,Sun:present in Sun|Moon:present in Moon,nm,IDENTICAL,magnesium triplet
+SPECTRAL,O₂ A-band,lambda=760.0nm,Sun:ABSENT in Sun (above|Moon:present in Moon,nm,EARTH ATMOSPHERE,telluric absorption — proves moonlight traverses same atmosphere
+SPECTRAL,H₂O bands,lambda=940.0nm,Sun:ABSENT in Sun (above|Moon:present in Moon,nm,EARTH ATMOSPHERE,water vapor — same path through atmosphere
+SPECTRAL,Lunar emission lines,lambda=N/Anm,Sun:NONE found|Moon:NONE found,nm,NOT DETECTED,no emission lines unique to Moon in any published study
+SPECTRAL,VERDICT,emission_lines_found,ZERO,count,literature search,no unique lunar emissions in any study
+SPECTRAL,VERDICT,fraunhofer_match,ALL lines identical,100%,spectroscopy,same wavelengths same depths
+SPECTRAL,VERDICT,mechanism,reflected sunlight,conclusion,overwhelming evidence,GLOBE wins this test
+POLARIZATION,New Moon (0°),angle=0deg,N/A,percent,lunar observations,not visible
+POLARIZATION,Waxing crescent (45°),angle=45deg,~2-5%,percent,lunar observations,"low, increasing"
+POLARIZATION,First quarter (90°),angle=90deg,~8-12%,percent,lunar observations,MAXIMUM — characteristic of fine silicate dust
+POLARIZATION,Waxing gibbous (135°),angle=135deg,~3-6%,percent,lunar observations,declining
+POLARIZATION,Full Moon (180°),angle=180deg,<1%,percent,lunar observations,near zero — backscatter depolarization
+POLARIZATION,Negative polarization (5-20°),angle=10deg,-0.5 to -2%,percent,lunar observations,NEGATIVE branch — diagnostic of regolith
+POLARIZATION,NEGATIVE_BRANCH,at 5-20deg,-0.5 to -2%,percent,Lyot 1929 + subsequent,diagnostic of particulate surface — NOT emission
+POLARIZATION,MAX_AT_90,first quarter,8-12%,percent,standard observations,matches powdered silicates exactly
+POLARIZATION,VERDICT,material match,silicate regolith,conclusion,overwhelming,GLOBE — reflector confirmed by polarimetry
+OPPOSITION,Shadow Hiding (SHOE),"At exact opposition, shadows are hidden ",geometric (verified in lab),Hapke 1986,,Reproduces surge shape to first order. Requires porous regolith.
+OPPOSITION,Coherent Backscatter (CBOE),Constructive interference of counter-pro,wave optics (verified in lab),Muinonen 1990,,Sharp spike within 2° of opposition. Confirmed in lab with powders.
+OPPOSITION,SHOE + CBOE combined,Both effects operate simultaneously at d,quantitative fit achieved,Hapke 2002; Shkuratov et al. 2011,,Best fit to full-phase curve. Used for ALL rocky bodies.
+OPPOSITION,Active energy surge (FDM),Moon increases output energy at resonanc,no mathematical model,hypothesis only,,"Would need: trigger mechanism, energy source, frequency dependence."
+OPPOSITION,BRIGHTNESS,full_vs_half,11.5x (vs geometric 3.3x),ratio,observations,3.5x excess = SHOE + CBOE
+OPPOSITION,SHOE_LAB,confirmed,reproduced with powders,verified,Hapke 1986,geometric shadow hiding
+OPPOSITION,CBOE_LAB,confirmed,reproduced with fine particles,verified,Muinonen 1990,coherent backscatter
+OPPOSITION,ON_OTHER_BODIES,same surge,Mercury Mars asteroids,universal,all rocky bodies,FDM can't explain these
+OPPOSITION,VERDICT,reflection_mechanisms,SHOE+CBOE fit completely,conclusion,standard physics,GLOBE — active surge has no model
+SCORECARD,spectroscopy,GLOBE,no emission lines,test,V34,reflected sunlight
+SCORECARD,polarization,GLOBE,matches silicate dust,test,V34,negative branch diagnostic
+SCORECARD,opposition,GLOBE,SHOE+CBOE confirmed,test,V34,same on other bodies
+SCORECARD,TOTAL_V34,40_tests,TIE=25|GLOBE=9|DOME=4|CONTESTED=2,count,V1-V34,dome strengths are magnetic not lunar

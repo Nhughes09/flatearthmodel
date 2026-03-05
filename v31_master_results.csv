@@ -1,0 +1,52 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+PRESSURE,Arctic Ocean (central),lat=+90.0,1012.5hPa,NCEP Reanalysis,,ice-covered ocean
+PRESSURE,"Alert, Canada",lat=+82.5,1013.5hPa,Environment Canada,,highest Arctic station
+PRESSURE,Svalbard,lat=+78.2,1011.5hPa,Norwegian Met,,Arctic archipelago
+PRESSURE,Reykjavik,lat=+64.1,1011.0hPa,IMO Iceland,,sub-Arctic
+PRESSURE,London,lat=+51.5,1013.3hPa,Met Office,,mid-latitude
+PRESSURE,New York,lat=+40.7,1015.0hPa,NWS,,mid-latitude
+PRESSURE,Chapel Hill,lat=+35.9,1015.5hPa,NOAA,,subtropical
+PRESSURE,Singapore,lat=+1.4,1010.5hPa,NEA Singapore,,equatorial
+PRESSURE,Nairobi,lat=-1.3,1013.0hPa,KMD,,equatorial highland (corrected to SL)
+PRESSURE,Sydney,lat=-33.9,1017.0hPa,BOM Australia,,mid-latitude south
+PRESSURE,Cape Town,lat=-33.9,1017.5hPa,SAWS,,mid-latitude south
+PRESSURE,Ushuaia,lat=-54.8,1003.0hPa,SMN Argentina,,sub-Antarctic
+PRESSURE,Macquarie Island,lat=-54.5,999.5hPa,BOM Australia,,sub-Antarctic
+PRESSURE,Amundsen-Scott SP,lat=-90.0,681.0hPa,NOAA/CMDL,,Antarctic plateau 2835m
+PRESSURE,South Pole (SL corrected),lat=-90.0,1001.5hPa,ERA5 corrected,,estimated SL equivalent
+PRESSURE,N_vs_S,pole_difference,Arctic=1012.5|Antarctic_SL=1001.5,+11.0 hPa,N higher,geography or aether — both explain
+PRESSURE,VERDICT,asymmetry,real 11hPa difference,globe: geography|dome: aetheric flow,BOTH explain,not distinguishing alone
+VORTEX,Vortex strength,N_vs_S,Weak/variable,Strong/stable,asymmetric,
+VORTEX,Persistence,N_vs_S,Breaks down often,Rarely breaks down,asymmetric,
+VORTEX,Temperature inside,N_vs_S,~-40 to -60°C,~-80 to -90°C,asymmetric,
+VORTEX,Wind speed (jet),N_vs_S,~100 km/h,~200 km/h,asymmetric,
+VORTEX,Ozone depletion,N_vs_S,Minor events,Major hole annually,asymmetric,
+VORTEX,Symmetry,N_vs_S,"Irregular, shifted",More circular,asymmetric,
+IONOSPHERE,North Pole region,lat=+85,TEC=5-15 TECU,"Low, stable",Arctic quiet,
+IONOSPHERE,Northern auroral zone,lat=+65,TEC=10-30 TECU,"Variable, storm-dependent",Aurora activity,
+IONOSPHERE,Northern mid-lat,lat=+45,TEC=20-60 TECU,"Moderate, seasonal",F-layer well-behaved,
+IONOSPHERE,Equatorial region,lat=+0,TEC=30-100 TECU,"High, double peak",Appleton anomaly,
+IONOSPHERE,Southern mid-lat,lat=-45,TEC=20-60 TECU,"Moderate, more variable",SAA influence,
+IONOSPHERE,Southern auroral zone,lat=-65,TEC=10-40 TECU,"Variable, HIGHER than N",Stronger aurora,
+IONOSPHERE,South Pole region,lat=-85,TEC=5-20 TECU,Higher than N pole,More scintillation,
+GPS,S4 scintillation index,N_vs_S,0.2-0.4,0.3-0.6,S worse,ionospheric asymmetry
+GPS,Signal loss events/day,N_vs_S,2-5,5-15,S worse,ionospheric asymmetry
+GPS,Phase scintillation (rad),N_vs_S,0.1-0.3,0.2-0.5,S worse,ionospheric asymmetry
+GPS,Worst season,N_vs_S,Sep equinox,Dec solstice,S worse,ionospheric asymmetry
+GPS,Recovery time after storm,N_vs_S,~4 hours,~8 hours,S worse,ionospheric asymmetry
+IONOSPHERE,ASYMMETRY,overall,S pole TEC higher,S GPS worse,S auroral stronger,dome: exhaust | globe: SAA
+FREQ_SHIFT,pole_vs_equator,gravitational_redshift,Δf/f=1.21e-14,Δf=0.0001Hz@10GHz,identical both models,GR = aetheric pressure — same equation
+VLF,Pre-seismic VLF anomalies,documented,YES (published),dome: Aetheric pressure shifts before qua,,standard atmospheric physics also explains
+VLF,Solar flare VLF enhancement,documented,YES (routine),dome: Aetheric medium responds to Sun act,,standard atmospheric physics also explains
+VLF,Polar VLF attenuation,documented,YES (SID),dome: Higher aetheric density at intake a,,standard atmospheric physics also explains
+VLF,Night-time VLF enhancement,documented,YES (standard),dome: Less solar heating reduces aetheric,,standard atmospheric physics also explains
+VLF,N-S propagation asymmetry,documented,PARTIAL,dome: Intake vs exhaust path difference,,standard atmospheric physics also explains
+VLF,Trans-equatorial VLF anomaly,documented,YES (TEP),dome: Transition between aetheric flow re,,standard atmospheric physics also explains
+SCORECARD,TOTAL,32_tests,TIE=22|GLOBE=5,DOME=3|CONTESTED=2,V1-V31,complete audit
+SUMMARY,PRESSURE,N_vs_S_asymmetry,Arctic 1012.5|Antarctic_SL 1001.5,+11 hPa N higher,both explain,geography vs aetheric flow
+SUMMARY,IONOSPHERE,TEC_asymmetry,S pole higher TEC,S GPS worse,S auroral stronger,dome: exhaust | globe: SAA
+SUMMARY,FREQ_SHIFT,pole_equator,Δf/f=1.21e-14,identical both models,same equation,GR = aetheric pressure
+SUMMARY,SCORECARD,V1-V31_total,TIE=22 GLOBE=5,DOME=3 CONTESTED=2,total={len(scorecard)},"dome wins on magnetic, globe wins on distances"
+SUMMARY,STRONGEST_DOME,magnetic_asymmetry,N: -16.3°→Polaris,S: +8.2°←σ Oct,OPPOSITE SIGNS,intake/exhaust — globe has no equivalent prediction
+SUMMARY,STRONGEST_GLOBE,southern_distances,R²=0.99 (globe),R²=0.83 (dome bipolar),GLOBE wins,physical distances favor sphere geometry
+SUMMARY,VERDICT,V31_complete,atmospheric asymmetry is real,both models explain geography/aether,NOT distinguishing alone,magnetic remains strongest unique finding

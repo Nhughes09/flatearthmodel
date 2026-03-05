@@ -1,0 +1,9 @@
+constant,value,tolerance,consequence
+Gravitational G,6.674e-11,±1%,Stars don't form or collapse too fast
+Speed of light c,2.998e8 m/s,any value works,Defines units — not truly tuned
+Fine structure α,1/137.036,±4%,Atoms unstable or chemistry impossible
+Strong force αs,0.1181,±2%,Nuclei don't bind or all hydrogen stays H
+Proton/electron mass,1836.15,±0.1%,Chemistry radically different
+Cosmological Λ,~10^-122 (Planck),1 in 10^120,THE most finely tuned — why so small?
+Neutron/proton mass,1.00138 ratio,±0.1%,All protons convert to neutrons or vice versa
+Dark energy density,68.3% of universe,no independent measurement,Inferred from expansion rate

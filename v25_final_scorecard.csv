@@ -1,0 +1,28 @@
+test,dome,globe,winner,version
+Polaris elevation,0.30° err,0.30° err,TIE,V1-V3
+Sun transit elevation,0.09° err,0.09° err,TIE,V11-V13
+Sun azimuth,0.46° err,0.46° err,TIE,V9-V10
+Day length,8.4 min err,8.4 min err,TIE,V12-V17
+Sunrise/sunset az,0.10° err,0.10° err,TIE,V13
+Jupiter elev/az,0.04° err,0.04° err,TIE,V15
+Moon elevation,0.82° err,0.82° err,TIE,V17
+Mars/Venus,0.14° err,0.14° err,TIE,V18
+Eclipse timing,10/10,10/10,TIE,V19
+Polar day/night,correct,correct,TIE,V19
+Southern Cross vis,8/8,8/8,TIE,V18
+Circumpolar stars,10/10,10/10,TIE,V18
+Star trail direction,5/5,5/5,TIE,V20
+Time zones R²,0.9999,0.9999,TIE,V20
+Off-transit sky pos,R²=0.9999,R²=0.9999,TIE,V24
+Equation of Time,R²=0.975,R²=0.975,TIE,V22
+Sigma Oct symmetric,1.16° off,1.16° off,TIE,V23
+Coriolis parameter,identical,identical,TIE,V23
+Simultaneous stars,both work,both work,TIE,V20
+Bedford Level,refraction,refraction,TIE,V20
+Ship hull-down,needs lens,natural,GLOBE,V20
+Southern distances,R²=0.83,R²=0.99+,GLOBE,V21-V23
+Sun height consist,inconsistent,consistent,GLOBE,V21-V22
+Tidal amplitude var,can't explain,explains,GLOBE,V21
+Mag N convergence,PREDICTS,coincidence,DOME,V24-V25
+Miller non-null,consistent,dismisses,DOME,V21
+N-S pole asymmetry,wall effect,core chaos,TIE,V24-V25

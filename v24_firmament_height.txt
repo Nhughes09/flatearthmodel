@@ -1,0 +1,22 @@
+FIRMAMENT HEIGHT ANALYSIS — V24
+
+MINIMUM HEIGHT: 9,086 km above flat plane
+- Polaris at 6,500 km must have clearance for 25,772-year precession wobble
+- Wobble radius = 6,500 × sin(23.44°) = 2,586 km
+- Minimum = 6,500 + 2,586 = 9,086 km
+
+UPPER BOUND: Unknown
+- No observation constrains how far above the bodies the firmament extends
+- The aetheric medium must be contained, so firmament exists
+- But its actual height is not determinable from ground observations alone
+
+OBSERVABLE CONSTRAINT:
+- The farthest parallax-measurable stars imply dome heights of ~3 billion km
+- If these are ON the firmament surface: firmament height ≈ 3 billion km
+- If these are embedded IN the firmament: height could be larger
+- The firmament's opacity/transparency determines this
+
+PLANE SIZE:
+- Pole to pole: 20,015 km (= πR, half globe circumference)
+- This is NOT independently derived — it IS the sphere's geometry unfolded
+- The flat plane dimensions encode spherical geometry by construction

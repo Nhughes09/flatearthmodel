@@ -1,0 +1,31 @@
+DARK MATTER DETECTION HISTORY — ALL MAJOR EXPERIMENTS
+
+SUMMARY: After 50 years of searching with increasingly sensitive detectors,
+no experiment has directly detected dark matter particles.
+
+KEY EXPERIMENTS AND RESULTS:
+- LUX: 2013-2016 — Null. 370 live days, 10 tonnes xenon
+- XENON1T: 2017-2018 — Null. 1 tonne-year exposure, one unexplained excess (debated)
+- PandaX-4T: 2021-2023 — Null. 0.63 tonne-year, world-leading sensitivity
+- LZ (LUX-ZEPLIN): 2022-present — Null. Most sensitive to date, 60 live days
+- CDMS/SuperCDMS: 2004-present — Null. Germanium/silicon detectors, multiple runs
+- DAMA/LIBRA: 1995-present — Annual modulation claim. Controversial — no other experiment replicates
+- LHC (ATLAS/CMS): 2010-present — Null. No dark matter particles at any energy
+- Fermi-LAT: 2008-present — Null. No dark matter annihilation signal detected
+- AMS-02: 2011-present — Ambiguous. Positron excess — could be pulsars, not DM
+- ADMX: 2018-present — Null. Axion search — no detection
+
+ESTIMATED INVESTMENT: >$2 billion across all programs
+DIRECT DETECTIONS: ZERO
+
+CONTEXT:
+- Gravitational waves: predicted 1916, detected 2015 (~100 years, but detected)
+- Higgs boson: predicted 1964, detected 2012 (~50 years, but detected)
+- Dark matter: predicted 1970s, NOT detected after 50+ years
+
+ALTERNATIVE EXPLANATIONS PROPOSED:
+1. MOND (Modified Newtonian Dynamics) — Milgrom 1983
+2. Emergent gravity — Verlinde 2010
+3. Aetheric medium drag — Tesla/Lesage tradition
+4. Measurement/modeling errors in rotation curves
+All remain contested. No consensus alternative exists.

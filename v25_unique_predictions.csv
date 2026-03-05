@@ -1,0 +1,8 @@
+prediction,description,test,equipment,confidence
+Mag N convergence,North magnetic pole continues toward Polaris,"Measure 2030: should be <2°, 2040: should be <1°",Ground magnetometers (existing network),HIGH — already trending
+Miller altitude effect,Aether drift increases with altitude,Repeat open-air interferometry at multiple altitudes,Balloon-mounted Michelson interferometer,MEDIUM — needs dedicated experiment
+Aurora oval convergence,Northern aurora oval converges toward pole,Track oval center position through 2030-2050,Ground-based aurora cameras (existing),HIGH — already tracking
+Equatorial distance anomaly,Cross-equatorial routes should show transition effects,Precision distance measurements across equator,Ground-based geodesy (existing),LOW — precision currently insufficient
+Firmament reflection,EM signals should show reflection at firmament boundary,Detect reflected signals at very high frequencies,Ground-based radio (high frequency),LOW — no confirmed detection
+Aetheric pressure gradient,Gravity varies slightly with magnetic field geometry,Ultra-precision gravimetry at magnetic pole vs equator,Superconducting gravimeters (existing),MEDIUM — needs coordination
+South pole wall proximity,South magnetic divergence continues and accelerates,Measure 2030: should be >28° from σ Oct,Ground magnetometers (existing),HIGH — already trending

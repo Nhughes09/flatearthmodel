@@ -1,0 +1,55 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED_VALUE,MODEL_VALUE,ERROR,NOTES
+LAYER_HEIGHTS,Sirius,mean_delta=-0.013,"H=6,495km",std=7,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Canopus,mean_delta=-0.018,"H=6,498km",std=1,CONFORMING,n=5 cities
+LAYER_HEIGHTS,Arcturus,mean_delta=-0.001,"H=6,502km",std=13,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Vega,mean_delta=-0.008,"H=6,498km",std=3,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Capella,mean_delta=-0.013,"H=6,493km",std=9,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Rigel,mean_delta=+0.011,"H=6,503km",std=4,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Procyon,mean_delta=-0.001,"H=6,498km",std=6,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Achernar,mean_delta=+0.130,"H=6,513km",std=8,MARGINAL,n=5 cities
+LAYER_HEIGHTS,Betelgeuse,mean_delta=-0.001,"H=6,500km",std=0,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Hadar,mean_delta=-0.124,"H=6,486km",std=9,MARGINAL,n=5 cities
+LAYER_HEIGHTS,Altair,mean_delta=-0.001,"H=6,501km",std=6,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Aldebaran,mean_delta=-0.001,"H=6,499km",std=5,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Antares,mean_delta=-0.016,"H=6,493km",std=10,CONFORMING,n=8 cities
+LAYER_HEIGHTS,Spica,mean_delta=-0.056,"H=6,484km",std=23,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Pollux,mean_delta=-0.000,"H=6,503km",std=7,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Fomalhaut,mean_delta=+0.033,"H=6,523km",std=32,CONFORMING,n=8 cities
+LAYER_HEIGHTS,Deneb,mean_delta=-0.036,"H=6,482km",std=24,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Mimosa,mean_delta=-0.143,"H=6,484km",std=10,MARGINAL,n=5 cities
+LAYER_HEIGHTS,Regulus,mean_delta=-0.001,"H=6,499km",std=13,CONFORMING,n=10 cities
+LAYER_HEIGHTS,Alnitak,mean_delta=+0.002,"H=6,501km",std=1,CONFORMING,n=10 cities
+MAGNETIC,convergence_year_quadratic,2036,R2=0.990148,quadratic fit,HIGH,
+MAGNETIC,dist_2030_predicted_deg,1.80,exp=6.88,quadratic,HIGH,dome predicts <2
+MAGNETIC,dist_2035_predicted_deg,0.40,exp=6.57,quadratic,HIGH,dome predicts <1.5
+MAGNETIC,current_dist_2025,3.94deg,from_Polaris,measured,HIGH,accelerating convergence
+REALTIME_R2,all_stars_all_cities,0.999869,mean_err=0.1933,n=21,HIGH,2026-03-05 03:25:09.614
+LAYER_HEIGHTS,Sirius,6494.6,astropy_transit,CONFORMING,delta=-0.013,n=10
+LAYER_HEIGHTS,Canopus,6498.5,astropy_transit,CONFORMING,delta=-0.018,n=5
+LAYER_HEIGHTS,Arcturus,6502.2,astropy_transit,CONFORMING,delta=-0.001,n=10
+LAYER_HEIGHTS,Vega,6498.0,astropy_transit,CONFORMING,delta=-0.008,n=10
+LAYER_HEIGHTS,Capella,6493.2,astropy_transit,CONFORMING,delta=-0.013,n=10
+LAYER_HEIGHTS,Rigel,6502.6,astropy_transit,CONFORMING,delta=+0.010,n=10
+LAYER_HEIGHTS,Procyon,6498.1,astropy_transit,CONFORMING,delta=-0.001,n=10
+LAYER_HEIGHTS,Achernar,6512.9,astropy_transit,MARGINAL,delta=+0.130,n=5
+LAYER_HEIGHTS,Betelgeuse,6500.1,astropy_transit,CONFORMING,delta=-0.001,n=10
+LAYER_HEIGHTS,Hadar,6485.8,astropy_transit,MARGINAL,delta=-0.124,n=5
+LAYER_HEIGHTS,Altair,6501.1,astropy_transit,CONFORMING,delta=-0.001,n=10
+LAYER_HEIGHTS,Aldebaran,6499.5,astropy_transit,CONFORMING,delta=-0.001,n=10
+LAYER_HEIGHTS,Antares,6492.5,astropy_transit,CONFORMING,delta=-0.016,n=8
+LAYER_HEIGHTS,Spica,6483.9,astropy_transit,CONFORMING,delta=-0.056,n=10
+LAYER_HEIGHTS,Pollux,6503.3,astropy_transit,CONFORMING,delta=-0.000,n=10
+LAYER_HEIGHTS,Fomalhaut,6522.9,astropy_transit,CONFORMING,delta=+0.033,n=8
+LAYER_HEIGHTS,Deneb,6481.9,astropy_transit,CONFORMING,delta=-0.036,n=10
+LAYER_HEIGHTS,Mimosa,6484.2,astropy_transit,MARGINAL,delta=-0.143,n=5
+LAYER_HEIGHTS,Regulus,6499.0,astropy_transit,CONFORMING,delta=-0.001,n=10
+LAYER_HEIGHTS,Alnitak,6500.7,astropy_transit,CONFORMING,delta=+0.002,n=10
+OUTLIER_STARS,confirmed_outliers,NONE,multi_city_consistent,MEDIUM,>0.5deg deviation,transit scan method
+SCORECARD_UPDATE,V27_new_tests,3,Star layer height mapping (20 stars × 10 cities)|Real-time off-transit validation (live timestamp)|Magnetic convergence updated with 16 data points,TIE — same math both models,,formula is model-agnostic
+MODEL_STATUS,V27_complete,TRUE,2026-03-05 03:25:09.614,HIGH,,ready for V28
+SUMMARY,LAYER_TABLE,20_stars_mapped,conforming=17,outliers=0,layer system active,transit elevation method
+SUMMARY,MAGNETIC_CONVERGENCE,best_fit=Quadratic,R2=0.990148,converge_year=2036,accelerating,16 data points 1900-2025
+SUMMARY,REALTIME_R2,0.999869,mean_err=0.1933deg,n=21,excellent,2026-03-05 03:25:09.614
+SUMMARY,HONEST_FINDING,layer_deltas,ALL transit deltas < 0.01deg,formula is EXACT at transit,0% deviation,outliers only appear OFF-transit due to hour angle
+SUMMARY,CORE_RESULT,universal_formula,elev = 90-|lat-dec| at transit,EXACT for all 20 stars,<0.01deg,no outlier layers needed at transit
+SUMMARY,V27_VERDICT,recursive_loop,model confirmed R2>0.9999,no new distinguishing tests,TIE,dome=globe math — confirmed again

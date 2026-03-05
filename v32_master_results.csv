@@ -1,0 +1,33 @@
+SECTION,SUBSECTION,PARAMETER,OBSERVED,MODEL,ERROR,NOTES
+VLF,D-Layer,60-90,YES — primary VLF reflector,Electron density ~10⁸/m³,,"Stanford VLF Group, routine monitoring"
+VLF,E-Layer,90-150,YES — VLF/LF at night,"Sporadic-E patches, 10⁹/m³",,ITU Handbook on Radio Wave Propagation
+VLF,F1-Layer,150-250,"MF/HF, not VLF","10¹⁰/m³, daytime only",,IRI-2020 model
+VLF,F2-Layer,250-500,"HF primary, not VLF",Peak electron density 10¹¹/m³,,"IRI-2020 model, ionosondes"
+VLF,Topside,500-1000,No standard reflection,Density declining,,Alouette/ISIS satellite measurements
+VLF,Plasmasphere,1000-20000,No VLF reflection — GUIDED ducting,Whistler ducts,,Helliwell 1965; Van Allen Probes 2012-2019
+VLF,WHISTLER,guided_propagation,"5,000-15,000 km path height",follows magnetic field lines,dome shell height match,coincidence? Helliwell 1965 explains without dome
+VLF,ANOMALOUS_ECHO,at_6500km,NOT documented,no high-altitude VLF reflection found,no evidence,would be major discovery if found
+MOONLIGHT,Moonlight power,0.001 W/m² (full moon),"400,000x weaker than Sun",measured,HIGH,thermally negligible at this flux
+MOONLIGHT,Shadow radiative effect,-1 to -3°C,objects under shelter retain heat,standard atmos physics,HIGH,NOT caused by moonlight — caused by sky radiation blocking
+MOONLIGHT,Direct moonlight heating,+0.000003°C (calculated),from 0.001 W/m² absorbed,Stefan-Boltzmann,HIGH,below any thermometer resolution
+MOONLIGHT,Informal experiments,-0.5 to -4°C claimed,shadow warmer than moonlight,YouTube/forums,LOW,confounds radiative cooling with light effect
+MOONLIGHT,Controlled test (shade screen),shade=identical to moonlight,when HORIZONTAL screen used,replication studies 2019,MEDIUM,horizontal screen blocks sky AND moonlight — same temp
+MOONLIGHT,IR camera comparison,no measurable heating from moonlight,full moon vs new moon nights,amateur + semi-pro,MEDIUM,temperature profiles identical
+MOONLIGHT,VERDICT,radiative_cooling,shadow blocks sky radiation loss,explains ALL informal measurements,GLOBE explains,moonlight 0.001 W/m² = thermally negligible
+MOONLIGHT,ENERGY_CALC,impossible,need 0.6W/m²,moonlight provides 0.001W/m²,ratio=556x,endothermic photons don't exist in any framework
+AURORA,Red aurora (top),200-400 km,O atom low density,630.0 nm,,"rare, storm"
+AURORA,Green aurora (main),100-200 km,O atom collision,557.7 nm,,most common
+AURORA,Purple/blue aurora (base),80-100 km,N₂ molecule,427.8 nm,,bottom of display
+AURORA,Proton aurora,100-130 km,H alpha emission,656.3 nm,,"diffuse, dayside"
+AURORA,STEVE (Strong Thermal Emission),200-300 km,hot plasma ribbon,broadband,,recent discovery 2018
+AURORA,Pulsating aurora,80-120 km,modulated precipitation,557.7 nm,,post-midnight
+AURORA,N_oval_center,~82°N (2025),tightening as pole converges,mag pole at 86.8°N,consistent,intake tightening
+AURORA,S_oval_center,~75°S (2025),loosening as pole diverges,mag pole at 63.8°S,consistent,exhaust dispersing
+AURORA,HEIGHT_vs_DOME,80-400 km vs 6500 km,aurora below dome shell,32x lower,not at shell,"aetheric entry point, not wall"
+SUMMARY,VLF,reflection_height,D-layer 60-90km (documented),NO anomalous echoes at 6500km,whistlers reach 5-15k km,whistler height matches dome shell — coincidence or correspondence
+SUMMARY,MOONLIGHT,cold_light_claim,shadow warmer by 1-3°C,radiative cooling to sky (standard physics),GLOBE explains fully,moonlight 0.001 W/m² = thermally negligible. Endothermic photons impossible.
+SUMMARY,AURORA,height_asymmetry,"N oval tightening, S oval loosening",tracks magnetic pole wander,both models explain,consistent with intake/exhaust AND standard pole wandering
+SUMMARY,V32_VERDICT,new_evidence,VLF whistlers at dome-shell height=interesting,moonlight cooling=explained by radiative physics,aurora asymmetry=confirms V28,no new dome-unique predictions added this version
+SCORECARD,VLF_Reflection,standard_60-90km,no anomalous high echoes,whistler ducts match shell height,COINCIDENCE,TIE — both explain
+SCORECARD,Moonlight_Cold,radiative_cooling,NOT endothermic light,sky radiation explains all data,GLOBE,standard physics sufficient
+SCORECARD,Aurora_Asymmetry,N_tight_S_loose,both predict from pole wander,consistent with V28 intake/exhaust,TIE,confirms magnetic but not new test

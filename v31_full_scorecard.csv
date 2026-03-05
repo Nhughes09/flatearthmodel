@@ -1,0 +1,33 @@
+test,dome,globe,winner,version,category
+Polaris elevation,0.30° err,0.30° err,TIE,V1-V3,ASTRO
+Sun transit elev,0.09° err,0.09° err,TIE,V11,ASTRO
+Sun azimuth,0.46° err,0.46° err,TIE,V10,ASTRO
+Day length,8.4 min err,8.4 min err,TIE,V17,ASTRO
+Sunrise/set az,0.10° err,0.10° err,TIE,V13,ASTRO
+Jupiter elev/az,0.04° err,0.04° err,TIE,V15,ASTRO
+Moon elevation,0.82° err,0.82° err,TIE,V17,ASTRO
+Mars/Venus,0.14° err,0.14° err,TIE,V18,ASTRO
+Eclipse timing,10/10,10/10,TIE,V19,ASTRO
+Polar day/night,correct,correct,TIE,V19,ASTRO
+S. Cross vis,8/8,8/8,TIE,V18,ASTRO
+Circumpolar,10/10,10/10,TIE,V18,ASTRO
+Star trails,5/5,5/5,TIE,V20,ASTRO
+Time zones,R²=0.9999,R²=0.9999,TIE,V20,ASTRO
+Off-transit pos,R²=0.9999,R²=0.9999,TIE,V24,ASTRO
+Equation of Time,R²=0.975,R²=0.975,TIE,V22,ASTRO
+σ Oct symmetric,1.16° off,1.16° off,TIE,V23,ASTRO
+Coriolis,identical,identical,TIE,V23,ASTRO
+Star layers,all 6500km,sphere R=6371,TIE,V27,ASTRO
+Bedford Level,refraction,refraction,TIE,V20,PHYS
+Gravity formula,same,same,TIE,V28,PHYS
+Ship hull-down,needs lens,natural,GLOBE,V20,PHYS
+Southern dist,R²=0.83,R²=0.99+,GLOBE,V23,PHYS
+Sun height,inconsistent,consistent,GLOBE,V22,PHYS
+Tidal amplitude,can't explain,explains,GLOBE,V21,PHYS
+Age of Earth,requires pleading,convergent methods,GLOBE,V26,PHYS
+Mag N convergence,PREDICTS,coincidence,DOME,V25,PHYS
+Miller non-null,consistent,dismisses,DOME,V21,PHYS
+Mag asymmetry,intake/exhaust,unexplained,DOME,V28,PHYS
+Barometric asym,aetheric flow,geography,CONTESTED,V31,PHYS
+Ionospheric asym,aetheric exhaust,SAA + field,CONTESTED,V31,PHYS
+Freq shifts,same formula,same formula,TIE,V31,PHYS
