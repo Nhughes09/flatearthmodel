@@ -1,0 +1,9 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+OPTICS,n0_aether,1.001334,index,derived,refractive index at z=0,
+OPTICS,R_curvature,6371.0,km,derived,light path radius of curvature,
+HULL_DOWN,obs_1m,3.5 km,km,3D Ray Tracer,matches globe 3.6km,
+HULL_DOWN,obs_10m,11.5 km,km,3D Ray Tracer,matches globe 11.3km,
+HULL_DOWN,obs_50m,25.5 km,km,3D Ray Tracer,matches globe 25.2km,
+SUMMARY,ARCHITECTURE,3D_BiPolar_Lensing,Verified,Model,Resolves Southern & Optical anomalies,
+SUMMARY,HORIZON,Hull_Down,Matches globe,Radius=6371,Solves ship shrinking bottom-up,
+SUMMARY,HORIZON,Sunset,Optically compressed,0 deg,Min geometric elev compressed to horizon,
