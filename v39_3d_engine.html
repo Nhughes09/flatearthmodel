@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V39: Bi-Polar 3D Aetheric Engine</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #050510;
+        color: #fff;
+        font-family: "Courier New", Courier, monospace;
+      }
+      #canvas-container {
+        width: 100vw;
+        height: 100vh;
+      }
+      #ui {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+        text-shadow: 1px 1px 2px #000;
+      }
+      h1 {
+        margin: 0 0 5px 0;
+        font-size: 20px;
+        color: #00ffff;
+      }
+      .data {
+        font-size: 14px;
+        margin-bottom: 3px;
+        color: #aaa;
+      }
+      .highlight {
+        color: #ff00ff;
+        font-weight: bold;
+      }
+      #controls {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(0, 0, 20, 0.8);
+        padding: 15px;
+        border: 1px solid #00ffff;
+        border-radius: 5px;
+        pointer-events: auto;
+      }
+      button {
+        background: transparent;
+        border: 1px solid #00ffff;
+        color: #00ffff;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-right: 5px;
+        font-family: inherit;
+      }
+      button:hover {
+        background: rgba(0, 255, 255, 0.2);
+      }
+    </style>
+    <!-- Include Three.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+  <body>
+    <div id="ui">
+      <h1>V39: Bi-Polar 3D Aetheric Engine</h1>
+      <div class="data">
+        Model Status: <span class="highlight">ACTIVE & COHERENT</span>
+      </div>
+      <div class="data">
+        Geographic Mapping:
+        <span style="color: #0f0">Dual Focal Constraint (North/South)</span>
+      </div>
+      <div class="data">Pole Separation: 20015 km (&pi; × R_earth)</div>
+      <div class="data">Firmament Apex: H=6500 km</div>
+      <div class="data" id="time-display">Time: 0.00 yrs</div>
+    </div>
+
+    <div id="controls">
+      <div style="margin-bottom: 10px; color: #00ffff; font-weight: bold">
+        TIME CONTROLS
+      </div>
+      <button onclick="speed = 0.1">Play Normal</button>
+      <button onclick="speed = 2.0">Fast Forward</button>
+      <button onclick="speed = 0">Pause</button>
+      <button onclick="toggleRays()">Toggle Ray Tracer</button>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script>
+      // SCALE: 1 unit = 100 km
+      const SCALE = 100;
+      const R_EARTH = 6371 / SCALE;
+      const R_PLANE = (Math.PI * 6371) / SCALE; // ~200.15
+      const H_DOME = 6500 / SCALE;
+      const H_SUN = 5733 / SCALE;
+      const H_MOON = 2534 / SCALE;
+
+      // Setup Scene
+      const scene = new THREE.Scene();
+      // Fog to simulate dense aether near edges
+      scene.fog = new THREE.FogExp2(0x050510, 0.001);
+
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        2000,
+      );
+      camera.position.set(150, 100, 150);
+
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      document
+        .getElementById("canvas-container")
+        .appendChild(renderer.domElement);
+
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.target.set(0, 0, -R_PLANE / 2); // Look at center between poles
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+      scene.add(ambientLight);
+
+      // Core Plane (Bi-Polar Shape: Oval/Capsule)
+      const planeGeo = new THREE.CylinderGeometry(
+        R_PLANE / 2 + 20,
+        R_PLANE / 2 + 20,
+        1,
+        64,
+      );
+      const planeMat = new THREE.MeshBasicMaterial({
+        color: 0x011122,
+        wireframe: false,
+        transparent: true,
+        opacity: 0.8,
+      });
+      const corePlane = new THREE.Mesh(planeGeo, planeMat);
+      corePlane.position.set(0, -0.5, -R_PLANE / 2);
+      // Stretch it to an oval spanning the two poles
+      corePlane.scale.set(0.6, 1, 1.2);
+      scene.add(corePlane);
+
+      // Grid helper mapping the transitioning geometry
+      const gridHelper1 = new THREE.GridHelper(200, 20, 0x00ffff, 0x003355);
+      scene.add(gridHelper1);
+      const gridHelper2 = new THREE.GridHelper(200, 20, 0xff00ff, 0x330055);
+      gridHelper2.position.set(0, 0, -R_PLANE);
+      scene.add(gridHelper2);
+
+      // North Pole (Polaris anchor)
+      const npMat = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+      const npMarker = new THREE.Mesh(new THREE.OctahedronGeometry(2), npMat);
+      scene.add(npMarker);
+
+      // South Pole (Sigma Octantis anchor)
+      const spMat = new THREE.MeshBasicMaterial({ color: 0xff00ff });
+      const spMarker = new THREE.Mesh(new THREE.OctahedronGeometry(2), spMat);
+      spMarker.position.set(0, 0, -R_PLANE);
+      scene.add(spMarker);
+
+      // Draw axis poles projecting up to firmament
+      const lineMat1 = new THREE.LineBasicMaterial({
+        color: 0x00ffff,
+        transparent: true,
+        opacity: 0.5,
+      });
+      const p1 = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(0, 0, 0),
+        new THREE.Vector3(0, H_DOME, 0),
+      ]);
+      scene.add(new THREE.Line(p1, lineMat1));
+
+      const lineMat2 = new THREE.LineBasicMaterial({
+        color: 0xff00ff,
+        transparent: true,
+        opacity: 0.5,
+      });
+      const p2 = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(0, 0, -R_PLANE),
+        new THREE.Vector3(0, H_DOME, -R_PLANE),
+      ]);
+      scene.add(new THREE.Line(p2, lineMat2));
+
+      // The Sun
+      const sunLight = new THREE.PointLight(0xffaa00, 2, 800);
+      const sunMesh = new THREE.Mesh(
+        new THREE.SphereGeometry(3, 16, 16),
+        new THREE.MeshBasicMaterial({ color: 0xffdd44 }),
+      );
+      sunLight.add(sunMesh);
+      scene.add(sunLight);
+
+      // Sun Orbit Path (Equator)
+      // Equator is exactly half way between north and south mappings, r = 10000 km = 100 units
+      const eqRadius = R_PLANE / 2;
+      const orbitPathGeo = new THREE.RingGeometry(
+        eqRadius - 0.5,
+        eqRadius + 0.5,
+        64,
+      );
+      const orbitPathMat = new THREE.MeshBasicMaterial({
+        color: 0xffff00,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.2,
+      });
+      const orbitOrbit = new THREE.Mesh(orbitPathGeo, orbitPathMat);
+      orbitOrbit.rotation.x = Math.PI / 2;
+      orbitOrbit.position.set(0, H_SUN, 0);
+      scene.add(orbitOrbit);
+
+      // The Moon
+      const moonGeo = new THREE.SphereGeometry(1.5, 16, 16);
+      const moonMat = new THREE.MeshBasicMaterial({ color: 0xaaaaaa });
+      const moon = new THREE.Mesh(moonGeo, moonMat);
+      scene.add(moon);
+
+      // Ray Tracer Visualizer
+      const raysGroup = new THREE.Group();
+      scene.add(raysGroup);
+      let raysVisible = true;
+
+      function createLensedRays() {
+        // Draw a few rays bending downwards from the sun to the ground (Sunset illusion)
+        // n(z) decreases exponentially making rays curve down.
+        const rayGeo = new THREE.BufferGeometry();
+        const points = [];
+        // Simple parametric parabola to visually simulate Runge-Kutta refraction path
+        for (let i = 0; i <= 50; i++) {
+          let t = i / 50;
+          let x =
+            Math.sin(Math.PI * 2 * 0) * eqRadius -
+            Math.sin(Math.PI * 2 * 0) * eqRadius * t;
+          let zPos =
+            Math.cos(Math.PI * 2 * 0) * eqRadius -
+            Math.cos(Math.PI * 2 * 0) * eqRadius * t;
+          // Curve height: starts at H_SUN, hits 0 with extreme curvature at end
+          let y = H_SUN * (1 - Math.pow(t, 0.3));
+          points.push(new THREE.Vector3(x, y, zPos));
+        }
+        const line = new THREE.Line(
+          new THREE.BufferGeometry().setFromPoints(points),
+          new THREE.LineBasicMaterial({
+            color: 0xff8800,
+            transparent: true,
+            opacity: 0.8,
+          }),
+        );
+        raysGroup.add(line);
+      }
+
+      function toggleRays() {
+        raysVisible = !raysVisible;
+        raysGroup.visible = raysVisible;
+      }
+
+      // Animation Loop Variables
+      let time = 0;
+      let speed = 0.5;
+      const clock = new THREE.Clock();
+      const timeDisplay = document.getElementById("time-display");
+
+      function animate() {
+        requestAnimationFrame(animate);
+
+        let delta = clock.getDelta();
+        time += delta * speed;
+
+        // Update Sun Position (Rotates around North with radius eqRadius)
+        let sunAngle = time * 0.5; // ~24h cycle
+        sunLight.position.set(
+          Math.sin(sunAngle) * eqRadius,
+          H_SUN,
+          Math.cos(sunAngle) * eqRadius,
+        );
+
+        // Update Moon Position (slower orbit offset, lower altitude)
+        let moonAngle = time * 0.48; // ~27.3 day cycle lag
+        moon.position.set(
+          Math.sin(moonAngle) * (eqRadius * 0.8),
+          H_MOON,
+          Math.cos(moonAngle) * (eqRadius * 0.8),
+        );
+
+        // Dynamically update bending ray anchor if rays are visible
+        if (raysGroup.children.length > 0) {
+          raysGroup.remove(raysGroup.children[0]);
+        }
+        if (raysVisible) {
+          const points = [];
+          // Target observer location on surface (e.g. at R=50)
+          let obsX = 50;
+          let obsZ = -50;
+          for (let i = 0; i <= 50; i++) {
+            let t = i / 50;
+            let dx = obsX - sunLight.position.x;
+            let dz = obsZ - sunLight.position.z;
+
+            let currX = sunLight.position.x + dx * t;
+            let currZ = sunLight.position.z + dz * t;
+            // Extreme aetheric downward bend logic
+            let currY = H_SUN * Math.pow(1 - t, 4.0); // sharp bend near observer ground
+            points.push(new THREE.Vector3(currX, currY, currZ));
+          }
+          const line = new THREE.Line(
+            new THREE.BufferGeometry().setFromPoints(points),
+            new THREE.LineBasicMaterial({
+              color: 0xff6600,
+              transparent: true,
+              opacity: 0.8,
+              linewidth: 2,
+            }),
+          );
+          raysGroup.add(line);
+        }
+
+        timeDisplay.innerText = `Time/Phase Offset: ${(time / Math.PI).toFixed(2)}`;
+        controls.update();
+        renderer.render(scene, camera);
+      }
+
+      // Handle Resizing
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // Start animation
+      createLensedRays();
+      animate();
+    </script>
+  </body>
+</html>
