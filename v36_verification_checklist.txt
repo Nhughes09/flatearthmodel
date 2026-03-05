@@ -1,0 +1,20 @@
+V36 VERIFICATION CHECKLIST — March 5, 2026
+==================================================
+
+TONIGHT:
+  [ ] Polaris altitude = 35.9° (clinometer app)
+  [ ] Moon visible? alt=-59.7°, az=348.5°
+  [ ] Star positions match Section 2 table
+
+TOMORROW MORNING:
+  [ ] Sunrise time = ~20:03 EST
+  [ ] Sunrise azimuth = ~98.5° from N
+
+TOMORROW NOON:
+  [ ] Shadow length of 1m stick = ~92.6 cm
+  [ ] Shadow points NORTH
+
+THIS WEEK:
+  [ ] Moon photo #1 (measure apparent diameter)
+  [ ] Moon photo #2 (in ~14 days, compare size)
+  [ ] Sunrise azimuth shifts ~0.3°/day northward

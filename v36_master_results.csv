@@ -1,0 +1,17 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+REALTIME,sunrise_mar5,20:03 EST,time,spherical,azimuth 98.5°,check vs weather app
+REALTIME,sunset_mar5,07:23 EST,time,spherical,azimuth 261.5°,check vs weather app
+DOME_PRED,min_sun_elevation,18.84°,degrees,flat geometry,never fully sets on flat plane,
+REALTIME,moon_alt_now,-59.7°,degrees,globe,az=348.5°,below horizon
+REALTIME,polaris_alt,35.9°,degrees,both models,latitude dependent,cannot distinguish globe vs dome
+3D_FLOW,"North Pole, surface",v_r=16221.9472,v_θ=0.01,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"Chapel Hill, surface",v_r=0.0000,v_θ=439.05,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"Equator, surface",v_r=0.0000,v_θ=730.58,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"South Pole, surface",v_r=0.0000,v_θ=1459.52,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"Chapel Hill, 10km alt",v_r=0.0000,v_θ=438.38,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"Chapel Hill, 100km alt",v_r=0.0000,v_θ=432.30,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"Chapel Hill, 1000km alt",v_r=0.0000,v_θ=371.51,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"Equator, 500km",v_r=0.0000,v_θ=674.38,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,"North Pole, 3000km",v_r=0.0000,v_θ=0.00,v_z=-0.0000,"mm/s, m/s, mm/s",
+3D_FLOW,Sun shell height,v_r=0.0000,v_θ=51.81,v_z=-0.0000,"mm/s, m/s, mm/s",
+PREDICTION,shadow_noon_mar5,0.926 m,meters,globe=dome,1m stick at noon,both models agree (same formula)
