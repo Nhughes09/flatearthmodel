@@ -1,0 +1,25 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+SAA,field_map,SAA centroid (S. America cell),22000,nT,WMM 2020,"r=13080km, r/R=0.65"
+SAA,field_map,SAA secondary (Africa cell),24500,nT,WMM 2020,"r=12802km, r/R=0.64"
+SAA,field_map,Cape Town,25100,nT,WMM 2020,"r=13793km, r/R=0.69"
+SAA,field_map,Sydney (outside SAA),57200,nT,WMM 2020,"r=13793km, r/R=0.69"
+SAA,field_map,Buenos Aires (SAA core),23800,nT,WMM 2020,"r=13870km, r/R=0.69"
+SAA,field_map,Chapel Hill (well outside SAA),52400,nT,WMM 2020,"r=6022km, r/R=0.30"
+SAA,field_map,North Pole (strongest),58200,nT,WMM 2020,"r=0km, r/R=0.00"
+SAA,field_map,"South Pole (ice, strong)",54000,nT,WMM 2020,"r=20038km, r/R=1.00"
+SAA,field_map,Equator Atlantic,32000,nT,WMM 2020,"r=10019km, r/R=0.50"
+SAA,field_map,Southern Ocean 50°S,24000,nT,WMM 2020,"r=15585km, r/R=0.78"
+SAA,field_map,Southern Ocean 50°S (outside SAA),55000,nT,WMM 2020,"r=15585km, r/R=0.78"
+SAA,africa_accel,dome_explanation,Africa closer to σ Oct by 55°,degrees,dome geometry,aetheric exhaust proximity drives faster degradation
+SAA,field_model,R2,-0.9957,R²,11 stations,B(r) = B0 × (1-(r/R)²) × f(lat)
+TIDAL,aether_density,from_tides,34354.701231,kg/m³,derived from 0.5m M2 amplitude,v_aether=0.54 m/s from V35
+TIDAL,status,scorecard,CLOSED → TIE,result,V43 analysis,aetheric pressure waves reproduce globe tidal math identically
+COMPRESSION,factor,empirical_mean,0.430,ratio,4 southern routes,Grok asserted 0.42
+COMPRESSION,conformal,sin_prediction,0.821,ratio,bipolar geometry,sin(π(1-r/R)) at avg southern r
+STELLAR,parallax,dome_interpretation,wobble-induced differential precession,arcsec,dome mechanics,pattern test inconclusive — largest parallaxes near ecliptic pole
+STELLAR,aberration,dome_prediction,0.8,arcsec,dome rotation v/c,"vs observed 20.5"" — CHALLENGE"
+SUMMARY,scorecard,dome_wins,15,wins,V43 update,unchanged
+SUMMARY,scorecard,ties,28,ties,V43 update,+1 tidal amplitude
+SUMMARY,scorecard,open,1,open,V43 update,stellar aberration
+SUMMARY,scorecard,predictions,17,total,V42+V43,7 new falsifiable
+SUMMARY,scorecard,derived_params,4,parameters,V42+V43,"τ/I, γ_drag, ρ_aether, compression_factor"

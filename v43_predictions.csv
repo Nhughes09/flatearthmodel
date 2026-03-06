@@ -1,0 +1,8 @@
+id,name,prediction,test,timeline,falsify,confidence
+E1,SAA Africa Cell Decay,"Africa cell decays at 35-50 nT/yr, faster than S.America (28-40 nT/yr)","ESA Swarm magnetometer data, annual comparison",2026-2030 (annual check),Africa cell decays slower than S.America cell,MEDIUM
+E2,N Magnetic Pole March 2027,2.5° ± 0.3° from Polaris,NOAA World Magnetic Model update,March 2027 (1-year test),Distance > 3.5° or < 1.5°,HIGH (R²=0.991 quadratic)
+E3,Next Geomagnetic Jerk,"Jerk in 2023-2024, detected 6-18 months earlier in north than south","Published jerk detection papers, magnetometer networks",2024-2026 (may already be observable in data),"No jerk by 2026, or south detects first",HIGH (10/10 historical precedent)
+E4,Schumann Resonance Drift,Fundamental shifts upward by ~0.01 Hz/decade due to aetheric thinning,ELF monitoring stations (existing networks),2025-2035 (decadal trend),Frequency decreases or remains perfectly stable within 0.005 Hz,MEDIUM (mechanism clear but magnitude uncertain)
+E5,SAA Cell Separation 2026,95° ± 5° longitude separation between cells,ESA Swarm or NOAA magnetic field maps,2026 (immediate),Separation < 80° or cells merge,HIGH (R²=0.98 from V42)
+E6,Roaring 40s Peak Shift,Storm track peak intensity shifts from 47-50°S toward 50-53°S by 2035,ERA5 reanalysis storm track data,2025-2035 (decadal shift),Peak intensity stays at 47°S or shifts equatorward,MEDIUM (linked to SAA rim degradation)
+E7,Moon-Gravity Correlation,Gravity increases by 0.01-0.05 mGal when Moon is at zenith (aetheric compression),Superconducting gravimeter data at coastal stations,Monthly (each lunar transit),"No correlation above noise, or gravity DECREASES at lunar zenith",LOW (aetheric mechanism untested at this precision)
