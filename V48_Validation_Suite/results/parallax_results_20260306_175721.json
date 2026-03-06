@@ -1,0 +1,15 @@
+{
+  "parameter": "firmament_wobble_offset",
+  "target_parallax_arcsec": 0.5,
+  "derived_offset_m": 22.02508553280622,
+  "derived_offset_km": 0.02202508553280622,
+  "derived_offset_as_fraction_of_R": 1.100428954924118e-06,
+  "firmament_height_km": 9086.0,
+  "predicted_parallax_range_arcsec": [
+    0.007932981917403941,
+    0.5
+  ],
+  "notes": "Offset is physical displacement of firmament rotation axis from geometric center",
+  "plausibility": "Offset < 1% of disc radius is physically plausible",
+  "timestamp": "2026-03-06T17:57:20.991522"
+}
