@@ -1,0 +1,6 @@
+d1_km,d2_km,divergence_local_deg,divergence_distant_deg,delta,distinguishable
+50,100,0.4996,1.9e-05,0.4996,YES
+100,200,0.9987,3.8e-05,0.9987,YES
+200,500,2.9864,0.000115,2.9863,YES
+500,1000,4.9101,0.000191,4.9099,YES
+1000,2000,9.3372,0.000382,9.3368,YES

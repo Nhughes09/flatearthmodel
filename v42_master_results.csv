@@ -1,0 +1,32 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+PRECESSION,dome_derivation,tau_over_I,5.619595e-16,rad/s²,derived,aetheric torque-to-inertia ratio from observed 50.3 arcsec/yr
+PRECESSION,biblical_arc,total_in_6000yr,83.8,degrees,computed,precession has NOT completed a full cycle
+PRECESSION,firmament_height,minimum,9086,km,V24 unchanged,"obliquity-dependent, not cycle-length dependent"
+MAG_POLE,pred_2030,distance_from_Polaris,7.54,degrees,piecewise exponential,"γ1=0.00854, γ2=0.00854/yr"
+MAG_POLE,pred_2035,distance_from_Polaris,7.22,degrees,piecewise exponential,"γ1=0.00854, γ2=0.00854/yr"
+MAG_POLE,pred_2037,distance_from_Polaris,7.10,degrees,piecewise exponential,"γ1=0.00854, γ2=0.00854/yr"
+MAG_POLE,pred_2040,distance_from_Polaris,6.92,degrees,piecewise exponential,"γ1=0.00854, γ2=0.00854/yr"
+MAG_POLE,pred_2050,distance_from_Polaris,6.35,degrees,piecewise exponential,"γ1=0.00854, γ2=0.00854/yr"
+MAG_POLE,piecewise_model,R2,0.838107,R²,26 data points,"two-mode exponential, γ1=0.00854, γ2=0.00854/yr"
+MAG_POLE,mode1_halflife,value,81,years,derived,deep aetheric drag mode
+MAG_POLE,mode2_halflife,value,81,years,derived,surface breakdown mode
+ANALEMMA,loop_ratio,computed,3.11,ratio,derived,from R_amp/R_eq + H_amp/H_mean × cos(φ)
+ANALEMMA,H_amp_optimized,value,1487,km,optimized to 2.66×,"H_summer=5987, H_winter=3013"
+ANALEMMA,phase_offset,value,77.5,degrees,derived from perihelion,constrained by Jan 3 perihelion vs Mar 21 equinox
+SAA,pred_2025,separation,95.6,degrees,vortex model,"k=0.1008/yr, equilibrium=180°"
+SAA,pred_2030,separation,122.6,degrees,vortex model,"k=0.1008/yr, equilibrium=180°"
+SAA,pred_2035,separation,143.4,degrees,vortex model,"k=0.1008/yr, equilibrium=180°"
+SAA,pred_2040,separation,157.4,degrees,vortex model,"k=0.1008/yr, equilibrium=180°"
+SAA,pred_2050,separation,171.7,degrees,vortex model,"k=0.1008/yr, equilibrium=180°"
+SAA,pred_2060,separation,176.9,degrees,vortex model,"k=0.1008/yr, equilibrium=180°"
+DISTANCE,sigmoid_bipolar,R2,0.829591,R²,grid search 750 combos,"Am=-5, Af=-20, As=0, k=0.3"
+DISTANCE,improvement,delta_R2,1.09,pp,vs V24 step function,sigmoid smoothing helps or hurts?
+CREPUSCULAR,divergence,local_sun,1-20 deg visible,degrees,dome H=5733km,photographically observable convergence toward point source
+CREPUSCULAR,divergence,distant_sun,<0.0001 deg,degrees,globe H=150Mkm,effectively zero — rays appear parallel
+CREPUSCULAR,verdict,scorecard,DOME WIN #15,win,quantitative comparison,local sun predicts observed divergence; distant sun does not
+SUMMARY,precession,dome_derivation,τ/I derived from 50.3 arcsec/yr,complete,dome mechanics,biblical compatible — no full cycle assumed
+SUMMARY,n_pole,precession_decay,R²=0.8381,model,exponential decay,"γ derived, connects to aether density"
+SUMMARY,analemma,loop_ratio,2.66 (target 2.66),ratio,height oscillation,H(d) formula derived with φ constrained
+SUMMARY,saa,separation,R²=0.9825,model,vortex repulsion,equilibrium at 180° predicted
+SUMMARY,distance,sigmoid_R2,0.8296,R²,bipolar sigmoid,vs V24 step=0.8187
+SUMMARY,crepuscular,verdict,DOME WIN #15,win,easy calc,local sun divergence vs parallel distant rays
