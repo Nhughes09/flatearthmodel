@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V41: Firmament Dome Engine — Full 3D Model</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=JetBrains+Mono:wght@400&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{overflow:hidden;background:#000;color:#fff;font-family:'Inter',sans-serif}
+  canvas{display:block}
+
+  /* ── TOP HUD ── */
+  #hud-top{position:fixed;top:20px;left:20px;z-index:100;pointer-events:none}
+  #hud-top h1{font-size:26px;font-weight:200;letter-spacing:3px;
+    background:linear-gradient(90deg,#00e5ff,#7c4dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  #hud-top .sub{font-size:11px;color:#5588bb;letter-spacing:5px;text-transform:uppercase;margin-top:2px}
+
+  /* ── DATA PANEL ── */
+  .panel{position:fixed;z-index:100;background:rgba(2,4,15,0.75);backdrop-filter:blur(12px);
+    border:1px solid rgba(0,229,255,0.12);border-radius:14px;padding:18px 22px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.6);pointer-events:auto;font-size:13px}
+  .panel h3{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#5588bb;margin-bottom:12px;font-weight:400}
+  .row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .row .lbl{color:#6688aa}.row .val{font-family:'JetBrains Mono',monospace;color:#00e5ff;font-size:13px}
+  .val.gold{color:#ffcc00}.val.mag{color:#e040fb}.val.grn{color:#00e676}
+
+  #panel-data{top:90px;left:20px;width:280px}
+  #panel-time{bottom:20px;left:20px;width:340px}
+  #panel-layers{top:20px;right:20px;width:260px}
+
+  /* ── BUTTONS ── */
+  .btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .btn{background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.25);color:#cceeff;
+    padding:8px 12px;border-radius:8px;cursor:pointer;font-size:11px;letter-spacing:1px;
+    text-transform:uppercase;font-family:'Inter',sans-serif;transition:all .2s}
+  .btn:hover{background:rgba(0,229,255,0.22);box-shadow:0 0 14px rgba(0,229,255,0.3)}
+  .btn.on{background:rgba(0,229,255,0.3);border-color:#00e5ff;color:#fff}
+
+  /* ── TIME DISPLAY ── */
+  #clock{font-size:32px;font-weight:200;letter-spacing:2px;margin-top:8px;
+    font-variant-numeric:tabular-nums;color:#fff}
+  #day-count{font-size:14px;color:#5588bb;margin-top:2px}
+
+  /* ── LEGEND ── */
+  .legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+</style>
+</head>
+<body>
+<!-- HUD -->
+<div id="hud-top">
+  <h1>FIRMAMENT DOME ENGINE</h1>
+  <div class="sub">V41 · Bi-Polar 3D · Full Star Catalog</div>
+</div>
+
+<div class="panel" id="panel-data">
+  <h3>Dome Geometry</h3>
+  <div class="row"><span class="lbl">Polaris Height</span><span class="val">6,500 km</span></div>
+  <div class="row"><span class="lbl">Sun Altitude</span><span class="val gold" id="sun-h">5,733 km</span></div>
+  <div class="row"><span class="lbl">Moon Altitude</span><span class="val" style="color:#aab">2,534 km</span></div>
+  <div class="row"><span class="lbl">Pole Separation</span><span class="val mag">20,015 km</span></div>
+  <div class="row"><span class="lbl">Dome Rotation</span><span class="val grn">15°/hr</span></div>
+  <div class="row"><span class="lbl">Stars Mapped</span><span class="val" id="star-count">0</span></div>
+  <div class="row"><span class="lbl">Cities Mapped</span><span class="val" id="city-count">0</span></div>
+</div>
+
+<div class="panel" id="panel-layers">
+  <h3>Dome Shell Layers</h3>
+  <div class="row"><span class="lbl"><span class="legend-dot" style="background:#00e5ff"></span>Atmosphere</span><span class="val">0–100 km</span></div>
+  <div class="row"><span class="lbl"><span class="legend-dot" style="background:#aab"></span>Moon Shell</span><span class="val">2,534 km</span></div>
+  <div class="row"><span class="lbl"><span class="legend-dot" style="background:#ffcc00"></span>Sun Shell</span><span class="val">5,733 km</span></div>
+  <div class="row"><span class="lbl"><span class="legend-dot" style="background:#00e5ff"></span>Polaris Axis</span><span class="val">6,500 km</span></div>
+  <div class="row"><span class="lbl"><span class="legend-dot" style="background:#e040fb"></span>Star Firmament</span><span class="val">6,500 km</span></div>
+
+  <div class="btns">
+    <button class="btn on" id="btn-dome" onclick="toggle('dome')">Dome Grid</button>
+    <button class="btn on" id="btn-stars" onclick="toggle('stars')">Stars</button>
+    <button class="btn on" id="btn-rays" onclick="toggle('rays')">Optical Rays</button>
+    <button class="btn on" id="btn-cities" onclick="toggle('cities')">Cities</button>
+    <button class="btn on" id="btn-orbits" onclick="toggle('orbits')">Orbit Paths</button>
+    <button class="btn on" id="btn-labels" onclick="toggle('labels')">Labels</button>
+  </div>
+</div>
+
+<div class="panel" id="panel-time">
+  <h3>Time Simulation</h3>
+  <div id="clock">00:00:00</div>
+  <div id="day-count">Day 0 · March 6 2026</div>
+  <div class="btns">
+    <button class="btn" onclick="setSpeed(0)">⏸ Pause</button>
+    <button class="btn on" onclick="setSpeed(1)">▶ 1×</button>
+    <button class="btn" onclick="setSpeed(60)">⏩ 1hr/s</button>
+    <button class="btn" onclick="setSpeed(1440)">⏩⏩ 1day/s</button>
+    <button class="btn" onclick="setSpeed(10080)">🚀 1wk/s</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+// ════════════════════════════════════════════════════════════
+// CONSTANTS — All from the Dome Master Model
+// ════════════════════════════════════════════════════════════
+const S = 25;                       // scale: 1 unit = 25 km
+const H_POLARIS  = 6500 / S;       // 260 units
+const H_SUN      = 5733 / S;       // 229.3
+const H_MOON     = 2534 / S;       // 101.4
+const R_EQUATOR  = 16500 / S;      // 660
+const DOME_R     = 20015 / S;      // 800.6 (full radius to ice wall)
+const ROTATION   = (2*Math.PI)/(24*3600); // rad/sec — dome does 1 full turn per 24h
+
+// Sun orbit radii by season (spinning top model v0.7)
+const SUN_R_SUMMER = 8000 / S;     // tight inner orbit
+const SUN_R_EQUINOX = 16500 / S;   // equatorial
+const SUN_R_WINTER = 22000 / S;    // wide outer orbit
+
+// ════════════════════════════════════════════════════════════
+// FULL STAR CATALOG — RA (hours), Dec (degrees), Magnitude, Name
+// Placed on the firmament dome at H_POLARIS
+// ════════════════════════════════════════════════════════════
+const STARS = [
+  // ─ Tracked from V24 ─
+  {name:"Polaris",       ra:2.530, dec:89.264, mag:2.0, color:0x00e5ff},
+  {name:"σ Octantis",    ra:21.146,dec:-88.956,mag:5.4, color:0xe040fb},
+  {name:"Sirius",        ra:6.752, dec:-16.716,mag:-1.46,color:0xaaccff},
+  {name:"Canopus",       ra:6.399, dec:-52.696,mag:-0.74,color:0xffffcc},
+  {name:"Betelgeuse",    ra:5.919, dec:7.407,  mag:0.42, color:0xff6644},
+  {name:"Alnitak",       ra:5.679, dec:-1.943, mag:1.77, color:0x88aaff},
+  {name:"Alnilam",       ra:5.603, dec:-1.202, mag:1.69, color:0x88aaff},
+  {name:"Mintaka",       ra:5.533, dec:-0.299, mag:2.23, color:0x88aaff},
+  // ─ Extended Catalog (major navigation stars) ─
+  {name:"Rigel",         ra:5.242, dec:-8.202, mag:0.13, color:0xaaddff},
+  {name:"Arcturus",      ra:14.261,dec:19.182, mag:-0.05,color:0xffaa44},
+  {name:"Vega",          ra:18.616,dec:38.784, mag:0.03, color:0xccddff},
+  {name:"Capella",       ra:5.278, dec:45.998, mag:0.08, color:0xffdd88},
+  {name:"Procyon",       ra:7.655, dec:5.225,  mag:0.34, color:0xffeedd},
+  {name:"Aldebaran",     ra:4.599, dec:16.509, mag:0.87, color:0xff8844},
+  {name:"Antares",       ra:16.490,dec:-26.432,mag:1.09, color:0xff4422},
+  {name:"Spica",         ra:13.420,dec:-11.161,mag:1.04, color:0xaabbff},
+  {name:"Pollux",        ra:7.755, dec:28.026, mag:1.14, color:0xffcc88},
+  {name:"Fomalhaut",     ra:22.961,dec:-29.622,mag:1.16, color:0xccddff},
+  {name:"Deneb",         ra:20.690,dec:45.280, mag:1.25, color:0xeeeeff},
+  {name:"Regulus",       ra:10.140,dec:11.967, mag:1.40, color:0xbbccff},
+  {name:"Altair",        ra:19.846,dec:8.868,  mag:0.77, color:0xddeeff},
+  {name:"Achernar",      ra:1.629, dec:-57.237,mag:0.46, color:0xaabbff},
+  {name:"Acrux",         ra:12.443,dec:-63.099,mag:0.76, color:0x88aaff},
+  {name:"Mimosa",        ra:12.795,dec:-59.689,mag:1.25, color:0x88aaff},
+  {name:"Hadar",         ra:14.064,dec:-60.373,mag:0.61, color:0x88aaff},
+  {name:"Rigil Kent",    ra:14.660,dec:-60.835,mag:-0.01,color:0xffdd88},
+  {name:"Castor",        ra:7.577, dec:31.888, mag:1.58, color:0xccddff},
+  {name:"Bellatrix",     ra:5.419, dec:6.350,  mag:1.64, color:0x99bbff},
+  {name:"Alnath",        ra:5.438, dec:28.608, mag:1.65, color:0x99bbff},
+  {name:"Gacrux",        ra:12.519,dec:-57.113,mag:1.63, color:0xff8866},
+  {name:"Miaplacidus",   ra:9.220, dec:-69.717,mag:1.68, color:0xccddff},
+  {name:"Alphard",       ra:9.460, dec:-8.659, mag:1.98, color:0xffaa44},
+  {name:"Dubhe",         ra:11.062,dec:61.751, mag:1.79, color:0xffcc88},
+  {name:"Merak",         ra:11.031,dec:56.382, mag:2.37, color:0xccddff},
+  {name:"Alioth",        ra:12.900,dec:55.960, mag:1.77, color:0xccddff},
+  {name:"Alkaid",        ra:13.792,dec:49.313, mag:1.86, color:0x99bbff},
+  {name:"Mizar",         ra:13.399,dec:54.925, mag:2.27, color:0xccddff},
+  {name:"Thuban",        ra:14.073,dec:64.376, mag:3.65, color:0x99bbff},
+  {name:"Kochab",        ra:14.845,dec:74.156, mag:2.08, color:0xffaa44},
+  // ─ Southern Cross complete ─
+  {name:"δ Crucis",      ra:12.252,dec:-58.749,mag:2.80, color:0x88aaff},
+];
+
+// ════════════════════════════════════════════════════════════
+// CITIES — from V24 pipeline
+// ════════════════════════════════════════════════════════════
+const CITIES = [
+  {name:"North Pole",lat:90,lon:0},
+  {name:"Reykjavik",lat:64.15,lon:-21.94},{name:"London",lat:51.51,lon:-0.13},
+  {name:"Paris",lat:48.86,lon:2.35},{name:"Berlin",lat:52.52,lon:13.41},
+  {name:"Moscow",lat:55.76,lon:37.62},{name:"Stockholm",lat:59.33,lon:18.07},
+  {name:"Helsinki",lat:60.17,lon:24.94},{name:"New York",lat:40.71,lon:-74.01},
+  {name:"Chicago",lat:41.88,lon:-87.63},{name:"Los Angeles",lat:34.05,lon:-118.24},
+  {name:"Toronto",lat:43.65,lon:-79.38},{name:"Chapel Hill",lat:35.91,lon:-79.06},
+  {name:"Mexico City",lat:19.43,lon:-99.13},{name:"Miami",lat:25.76,lon:-80.19},
+  {name:"Tokyo",lat:35.68,lon:139.65},{name:"Beijing",lat:39.90,lon:116.41},
+  {name:"Dubai",lat:25.20,lon:55.27},{name:"Mumbai",lat:19.08,lon:72.88},
+  {name:"Singapore",lat:1.35,lon:103.82},{name:"Cairo",lat:30.04,lon:31.24},
+  {name:"Accra",lat:5.60,lon:-0.19},{name:"Nairobi",lat:-1.29,lon:36.82},
+  {name:"Quito",lat:-0.18,lon:-78.47},{name:"Lima",lat:-12.05,lon:-77.04},
+  {name:"São Paulo",lat:-23.55,lon:-46.63},{name:"Buenos Aires",lat:-34.60,lon:-58.38},
+  {name:"Santiago",lat:-33.45,lon:-70.67},{name:"Cape Town",lat:-33.92,lon:18.42},
+  {name:"Johannesburg",lat:-26.20,lon:28.05},{name:"Sydney",lat:-33.87,lon:151.21},
+  {name:"Perth",lat:-31.95,lon:115.86},{name:"Auckland",lat:-36.85,lon:174.76},
+];
+
+document.getElementById('star-count').textContent = STARS.length;
+document.getElementById('city-count').textContent = CITIES.length;
+
+// ════════════════════════════════════════════════════════════
+// THREE.JS SCENE
+// ════════════════════════════════════════════════════════════
+const scene  = new THREE.Scene();
+scene.background = new THREE.Color(0x020308);
+const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.5, 8000);
+camera.position.set(400, 350, 500);
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+document.body.appendChild(renderer.domElement);
+
+const ctrl = new THREE.OrbitControls(camera, renderer.domElement);
+ctrl.enableDamping = true; ctrl.dampingFactor = 0.06;
+ctrl.target.set(0,40,0);
+ctrl.maxDistance = 2500;
+
+// Ambient
+scene.add(new THREE.AmbientLight(0x223344, 0.4));
+
+// ════════════════════════════════════════════════════════════
+// PROCEDURAL EARTH DISC (No external textures!)
+// ════════════════════════════════════════════════════════════
+function makeEarthTexture(){
+  const c = document.createElement('canvas');
+  c.width = 2048; c.height = 2048;
+  const ctx = c.getContext('2d');
+  const cx = 1024, cy = 1024, maxR = 1000;
+
+  // Ocean base
+  ctx.fillStyle = '#0a1628';
+  ctx.fillRect(0,0,2048,2048);
+
+  // Draw dark ocean disc
+  ctx.beginPath(); ctx.arc(cx,cy,maxR,0,Math.PI*2);
+  ctx.fillStyle = '#0b1a30'; ctx.fill();
+
+  // Latitude rings
+  for(let lat = 10; lat <= 80; lat += 10){
+    let r = (90-lat)/90 * maxR;
+    ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+    ctx.strokeStyle = lat===0 ? 'rgba(255,200,0,0.3)' : 'rgba(0,180,255,0.08)';
+    ctx.lineWidth = lat%30===0 ? 1.5 : 0.7;
+    ctx.stroke();
+  }
+  // Equator ring
+  let eqR = maxR * (90/90); // Actually equator is at lat=0 → r = maxR
+  // In AE projection, equator is at r = 90/90 * maxR = maxR... that's the edge.
+  // Actually in AE: r proportional to (90-lat). Equator = lat 0, r = 90/90*maxR.
+  // Let's recalculate: r = (90 - lat) / 90 * maxR. lat=0 → r=maxR. That puts equator at edge.
+  // Standard AE: equator is halfway. Let North Pole = center, edge = equator at r = maxR*0.5,
+  // then southern lats extend beyond.
+  // Let me use: r = colatitude / 180 * maxR so that south pole is at edge.
+  // colatitude of equator = 90 → r = 90/180 * maxR = maxR/2
+  
+  // Redraw with correct mapping: r = (90-lat)/180 * maxR * 2 so equator at maxR/2
+  // Actually simplest: r = (90-lat) * maxR / 180 makes South Pole at r=maxR
+  // North Pole at r=0, Equator at r=maxR/2
+
+  // Draw continents as simplified polygonal shapes 
+  // We'll draw approximate landmass blobs using the AE projection
+  function latLonToXY(lat, lon){
+    let r = ((90-lat)/180) * maxR * 2;
+    let theta = (lon - 90) * Math.PI/180; // rotate so 0° lon is "up"
+    return [cx + r * Math.cos(theta), cy + r * Math.sin(theta)];
+  }
+
+  function drawLand(points, fill){
+    ctx.beginPath();
+    let [x0,y0] = latLonToXY(points[0][0], points[0][1]);
+    ctx.moveTo(x0,y0);
+    for(let i=1;i<points.length;i++){
+      let [x,y] = latLonToXY(points[i][0], points[i][1]);
+      ctx.lineTo(x,y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = fill || '#1a3322';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,255,100,0.15)';
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+  }
+
+  // Simplified continent outlines (enough to be recognizable)
+  // North America
+  drawLand([[70,-170],[72,-100],[60,-60],[45,-55],[30,-80],[25,-80],[15,-90],[15,-105],[30,-115],[48,-125],[55,-165],[70,-170]], '#11301a');
+  // South America
+  drawLand([[12,-75],[5,-77],[-5,-80],[-15,-75],[-23,-43],[-35,-58],[-55,-68],[-55,-75],[-40,-73],[-20,-70],[-5,-60],[5,-60],[12,-75]], '#11301a');
+  // Europe
+  drawLand([[70,30],[60,50],[55,40],[50,30],[45,0],[36,-5],[36,0],[38,25],[42,28],[45,15],[48,2],[50,5],[55,10],[58,25],[65,25],[70,30]], '#1a331f');
+  // Africa
+  drawLand([[35,-5],[35,10],[30,32],[15,42],[10,50],[5,42],[0,42],[-5,40],[-15,40],[-25,35],[-35,20],[-35,17],[-25,15],[-5,10],[5,0],[5,-15],[15,-17],[20,-17],[30,-10],[35,-5]], '#1a331f');
+  // Asia
+  drawLand([[70,30],[75,80],[72,130],[65,140],[60,165],[55,135],[45,145],[35,140],[30,120],[22,105],[10,105],[5,80],[10,75],[25,55],[30,48],[35,35],[40,28],[42,45],[45,50],[50,60],[55,70],[60,50],[70,30]], '#12301d');
+  // Australia
+  drawLand([[-12,130],[-15,140],[-25,150],[-35,150],[-38,145],[-35,138],[-32,115],[-22,113],[-12,130]], '#1a331f');
+
+  // Longitude lines
+  for(let lon = 0; lon < 360; lon += 30){
+    let a = (lon-90)*Math.PI/180;
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.lineTo(cx + maxR*Math.cos(a), cy + maxR*Math.sin(a));
+    ctx.strokeStyle = 'rgba(0,180,255,0.06)';
+    ctx.lineWidth = 0.5;
+    ctx.stroke();
+  }
+
+  // Center marker (North Pole)
+  ctx.beginPath(); ctx.arc(cx,cy,5,0,Math.PI*2);
+  ctx.fillStyle='#00e5ff'; ctx.fill();
+
+  // Ice wall ring at edge
+  ctx.beginPath(); ctx.arc(cx,cy,maxR,0,Math.PI*2);
+  ctx.strokeStyle='rgba(200,240,255,0.5)'; ctx.lineWidth=8; ctx.stroke();
+  ctx.strokeStyle='rgba(200,240,255,0.2)'; ctx.lineWidth=16; ctx.stroke();
+
+  return new THREE.CanvasTexture(c);
+}
+
+const earthTex = makeEarthTexture();
+const earthGeo = new THREE.CircleGeometry(DOME_R, 128);
+const earthMat = new THREE.MeshStandardMaterial({map:earthTex, roughness:0.9, metalness:0.05, side:THREE.DoubleSide});
+const earthDisc = new THREE.Mesh(earthGeo, earthMat);
+earthDisc.rotation.x = -Math.PI/2;
+earthDisc.position.y = 0;
+scene.add(earthDisc);
+
+// Ice wall rim (torus)
+const iceGeo = new THREE.TorusGeometry(DOME_R, 2.5, 12, 128);
+const iceMat = new THREE.MeshStandardMaterial({color:0xcceeFF, emissive:0x224466, emissiveIntensity:0.4, roughness:0.15, metalness:0.7});
+const iceRim = new THREE.Mesh(iceGeo, iceMat);
+iceRim.rotation.x = Math.PI/2; iceRim.position.y = 1.5;
+scene.add(iceRim);
+
+// ════════════════════════════════════════════════════════════
+// FIRMAMENT DOME (transparent wireframe hemisphere)
+// ════════════════════════════════════════════════════════════
+const domeGroup = new THREE.Group();
+scene.add(domeGroup);
+
+const firmGeo = new THREE.SphereGeometry(DOME_R, 64, 32, 0, Math.PI*2, 0, Math.PI/2);
+const firmMat = new THREE.MeshBasicMaterial({color:0x1133aa, wireframe:true, transparent:true, opacity:0.035});
+const firmament = new THREE.Mesh(firmGeo, firmMat);
+// Scale Y to make dome apex = H_POLARIS
+firmament.scale.y = H_POLARIS / DOME_R;
+domeGroup.add(firmament);
+
+// Secondary dome shell — inner atmosphere layer
+const atmGeo = new THREE.SphereGeometry(DOME_R * 0.99, 32, 16, 0, Math.PI*2, 0, Math.PI/2);
+const atmMat = new THREE.MeshBasicMaterial({color:0x0066ff, transparent:true, opacity:0.015, side:THREE.BackSide});
+const atmosphere = new THREE.Mesh(atmGeo, atmMat);
+atmosphere.scale.y = (100/S) / DOME_R; // 100km atmosphere
+scene.add(atmosphere);
+
+// Polaris axis line (cyan beam through center)
+const axisGeo = new THREE.BufferGeometry().setFromPoints([
+  new THREE.Vector3(0,0,0), new THREE.Vector3(0,H_POLARIS,0)
+]);
+const axisMat = new THREE.LineBasicMaterial({color:0x00e5ff, transparent:true, opacity:0.6});
+scene.add(new THREE.Line(axisGeo, axisMat));
+
+// Polaris star at apex
+const polarisMesh = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 16, 16),
+  new THREE.MeshBasicMaterial({color:0x00e5ff})
+);
+polarisMesh.position.set(0, H_POLARIS, 0);
+domeGroup.add(polarisMesh);
+
+// ════════════════════════════════════════════════════════════
+// MAP ALL STARS TO THE DOME SURFACE
+// ════════════════════════════════════════════════════════════
+const starGroup = new THREE.Group();
+domeGroup.add(starGroup);
+
+const labelGroup = new THREE.Group();
+domeGroup.add(labelGroup);
+
+function raDecToDomePos(raHours, decDeg){
+  // In dome model: dec maps to distance from center axis
+  // RA maps to azimuthal angle
+  // Stars are embedded IN the firmament at H = dome surface
+  
+  // Colatitude from north pole
+  const colat = (90 - decDeg) * Math.PI / 180;
+  const azimuth = (raHours / 24) * 2 * Math.PI;
+  
+  // Use dome surface: spheroid shape scaled by H_POLARIS/DOME_R in Y
+  // On a hemisphere of radius DOME_R, the point at (colat, azimuth) is:
+  const r = DOME_R;
+  const x = r * Math.sin(colat) * Math.cos(azimuth);
+  const z = r * Math.sin(colat) * Math.sin(azimuth);
+  const y = r * Math.cos(colat) * (H_POLARIS / DOME_R); // scale Y to dome height
+  
+  return new THREE.Vector3(x, Math.max(y, 0), z);
+}
+
+function makeLabel(text, position, color){
+  const canvas = document.createElement('canvas');
+  canvas.width = 256; canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+  ctx.font = '24px Inter, sans-serif';
+  ctx.fillStyle = color || '#88aacc';
+  ctx.fillText(text, 4, 40);
+  const tex = new THREE.CanvasTexture(canvas);
+  const mat = new THREE.SpriteMaterial({map:tex, transparent:true, opacity:0.85});
+  const sprite = new THREE.Sprite(mat);
+  sprite.position.copy(position).add(new THREE.Vector3(2,4,0));
+  sprite.scale.set(30, 7.5, 1);
+  return sprite;
+}
+
+STARS.forEach(s => {
+  if(s.name === 'Polaris') return; // Already placed at apex
+  const pos = raDecToDomePos(s.ra, s.dec);
+  
+  // Star size based on magnitude (brighter = bigger)
+  const size = Math.max(0.8, 3.5 - s.mag * 0.6);
+  const starMesh = new THREE.Mesh(
+    new THREE.SphereGeometry(size, 8, 8),
+    new THREE.MeshBasicMaterial({color: s.color})
+  );
+  starMesh.position.copy(pos);
+  starGroup.add(starMesh);
+  
+  // Glow for bright stars
+  if(s.mag < 1.0){
+    const glowMat = new THREE.MeshBasicMaterial({color: s.color, transparent:true, opacity:0.25});
+    const glow = new THREE.Mesh(new THREE.SphereGeometry(size*2.5, 8, 8), glowMat);
+    glow.position.copy(pos);
+    starGroup.add(glow);
+  }
+
+  // Label
+  const label = makeLabel(s.name, pos, '#' + new THREE.Color(s.color).getHexString());
+  labelGroup.add(label);
+});
+
+// ════════════════════════════════════════════════════════════
+// MAP CITIES ON THE EARTH DISC
+// ════════════════════════════════════════════════════════════
+const cityGroup = new THREE.Group();
+scene.add(cityGroup);
+
+function latLonToPlanePos(lat, lon){
+  // AE projection: r = colatitude * scale
+  // colatitude in km from north pole: (90-lat) * 111.32
+  const r_km = (90 - lat) * 111.32;
+  const r = r_km / S;
+  const theta = (lon - 90) * Math.PI / 180;
+  return new THREE.Vector3(r * Math.cos(theta), 0.5, r * Math.sin(theta));
+}
+
+CITIES.forEach(c => {
+  const pos = latLonToPlanePos(c.lat, c.lon);
+  const dot = new THREE.Mesh(
+    new THREE.SphereGeometry(1.2, 8, 8),
+    new THREE.MeshBasicMaterial({color: c.lat >= 0 ? 0x00e676 : 0xff4081})
+  );
+  dot.position.copy(pos);
+  cityGroup.add(dot);
+  
+  const lbl = makeLabel(c.name, pos, c.lat >= 0 ? '#00e676' : '#ff4081');
+  lbl.scale.set(20, 5, 1);
+  cityGroup.add(lbl);
+});
+
+// ════════════════════════════════════════════════════════════
+// SUN — Orbits at FIXED altitude H_SUN, variable radius by season
+// ════════════════════════════════════════════════════════════
+const sunGroup = new THREE.Group();
+scene.add(sunGroup);
+
+// Core
+const sunCore = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.MeshBasicMaterial({color:0xffffff})
+);
+sunGroup.add(sunCore);
+
+// Inner glow
+const sunGlow1 = new THREE.Mesh(
+  new THREE.SphereGeometry(9, 32, 32),
+  new THREE.MeshBasicMaterial({color:0xffcc00, transparent:true, opacity:0.5})
+);
+sunGroup.add(sunGlow1);
+
+// Outer glow
+const sunGlow2 = new THREE.Mesh(
+  new THREE.SphereGeometry(16, 16, 16),
+  new THREE.MeshBasicMaterial({color:0xff8800, transparent:true, opacity:0.15})
+);
+sunGroup.add(sunGlow2);
+
+// Point light
+const sunLight = new THREE.PointLight(0xffeedd, 3, DOME_R * 3, 1.5);
+sunGroup.add(sunLight);
+
+// ════════════════════════════════════════════════════════════
+// MOON — Orbits at FIXED altitude H_MOON
+// ════════════════════════════════════════════════════════════
+const moonGroup = new THREE.Group();
+scene.add(moonGroup);
+
+const moonCore = new THREE.Mesh(
+  new THREE.SphereGeometry(2.5, 32, 32),
+  new THREE.MeshBasicMaterial({color:0xddddee})
+);
+moonGroup.add(moonCore);
+
+const moonGlow = new THREE.Mesh(
+  new THREE.SphereGeometry(4.5, 16, 16),
+  new THREE.MeshBasicMaterial({color:0x8888bb, transparent:true, opacity:0.2})
+);
+moonGroup.add(moonGlow);
+
+const moonLight = new THREE.PointLight(0x8888cc, 1.2, DOME_R * 2, 1.5);
+moonGroup.add(moonLight);
+
+// ════════════════════════════════════════════════════════════
+// ORBIT PATH RINGS
+// ════════════════════════════════════════════════════════════
+const orbitGroup = new THREE.Group();
+scene.add(orbitGroup);
+
+function makeOrbitRing(radius, height, color, opacity){
+  const geo = new THREE.RingGeometry(radius - 0.8, radius + 0.8, 128);
+  const mat = new THREE.MeshBasicMaterial({color, transparent:true, opacity: opacity||0.2, side:THREE.DoubleSide});
+  const ring = new THREE.Mesh(geo, mat);
+  ring.rotation.x = -Math.PI/2;
+  ring.position.y = height;
+  return ring;
+}
+
+// Sun orbit bands (summer / equinox / winter)
+orbitGroup.add(makeOrbitRing(SUN_R_SUMMER, H_SUN, 0xff4400, 0.1));  // tight inner
+orbitGroup.add(makeOrbitRing(SUN_R_EQUINOX, H_SUN, 0xffaa00, 0.15)); // equinox
+orbitGroup.add(makeOrbitRing(SUN_R_WINTER, H_SUN, 0xff6600, 0.1));  // wide outer
+
+// Moon orbit (roughly equatorial)
+orbitGroup.add(makeOrbitRing(SUN_R_EQUINOX * 0.95, H_MOON, 0x6666aa, 0.12));
+
+// ════════════════════════════════════════════════════════════
+// OPTICAL LENSING RAYS (from V37)
+// ════════════════════════════════════════════════════════════
+const rayGroup = new THREE.Group();
+scene.add(rayGroup);
+
+function updateRays(sunPos){
+  while(rayGroup.children.length) rayGroup.remove(rayGroup.children[0]);
+  
+  // Shoot 6 rays from Sun bending down via aetheric refraction
+  for(let i = 0; i < 6; i++){
+    const angle = (i / 6) * Math.PI * 2;
+    const targetR = DOME_R * 0.4;
+    const tx = targetR * Math.cos(angle);
+    const tz = targetR * Math.sin(angle);
+    
+    const pts = [];
+    for(let j = 0; j <= 80; j++){
+      const t = j / 80;
+      const x = sunPos.x + (tx - sunPos.x) * t;
+      const z = sunPos.z + (tz - sunPos.z) * t;
+      // Aetheric bending: power curve simulating exponential density gradient
+      const y = H_SUN * Math.pow(1 - t, 2.8);
+      pts.push(new THREE.Vector3(x, y, z));
+    }
+    const lineGeo = new THREE.BufferGeometry().setFromPoints(pts);
+    const lineMat = new THREE.LineBasicMaterial({
+      color: new THREE.Color().setHSL(0.08 + i * 0.015, 1, 0.55),
+      transparent: true, opacity: 0.35,
+      blending: THREE.AdditiveBlending
+    });
+    rayGroup.add(new THREE.Line(lineGeo, lineMat));
+  }
+}
+
+// ════════════════════════════════════════════════════════════
+// ANIMATION LOOP — Spinning Top Rotation
+// ════════════════════════════════════════════════════════════
+let simMinutes = 0; // elapsed simulation minutes
+let speedMult = 1;  // 1 = realtime (1 sim-minute per real-second for visibility)
+const clock = new THREE.Clock();
+
+// Toggle visibility map
+const toggleMap = {dome: domeGroup, stars: starGroup, rays: rayGroup, cities: cityGroup, orbits: orbitGroup, labels: labelGroup};
+window.toggle = function(key){
+  const obj = toggleMap[key];
+  if(!obj) return;
+  obj.visible = !obj.visible;
+  document.getElementById('btn-'+key).classList.toggle('on');
+};
+window.setSpeed = function(s){ speedMult = s; };
+
+function animate(){
+  requestAnimationFrame(animate);
+  const dt = clock.getDelta();
+  simMinutes += dt * speedMult;
+
+  // ── Dome Rotation (15°/hr = 0.25°/min) ──
+  const domeAngle = (simMinutes / 60) * (15 * Math.PI / 180);
+  domeGroup.rotation.y = domeAngle;
+
+  // ── Sun Position ──
+  // One full orbit = 1440 minutes (24h)
+  // Seasonal radius modulation: ~365 day cycle
+  const dayFrac = simMinutes / 1440;
+  const yearFrac = dayFrac / 365.25;
+  const seasonAngle = yearFrac * 2 * Math.PI;
+
+  // Spinning top: radius oscillates between summer (inner) and winter (outer)
+  const sunR = SUN_R_EQUINOX + (SUN_R_WINTER - SUN_R_SUMMER) / 2 * Math.sin(seasonAngle);
+  const sunAngle = (simMinutes / 1440) * 2 * Math.PI; // 1 revolution per day
+  
+  sunGroup.position.set(
+    sunR * Math.cos(sunAngle),
+    H_SUN, // FIXED altitude — never fluctuates
+    sunR * Math.sin(sunAngle)
+  );
+
+  // ── Moon Position ──
+  // 27.3 day synodic period
+  const moonAngle = (simMinutes / (1440 * 27.3)) * 2 * Math.PI;
+  const moonR = SUN_R_EQUINOX * 0.95;
+  moonGroup.position.set(
+    moonR * Math.cos(moonAngle),
+    H_MOON, // FIXED altitude
+    moonR * Math.sin(moonAngle)
+  );
+
+  // Update lensing rays
+  if(rayGroup.visible && Math.floor(simMinutes) % 5 === 0){
+    updateRays(sunGroup.position);
+  }
+
+  // ── HUD Updates ──
+  const totalMinutes = Math.floor(simMinutes);
+  const hrs = Math.floor((totalMinutes % 1440) / 60);
+  const mins = totalMinutes % 60;
+  const secs = Math.floor((simMinutes % 1) * 60);
+  document.getElementById('clock').textContent =
+    String(hrs).padStart(2,'0') + ':' + String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
+  document.getElementById('day-count').textContent =
+    `Day ${Math.floor(dayFrac)} · Dome Rotation: ${(domeAngle * 180 / Math.PI % 360).toFixed(1)}°`;
+
+  ctrl.update();
+  renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+animate();
+</script>
+</body>
+</html>

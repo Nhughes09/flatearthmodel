@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V40: Premium Flat Earth Aetheric Engine</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #030308; color: #fff; font-family: 'Inter', -apple-system, sans-serif; }
+        #canvas-container { width: 100vw; height: 100vh; position: absolute; top:0; left:0; z-index: 1;}
+        #ui-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; box-sizing: border-box;}
+        h1 { margin: 0; font-size: 28px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(90deg, #00ffff, #0088ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        .subtitle { font-size: 12px; color: #66aaff; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;}
+        .panel { background: rgba(5, 5, 15, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(0, 255, 255, 0.1); padding: 20px; border-radius: 12px; width: 320px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: auto;}
+        
+        .data-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+        .data-label { color: #8899aa; }
+        .data-value { color: #00ffff; font-family: monospace; font-size: 14px;}
+        .status-active { color: #00ffaa; text-shadow: 0 0 10px rgba(0,255,170,0.5); font-weight: bold;}
+        
+        .controls-group { margin-top: 20px; }
+        .btn { background: rgba(0, 255, 255, 0.1); border: 1px solid rgba(0, 255, 255, 0.3); color: #fff; padding: 10px 15px; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; width: 48%; margin-bottom: 10px;}
+        .btn:hover { background: rgba(0, 255, 255, 0.3); box-shadow: 0 0 15px rgba(0,255,255,0.4); }
+        .btn.active { background: rgba(0, 255, 255, 0.4); border-color: #00ffff;}
+        .flex-row { display: flex; justify-content: space-between; flex-wrap: wrap;}
+        
+        #time-display { font-size: 24px; font-weight: 200; color: #fff; margin-top: 10px; font-variant-numeric: tabular-nums;}
+    </style>
+    <!-- Three.js and plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="ui-overlay">
+        <div>
+            <h1>V40 Aetheric Engine</h1>
+            <div class="subtitle">Bi-Polar 3D Coordinate Mapping</div>
+            
+            <div class="panel">
+                <div class="data-row">
+                    <span class="data-label">System Status</span>
+                    <span class="data-value status-active">ONLINE</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Sun Altitude</span>
+                    <span class="data-value">5,733 km (FIXED)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Moon Altitude</span>
+                    <span class="data-value">2,534 km (FIXED)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Pole Separation</span>
+                    <span class="data-value">20,015.1 km</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Refractive Index (n₀)</span>
+                    <span class="data-value">1.001334</span>
+                </div>
+                
+                <div id="time-display">Day 0.00</div>
+            </div>
+        </div>
+        
+        <div class="panel" style="width: 350px;">
+            <div class="controls-group">
+                <div class="subtitle" style="margin-bottom: 10px;">Time Simulation</div>
+                <div class="flex-row">
+                    <button class="btn" onclick="setSpeed(0)">Pause</button>
+                    <button class="btn active" id="btn-play" onclick="setSpeed(0.5)">Play Realtime</button>
+                    <button class="btn" onclick="setSpeed(5.0)">Fast Forward</button>
+                    <button class="btn" onclick="setSpeed(20.0)">Ultra Speed</button>
+                </div>
+            </div>
+            <div class="controls-group">
+                <div class="subtitle" style="margin-bottom: 10px;">Visual Overlays</div>
+                <div class="flex-row">
+                    <button class="btn active" id="btn-rays" onclick="toggleRays()">Show Optical Rays</button>
+                    <button class="btn active" id="btn-orbits" onclick="toggleOrbits()">Show Orbit Paths</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script>
+        // SCALE: 1 unit = 50 km for better high-res rendering
+        const SCALE = 50;
+        const R_PLANE = (Math.PI * 6371) / SCALE; // ~400 units
+        const H_DOME = 6500 / SCALE;
+        const H_SUN = 5733 / SCALE;
+        const H_MOON = 2534 / SCALE;
+
+        // Scene Setup
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x020205);
+        scene.fog = new THREE.FogExp2(0x020205, 0.0008); // Subtle atmospheric fade
+
+        // Camera
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 5000);
+        camera.position.set(0, 180, 250);
+
+        // Renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Cap pixel ratio for perf
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        // Controls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.maxPolarAngle = Math.PI / 2 + 0.1; // allow looking slightly below the plane
+        controls.target.set(0, 0, 0);
+
+        // Textures
+        const textureLoader = new THREE.TextureLoader();
+        textureLoader.setCrossOrigin('anonymous');
+        
+        // Use a high-quality Gleason/Azimuthal map for the base Plane
+        // We'll use a widely available Wikimedia commons azimuthal equidistant map
+        const earthTexUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flat_earth_night_map.jpg/1024px-Flat_earth_night_map.jpg';
+        
+        const earthGroup = new THREE.Group();
+        scene.add(earthGroup);
+
+        // Creates the main plane representing the Earth
+        const planeGeo = new THREE.PlaneGeometry(R_PLANE, R_PLANE, 64, 64);
+        
+        textureLoader.load(earthTexUrl, (texture) => {
+            const planeMat = new THREE.MeshStandardMaterial({ 
+                map: texture, 
+                roughness: 0.8,
+                metalness: 0.1,
+                transparent: true,
+                opacity: 0.9,
+                side: THREE.DoubleSide
+            });
+            const earthPlane = new THREE.Mesh(planeGeo, planeMat);
+            earthPlane.rotation.x = -Math.PI / 2;
+            earthGroup.add(earthPlane);
+        });
+
+        // Ice Wall (Ice Ring) around the edge
+        const iceWallGeo = new THREE.TorusGeometry(R_PLANE/2, 2, 16, 128);
+        const iceWallMat = new THREE.MeshStandardMaterial({ 
+            color: 0xccffff, 
+            roughness: 0.2, 
+            metalness: 0.8,
+            emissive: 0x3388ff,
+            emissiveIntensity: 0.2
+        });
+        const iceWall = new THREE.Mesh(iceWallGeo, iceWallMat);
+        iceWall.rotation.x = Math.PI / 2;
+        iceWall.position.y = 1;
+        earthGroup.add(iceWall);
+
+        // Bi-Polar Indicators (North and South Foci)
+        // Since V24 sets South pole distance essentially folded, we place indicators
+        const northMarker = new THREE.Mesh(new THREE.SphereGeometry(1.5, 16, 16), new THREE.MeshBasicMaterial({color: 0x00ffff}));
+        northMarker.position.set(0, 1, 0); // Center is North Pole in Azimuthal map
+        earthGroup.add(northMarker);
+
+        // Firmament Dome Grid (subtle overlay)
+        const domeGeo = new THREE.SphereGeometry(R_PLANE/2, 64, 32, 0, Math.PI * 2, 0, Math.PI / 2);
+        const domeMat = new THREE.MeshBasicMaterial({
+            color: 0x0044ff,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.05
+        });
+        const dome = new THREE.Mesh(domeGeo, domeMat);
+        // Scale dome to match PH (firmament height at apex)
+        dome.scale.set(1, (H_DOME / (R_PLANE/2)), 1);
+        earthGroup.add(dome);
+
+        // Stars Background
+        const starsGeo = new THREE.BufferGeometry();
+        const starsCount = 5000;
+        const posArray = new Float32Array(starsCount * 3);
+        for(let i = 0; i < starsCount * 3; i++) {
+            // Random points in upper hemisphere
+            let theta = Math.random() * 2 * Math.PI;
+            let phi = Math.acos(Math.random()); 
+            let r = R_PLANE/2 + 100 + Math.random() * 200;
+            posArray[i*3] = r * Math.sin(phi) * Math.cos(theta);
+            posArray[i*3+1] = r * Math.cos(phi);
+            posArray[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
+        }
+        starsGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const starsMat = new THREE.PointsMaterial({ size: 1.5, color: 0xffffff, transparent:true, opacity:0.8 });
+        const starMesh = new THREE.Points(starsGeo, starsMat);
+        scene.add(starMesh);
+
+        /* -------------------------------------------------------------
+           CELESTIAL BODIES (Strict constant altitudes as requested)
+           ------------------------------------------------------------- */
+        
+        // SUN
+        // Altitude is strictly constant at H_SUN
+        const sunRadius = (90 - (-6.5)) * 111.32 / SCALE; // Example equinox/march orbit radius
+        
+        const sunGroup = new THREE.Group();
+        scene.add(sunGroup);
+
+        // Sun Glow setup
+        const sunLight = new THREE.PointLight(0xffeedd, 5, R_PLANE*2, 1.5);
+        sunGroup.add(sunLight);
+
+        // Sun visual core
+        const sunCoreMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        const sunCore = new THREE.Mesh(new THREE.SphereGeometry(3, 32, 32), sunCoreMat);
+        sunGroup.add(sunCore);
+        
+        // Sun outer glow
+        const sunGlowMat = new THREE.MeshBasicMaterial({ color: 0xffaa00, transparent: true, opacity: 0.4 });
+        const sunGlow = new THREE.Mesh(new THREE.SphereGeometry(7, 32, 32), sunGlowMat);
+        sunGroup.add(sunGlow);
+
+        // MOON
+        // Altitude strictly constant at H_MOON
+        const moonRadius = (90 - 20) * 111.32 / SCALE; 
+        
+        const moonGroup = new THREE.Group();
+        scene.add(moonGroup);
+        
+        const moonLight = new THREE.PointLight(0xaaaaff, 1.5, R_PLANE, 1);
+        moonGroup.add(moonLight);
+
+        const moonCoreMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1.0, emissive: 0x222233 });
+        const moonCore = new THREE.Mesh(new THREE.SphereGeometry(1.5, 32, 32), moonCoreMat);
+        moonGroup.add(moonCore);
+
+        // Orbit paths (Yellow Sun, White Moon)
+        const orbitPathGeoSun = new THREE.RingGeometry(sunRadius-0.5, sunRadius+0.5, 128);
+        const orbitPathMatSun = new THREE.MeshBasicMaterial({ color: 0xffaa00, side: THREE.DoubleSide, transparent:true, opacity:0.3 });
+        const sunOrbitLine = new THREE.Mesh(orbitPathGeoSun, orbitPathMatSun);
+        sunOrbitLine.rotation.x = Math.PI / 2;
+        sunOrbitLine.position.y = H_SUN;
+        scene.add(sunOrbitLine);
+
+        const orbitPathGeoMoon = new THREE.RingGeometry(moonRadius-0.5, moonRadius+0.5, 128);
+        const orbitPathMatMoon = new THREE.MeshBasicMaterial({ color: 0x88aaff, side: THREE.DoubleSide, transparent:true, opacity:0.3 });
+        const moonOrbitLine = new THREE.Mesh(orbitPathGeoMoon, orbitPathMatMoon);
+        moonOrbitLine.rotation.x = Math.PI / 2;
+        moonOrbitLine.position.y = H_MOON;
+        scene.add(moonOrbitLine);
+
+        // Aetheric Lensing Ray Visualizer
+        const raysGroup = new THREE.Group();
+        scene.add(raysGroup);
+
+        function drawLensingRays(sunVec) {
+            // Clear old rays
+            while(raysGroup.children.length > 0) {
+                raysGroup.remove(raysGroup.children[0]);
+            }
+            
+            // Draw rays bending downwards from Sun due to aetheric density gradient
+            // We shoot ~8 rays downwards at shallow angles
+            let observerX = 0, observerZ = R_PLANE/4; // approximate mid-latitude observer
+            
+            for(let i=0; i<8; i++) {
+                let points = [];
+                let t_max = 1.0 + (i * 0.05); // slightly different ranges
+                
+                for(let j=0; j<=100; j++) {
+                    let t = j/100;
+                    // Interpolate X/Z from Sun to Observer area
+                    let lx = sunVec.x + (observerX - sunVec.x) * t;
+                    let lz = sun加强.z + (observerZ - sunVec.z) * t;
+                    let dz = observerZ - sunVec.z; 
+                    let dx = observerX - sunVec.x;
+                    
+                    let lx2 = sunVec.x + dx * t;
+                    let lz2 = sunVec.z + dz * t;
+                    
+                    // The optical illusion: height bends parabolically/exponentially
+                    // Constant physical height is H_SUN, but the RAY bends.
+                    // This creates the sunset.
+                    let optical_y = Math.pow(1 - t, 2.5) * H_SUN;
+                    points.push(new THREE.Vector3(lx2, optical_y, lz2));
+                }
+                const rayMat = new THREE.LineBasicMaterial({
+                    color: new THREE.Color().setHSL(0.1 + (i*0.01), 1.0, 0.5),
+                    transparent: true,
+                    opacity: 0.6,
+                    blending: THREE.AdditiveBlending
+                });
+                const rayLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), rayMat);
+                raysGroup.add(rayLine);
+            }
+        }
+
+        // Toggles
+        let showRays = true;
+        let showOrbits = true;
+
+        window.toggleRays = function() {
+            showRays = !showRays;
+            raysGroup.visible = showRays;
+            document.getElementById('btn-rays').className = showRays ? "btn active" : "btn";
+        }
+        window.toggleOrbits = function() {
+            showOrbits = !showOrbits;
+            sunOrbitLine.visible = showOrbits;
+            moonOrbitLine.visible = showOrbits;
+            document.getElementById('btn-orbits').className = showOrbits ? "btn active" : "btn";
+        }
+
+        let timeOffset = 0;
+        let speedMultiplier = 0.5;
+
+        window.setSpeed = function(s) {
+            speedMultiplier = s;
+            document.querySelectorAll('.flex-row:first-child .btn').forEach(b => b.classList.remove('active'));
+            if(s === 0.5) document.getElementById('btn-play').classList.add('active');
+        }
+
+        // Main Animation Loop
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let delta = clock.getDelta();
+            timeOffset += delta * speedMultiplier;
+
+            // Firmament background rotates very slowly
+            starMesh.rotation.y = timeOffset * 0.05;
+
+            // Update Sun & Moon positions
+            // Strict constant altitudes: Y axis is solidly locked to H_SUN & H_MOON.
+            let sunAngle = timeOffset * 2.0; 
+            sunGroup.position.set(
+                Math.sin(sunAngle) * sunRadius,
+                H_SUN,
+                Math.cos(sunAngle) * sunRadius
+            );
+
+            let moonAngle = timeOffset * 1.9; // Moon orbits slightly slower (27.3 day lag)
+            moonGroup.position.set(
+                Math.sin(moonAngle) * moonRadius,
+                H_MOON,
+                Math.cos(moonAngle) * moonRadius
+            );
+            
+            // Make moon face the sun for phase illumination emulation
+            moonCore.lookAt(sunGroup.position);
+
+            if(showRays) {
+                drawLensingRays(sunGroup.position);
+            }
+
+            document.getElementById('time-display').innerText = `Day ${(timeOffset / (Math.PI*2)).toFixed(2)}`;
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // Handle Resizing
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Initialize
+        animate();
+    </script>
+</body>
+</html>
