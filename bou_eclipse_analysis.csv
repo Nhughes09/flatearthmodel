@@ -1,0 +1,9 @@
+dataset,year,parameter,value,unit,source,notes
+bou_magnetic_2017,2017,z_component_quiet_mean_16UTC,47727.268600353505,nT,BOU Observatory (INTERMAGNET),Mean of Aug 14-15 at 16:00 UTC
+bou_magnetic_2017,2017,z_component_eclipse_16UTC,47718.51107492453,nT,BOU Observatory (INTERMAGNET),Eclipse day (Aug 21) at 16:00 UTC
+bou_magnetic_2017,2017,z_component_quiet_mean_18UTC,47724.74404228504,nT,BOU Observatory (INTERMAGNET),Mean of Aug 14-15 at 18:00 UTC
+bou_magnetic_2017,2017,z_component_eclipse_18UTC,47715.0,nT,BOU Observatory (INTERMAGNET),Eclipse day (Aug 21) at 18:00 UTC
+bou_magnetic_2017,2017,z_component_residual_mean,-9.514069570866972,nT,BOU Observatory (INTERMAGNET),Mean residual in eclipse window 16-19 UTC
+bou_magnetic_2017,2017,z_component_residual_max,-10.853237234179687,nT,BOU Observatory (INTERMAGNET),Maximum residual at 17.2 UTC
+bou_magnetic_2017,2017,z_component_total_drop,12.020061033086677,nT,BOU Observatory (INTERMAGNET),Drop from 12:00 baseline to 18:00 trough
+eclipse_magnetic_gravity_coupling,2017,magnetic_gravity_ratio,1.6697288052584134,nT/µGal,BOU 2017 + Mohe 1997,Ratio of magnetic anomaly to Mohe gravity anomaly

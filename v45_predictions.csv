@@ -1,0 +1,6 @@
+ID,Prediction,Method,Confidence
+P1,Ground EM resonance at 11.78 Hz (not 7.83),Measurement,HIGH
+P2,Bessel node locations match geological features,Geological survey,MEDIUM
+P3,Longitudinal waves penetrate Faraday cages,Lab experiment,MEDIUM
+P4,Seismic reflector at ~12717 km depth,Seismology,HIGH
+P5,Tuned 11.78 Hz receiver extracts energy,Lab experiment,HIGH

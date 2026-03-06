@@ -1,0 +1,19 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+TESLA,frequency,measured,11.79,Hz,Colorado Springs 1899,roundtrip 0.08484s
+TESLA,frequency,L_effective,12717,km,c/(2f),electromagnetic path length
+CAVITY,schumann_raw,f_sphere,10.59,Hz,"c/(2πR)×√2, R=6371km","Schumann's OWN formula gives 10.59, not 7.83!"
+CAVITY,dome,circumference,2.38,Hz,"c/(2πR), R=20015.0km",error to Tesla: 79.8%
+CAVITY,dome,vertical,16.50,Hz,"c/(2H), H=9086.0km",error to Tesla: 40.0%
+TESLA_PATENTS,US645576,year,1899,year,System of Transmission,Earth as conductor through natural medium
+TESLA_PATENTS,US787412,year,1905,year,Art of Transmitting Energy,Earth resonance stationary waves
+TESLA_PATENTS,CA142352,year,1912,year,Art of Transmitting Energy (Canada),11.78 Hz conductor of limited dimensions
+TESLA_PATENTS,US1119732,year,1914,year,Apparatus for Transmitting,Free wireless electricity — Wardenclyffe
+WAVES,tesla_pulse,speed,299792,km/s,L_eff / (t/2),travels at c ✓
+PYRAMID,kings_chamber,f_air_100,16.4,Hz,c_air/(2L),fundamental air mode
+PYRAMID,kings_chamber,f_measured,117.0,Hz,Reid 1997,sarcophagus prime resonance
+PYRAMID,harmonic,tesla_match_count,2,count,n × 11.78 Hz,out of 7 pyramid frequencies
+PREDICTION,P1,description,Ground EM resonance at 11.78 Hz (not 7.83),,Measurement,confidence: HIGH
+PREDICTION,P2,description,Bessel node locations match geological features,,Geological survey,confidence: MEDIUM
+PREDICTION,P3,description,Longitudinal waves penetrate Faraday cages,,Lab experiment,confidence: MEDIUM
+PREDICTION,P4,description,Seismic reflector at ~12717 km depth,,Seismology,confidence: HIGH
+PREDICTION,P5,description,Tuned 11.78 Hz receiver extracts energy,,Lab experiment,confidence: HIGH
