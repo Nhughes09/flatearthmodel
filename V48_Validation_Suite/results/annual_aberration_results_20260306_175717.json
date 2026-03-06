@@ -1,0 +1,11 @@
+{
+  "parameter": "aether_refractive_gradient",
+  "target_aberration_arcsec": 20.5,
+  "target_aberration_rad": 9.938680462745487e-05,
+  "derived_alpha": 2.5551e-08,
+  "derived_dn_dtheta": 8.133135901882035e-09,
+  "physical_plausibility": true,
+  "notes": "\u03b1 is change in refractive index over full annual cycle",
+  "threshold": "\u03b1 < 0.1 considered physically plausible",
+  "timestamp": "2026-03-06T17:57:17.961462"
+}
