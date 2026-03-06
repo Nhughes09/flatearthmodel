@@ -1,0 +1,122 @@
+dataset,year,parameter,value,unit,source,notes
+bou_magnetic_2017,2017.0,z_component_quiet_mean_16UTC,47727.3,nT,BOU Observatory (INTERMAGNET),Mean of Aug 14-15 at 16:00 UTC
+bou_magnetic_2017,2017.0,z_component_eclipse_16UTC,47718.5,nT,BOU Observatory (INTERMAGNET),Eclipse day (Aug 21) at 16:00 UTC
+bou_magnetic_2017,2017.0,z_component_quiet_mean_18UTC,47724.7,nT,BOU Observatory (INTERMAGNET),Mean of Aug 14-15 at 18:00 UTC
+bou_magnetic_2017,2017.0,z_component_eclipse_18UTC,47715.0,nT,BOU Observatory (INTERMAGNET),Eclipse day (Aug 21) at 18:00 UTC
+bou_magnetic_2017,2017.0,z_component_residual_mean,-9.51,nT,BOU Observatory (INTERMAGNET),Mean residual in eclipse window 16-19 UTC
+bou_magnetic_2017,2017.0,z_component_residual_max,-10.9,nT,BOU Observatory (INTERMAGNET),Maximum residual at 17.2 UTC
+bou_magnetic_2017,2017.0,z_component_total_drop,12.0,nT,BOU Observatory (INTERMAGNET),Drop from 12:00 baseline to 18:00 trough
+eclipse_gravity,1994.0,gravity_anomaly_montreal,2.4,microGal,Various,2.4 microgal anomaly recorded
+eclipse_gravity,1997.0,gravity_anomaly_mohe,-6.5,microGal,Chinese Academy of Sciences,6 to 7 microGal decrease at first/last contacts
+eclipse_gravity,1999.0,gravity_anomaly_europe,11.0,microGal,Various,10-12 microGal unexplainable change
+eclipse_gravity_compilation,1954.0,gravity_anomaly_valley,,microGal,Tomaschek/Frost54,"Two lateral valleys reported, magnitude unspecified"
+eclipse_gravity_compilation,1954.0,paris_theoretical_acceleration,25.0,microGal,Allais Theory,35 uGal anisotropic acceleration / 12 upward calculated
+eclipse_gravity_compilation,1990.0,gravity_anomaly_finland,0.0,microGal,Various,No anomalous variations detected.
+eclipse_gravity_compilation,1991.0,gravity_anomaly_mexico,0.1,microGal,LCR-G402,0.1 uGal attributed to atmospheric pressure
+eclipse_gravity_compilation,1994.0,gravity_anomaly_montreal,2.4,microGal,Various,Recorded 2.4 microgal anomaly
+eclipse_gravity_compilation,1997.0,gravity_anomaly_mohe,-6.5,microGal,Chinese Academy of Sciences / LaCoste-Romberg,6 to 7 microGal decrease symmetrically at first/last contacts
+eclipse_gravity_compilation,1999.0,gravity_anomaly_europe,11.0,microGal,Various,10-12 microGal unexplainable change at onset
+eclipse_gravity_compilation,2026.0,prediction_mohe_replica,-7.5,microGal,Dome Model V46,Predicted symmetric aetheric pressure trough at first/last contacts for Aug 12 2026
+eclipse_magnetic_gravity_coupling,2017.0,magnetic_gravity_ratio,1.67,nT/µGal,BOU 2017 + Mohe 1997,Ratio of magnetic anomaly to Mohe gravity anomaly
+igrf_saa,1990.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,1990.0,sa_cell_lon,306.0,deg,IGRF13,computed via ppigrf
+igrf_saa,1990.0,separation_deg,54.0,deg,IGRF13,computed via ppigrf
+igrf_saa,1990.0,fitted_theta_0,3.53901,coeff,scipy,Exponential fit param
+igrf_saa,1990.0,fitted_kappa,0.03146,coeff,scipy,Exponential fit param
+igrf_saa,1990.0,fitted_C,49.95628,coeff,scipy,Exponential fit param
+igrf_saa,1995.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,1995.0,sa_cell_lon,306.0,deg,IGRF13,computed via ppigrf
+igrf_saa,1995.0,separation_deg,54.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2000.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2000.0,sa_cell_lon,306.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2000.0,separation_deg,54.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2005.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2005.0,sa_cell_lon,304.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2005.0,separation_deg,56.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2010.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2010.0,sa_cell_lon,304.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2010.0,separation_deg,56.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2015.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2015.0,sa_cell_lon,302.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2015.0,separation_deg,58.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2020.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2020.0,sa_cell_lon,300.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2020.0,separation_deg,60.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2025.0,africa_cell_lon,0.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2025.0,sa_cell_lon,300.0,deg,IGRF13,computed via ppigrf
+igrf_saa,2025.0,separation_deg,60.0,deg,IGRF13,computed via ppigrf
+igrf_saa_highres,2000.0,africa_lon,-20.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2000.0,africa_lat,-36.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2000.0,sa_lon,305.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2000.0,sa_lat,-26.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2000.0,lon_separation,34.5,deg,CHAOS7,computed
+igrf_saa_highres,2000.0,great_circle_separation,30.80111263233112,deg,CHAOS7,computed
+igrf_saa_highres,2000.0,lon_fit_a,353.28977533287616,coeff,scipy,exp model
+igrf_saa_highres,2000.0,lon_fit_k,0.0033199606361819,coeff,scipy,exp model
+igrf_saa_highres,2000.0,lon_fit_c,-321.57430340145964,coeff,scipy,exp model
+igrf_saa_highres,2005.0,africa_lon,-20.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2005.0,africa_lat,-37.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2005.0,sa_lon,304.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2005.0,sa_lat,-26.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2005.0,lon_separation,35.5,deg,CHAOS7,computed
+igrf_saa_highres,2005.0,great_circle_separation,31.74497539217722,deg,CHAOS7,computed
+igrf_saa_highres,2010.0,africa_lon,-20.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2010.0,africa_lat,-38.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2010.0,sa_lon,303.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2010.0,sa_lat,-26.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2010.0,lon_separation,36.5,deg,CHAOS7,computed
+igrf_saa_highres,2010.0,great_circle_separation,32.690425103823145,deg,CHAOS7,computed
+igrf_saa_highres,2015.0,africa_lon,-1.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2015.0,africa_lat,-41.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2015.0,sa_lon,302.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2015.0,sa_lat,-26.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2015.0,lon_separation,56.5,deg,CHAOS7,computed
+igrf_saa_highres,2015.0,great_circle_separation,48.27785223601814,deg,CHAOS7,computed
+igrf_saa_highres,2020.0,africa_lon,-0.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2020.0,africa_lat,-41.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2020.0,sa_lon,301.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2020.0,sa_lat,-26.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2020.0,lon_separation,58.5,deg,CHAOS7,computed
+igrf_saa_highres,2020.0,great_circle_separation,49.78664125459244,deg,CHAOS7,computed
+igrf_saa_highres,2025.0,africa_lon,-0.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2025.0,africa_lat,-40.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2025.0,sa_lon,300.0,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2025.0,sa_lat,-26.5,deg,CHAOS7,high-resolution 0.5deg
+igrf_saa_highres,2025.0,lon_separation,59.5,deg,CHAOS7,computed
+igrf_saa_highres,2025.0,great_circle_separation,50.567482232174214,deg,CHAOS7,computed
+igrf_saa_highres,2025.0,aic_linear,23.673341811883635,aic,scipy,Akaike Information Criterion (lower is better)
+igrf_saa_highres,2025.0,aic_exponential,26.487156209171577,aic,scipy,Akaike Information Criterion (lower is better)
+igrf_saa_highres,2025.0,exponential_preferred,0.0,bool,scipy,1 if dome exponential vortex model wins
+longitudinal_wave_experiments,1900.0,tesla_magnifying_transmitter,1.0,bool,Nikola Tesla,Longitudinal ground compression wave transmission
+longitudinal_wave_experiments,2000.0,meyl_scalar_penetration,1.0,bool,Prof K. Meyl,Demonstrated unattenuated signal penetration through Faraday cage shielding
+north_pole_noaa,1990.0,pre1990_lin_a,245.4317679681395,coeff,scipy,Linear fit param (unwrapped)
+north_pole_noaa,1990.0,pre1990_lin_b,0.0465580928276319,coeff,scipy,Linear fit param (unwrapped)
+north_pole_noaa,1990.0,post1990_exp_c,-526526.5730209458,coeff,scipy,Exp fit param (unwrapped)
+north_pole_noaa,1990.0,post1990_exp_d,526806.6666537923,coeff,scipy,Exp fit param (unwrapped)
+north_pole_noaa,1990.0,post1990_exp_k,-6.673463147174226e-06,coeff,scipy,Exp fit param (unwrapped)
+north_pole_noaa,2025.0,deviation_120E,-18.056999999999988,deg,NOAA,Deviation from mapped asymptote
+schumann_corrections,1960.0,ideal_cavity_theoretical,10.59,Hz,Schumann Original,Raw geometric mathematical derivation
+schumann_corrections,1960.0,empirical_measurement,7.83,Hz,Various,Actual atmospheric measurement
+schumann_corrections,1960.0,fudge_factor_conductivity,1.0,bool,Mainstream Physics,Ad-hoc finite conductivity curve (knee) added to lower f1
+schumann_corrections,1960.0,dome_theoretical_match,11.78,Hz,Dome Model,Pure geometric resonance matches ground tellurics without ad-hoc conductivity corrections
+schumann_drift,2025.0,fundamental_range,7.8,Hz,Literature,Varies 7.5 to 8.1 Hz daily. Long term solar/climate drift observed.
+schumann_drift,2025.0,predicted_drift_compatibility,0.01,Hz/decade,Dome Model,0.01 Hz/decade is plausible within mainstream noise margins.
+schumann_synthetic,2025.0,atmospheric_peak,7.83,Hz,synthetic,based on literature
+schumann_synthetic,2025.0,atmospheric_peak,14.3,Hz,synthetic,based on literature
+schumann_synthetic,2025.0,ground_peak,11.78,Hz,synthetic,based on Meyl/Tesla telluric
+schumann_synthetic,2025.0,ground_peak,7.83,Hz,synthetic,leakage from atmosphere
+seismic_reflections,2025.0,deepest_boundary,5150.0,km,Mainstream Seismology,Inner Core Boundary is deepest recognized reflection. 12700km not cataloged.
+telluric_spectrum,2025.0,frequency_peak,12.0,Hz,Literature/Online,Earth current resonance intervals reported at ~12Hz
+telluric_spectrum,2025.0,receiver_band_edge,11.7,Hz,Geometrics/MT,100kHz to 11.7Hz is a standard MT receiver spec limit
+tesla_patent,1905.0,round_trip_time,0.08484,s,US787412,from patent text
+tesla_patent,1905.0,frequency,11.787,Hz,US787412,derived from 1/0.08484
+v48_annual_aberration,2026.0,target_aberration,20.5,arcsec,Dome Model V48,Target Bradley stellar aberration
+v48_annual_aberration,2026.0,aether_refractive_alpha,2.5551e-08,gradient coefficient,Dome Model V48,Aether refractive index gradient per solar zenith angle cycle
+v48_eclipse_2026_prediction,2026.0,Iceland_predicted_magnetic_z_drop,-10.9,nT,Dome Model V48,Predicted Z-component trough during totality
+v48_eclipse_2026_prediction,2026.0,Iceland_predicted_spring_gravity_drop,-6.5,microGal,Dome Model V48,Predicted gravity anomaly for unshielded instruments
+v48_eclipse_2026_prediction,2026.0,Spain_predicted_magnetic_z_drop,-10.9,nT,Dome Model V48,Predicted Z-component trough during totality
+v48_eclipse_2026_prediction,2026.0,Spain_predicted_spring_gravity_drop,-6.5,microGal,Dome Model V48,Predicted gravity anomaly for unshielded instruments
+v48_eclipse_2026_prediction,2026.0,Greenland_predicted_magnetic_z_drop,-10.9,nT,Dome Model V48,Predicted Z-component trough during totality
+v48_eclipse_2026_prediction,2026.0,Greenland_predicted_spring_gravity_drop,-6.5,microGal,Dome Model V48,Predicted gravity anomaly for unshielded instruments
+v48_parallax_wobble,2026.0,target_parallax,0.5,arcsec,Dome Model V48,Target stellar parallax to mimic
+v48_parallax_wobble,2026.0,derived_firmament_offset_km,0.02202508553280622,km,Dome Model V48,Required physical offset of firmament rotation axis from center
