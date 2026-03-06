@@ -1,0 +1,219 @@
+# Dome Cosmology V48 - Master Predictions
+
+**Created:** 2026-03-06T17:57:21.589096
+
+**Version:** V48
+
+## Summary
+
+This document contains all falsifiable predictions from the Dome Cosmology model.
+Each prediction is timestamped to establish priority of discovery.
+
+### Source: V48_Validation_Suite/predictions/2026_eclipse_predictions_20260306_175644.json
+```json
+[
+  {
+    "prediction_id": "2026_eclipse_iceland",
+    "date_created": "2026-03-06T17:56:44.774207",
+    "eclipse_date": "2026-08-12",
+    "location": "Iceland",
+    "lat": 64.5,
+    "lon": -18.5,
+    "time_max_utc": "17:30 UTC",
+    "predictions": {
+      "magnetic_anomaly_z_nT": {
+        "value": -10.9,
+        "uncertainty": 2.0,
+        "unit": "nT",
+        "notes": "Peak negative anomaly in Z-component"
+      },
+      "magnetic_anomaly_timing": {
+        "value": "17:30 UTC \u00b1 10 min",
+        "unit": "UTC",
+        "notes": "Anomaly peaks near maximum eclipse"
+      },
+      "gravity_anomaly_spring_microGal": {
+        "value": -6.5,
+        "uncertainty": 1.5,
+        "unit": "\u00b5Gal",
+        "notes": "For unshielded spring gravimeters"
+      },
+      "gravity_anomaly_sg_microGal": {
+        "value": 0.0,
+        "uncertainty": 0.1,
+        "unit": "\u00b5Gal",
+        "notes": "For superconducting gravimeters (shielded)"
+      },
+      "coupling_ratio": {
+        "value": 1.67,
+        "unit": "nT/\u00b5Gal",
+        "notes": "Magnetic to gravity anomaly ratio"
+      },
+      "magnetic_components": {
+        "value": "X, Y, Z all negative, Z strongest",
+        "unit": "",
+        "notes": "All three components show correlated anomaly"
+      }
+    },
+    "falsification_criteria": {
+      "magnetic_anomaly": "If Z-component anomaly < 5 nT or > 15 nT",
+      "gravity_anomaly_spring": "If no anomaly > 3 \u00b5Gal detected",
+      "gravity_anomaly_sg": "If anomaly > 0.5 \u00b5Gal detected",
+      "timing": "If anomaly does not coincide with eclipse window"
+    },
+    "source_model": "Dome Cosmology V48",
+    "derived_from": {
+      "magnetic_data": "BOU Observatory 2017 eclipse",
+      "gravity_data": "Mohe 1997 eclipse",
+      "ratio": "cross-correlation analysis"
+    }
+  },
+  {
+    "prediction_id": "2026_eclipse_spain",
+    "date_created": "2026-03-06T17:56:44.774222",
+    "eclipse_date": "2026-08-12",
+    "location": "Spain",
+    "lat": 42.5,
+    "lon": -3.5,
+    "time_max_utc": "18:15 UTC",
+    "predictions": {
+      "magnetic_anomaly_z_nT": {
+        "value": -10.9,
+        "uncertainty": 2.0,
+        "unit": "nT",
+        "notes": "Peak negative anomaly in Z-component"
+      },
+      "magnetic_anomaly_timing": {
+        "value": "18:15 UTC \u00b1 10 min",
+        "unit": "UTC",
+        "notes": "Anomaly peaks near maximum eclipse"
+      },
+      "gravity_anomaly_spring_microGal": {
+        "value": -6.5,
+        "uncertainty": 1.5,
+        "unit": "\u00b5Gal",
+        "notes": "For unshielded spring gravimeters"
+      },
+      "gravity_anomaly_sg_microGal": {
+        "value": 0.0,
+        "uncertainty": 0.1,
+        "unit": "\u00b5Gal",
+        "notes": "For superconducting gravimeters (shielded)"
+      },
+      "coupling_ratio": {
+        "value": 1.67,
+        "unit": "nT/\u00b5Gal",
+        "notes": "Magnetic to gravity anomaly ratio"
+      },
+      "magnetic_components": {
+        "value": "X, Y, Z all negative, Z strongest",
+        "unit": "",
+        "notes": "All three components show correlated anomaly"
+      }
+    },
+    "falsification_criteria": {
+      "magnetic_anomaly": "If Z-component anomaly < 5 nT or > 15 nT",
+      "gravity_anomaly_spring": "If no anomaly > 3 \u00b5Gal detected",
+      "gravity_anomaly_sg": "If anomaly > 0.5 \u00b5Gal detected",
+      "timing": "If anomaly does not coincide with eclipse window"
+    },
+    "source_model": "Dome Cosmology V48",
+    "derived_from": {
+      "magnetic_data": "BOU Observatory 2017 eclipse",
+      "gravity_data": "Mohe 1997 eclipse",
+      "ratio": "cross-correlation analysis"
+    }
+  },
+  {
+    "prediction_id": "2026_eclipse_greenland",
+    "date_created": "2026-03-06T17:56:44.774226",
+    "eclipse_date": "2026-08-12",
+    "location": "Greenland",
+    "lat": 67.0,
+    "lon": -35.0,
+    "time_max_utc": "16:45 UTC",
+    "predictions": {
+      "magnetic_anomaly_z_nT": {
+        "value": -10.9,
+        "uncertainty": 2.0,
+        "unit": "nT",
+        "notes": "Peak negative anomaly in Z-component"
+      },
+      "magnetic_anomaly_timing": {
+        "value": "16:45 UTC \u00b1 10 min",
+        "unit": "UTC",
+        "notes": "Anomaly peaks near maximum eclipse"
+      },
+      "gravity_anomaly_spring_microGal": {
+        "value": -6.5,
+        "uncertainty": 1.5,
+        "unit": "\u00b5Gal",
+        "notes": "For unshielded spring gravimeters"
+      },
+      "gravity_anomaly_sg_microGal": {
+        "value": 0.0,
+        "uncertainty": 0.1,
+        "unit": "\u00b5Gal",
+        "notes": "For superconducting gravimeters (shielded)"
+      },
+      "coupling_ratio": {
+        "value": 1.67,
+        "unit": "nT/\u00b5Gal",
+        "notes": "Magnetic to gravity anomaly ratio"
+      },
+      "magnetic_components": {
+        "value": "X, Y, Z all negative, Z strongest",
+        "unit": "",
+        "notes": "All three components show correlated anomaly"
+      }
+    },
+    "falsification_criteria": {
+      "magnetic_anomaly": "If Z-component anomaly < 5 nT or > 15 nT",
+      "gravity_anomaly_spring": "If no anomaly > 3 \u00b5Gal detected",
+      "gravity_anomaly_sg": "If anomaly > 0.5 \u00b5Gal detected",
+      "timing": "If anomaly does not coincide with eclipse window"
+    },
+    "source_model": "Dome Cosmology V48",
+    "derived_from": {
+      "magnetic_data": "BOU Observatory 2017 eclipse",
+      "gravity_data": "Mohe 1997 eclipse",
+      "ratio": "cross-correlation analysis"
+    }
+  }
+]
+```
+
+### Source: V48_Validation_Suite/results/annual_aberration_results_20260306_175717.json
+```json
+{
+  "parameter": "aether_refractive_gradient",
+  "target_aberration_arcsec": 20.5,
+  "target_aberration_rad": 9.938680462745487e-05,
+  "derived_alpha": 2.5551e-08,
+  "derived_dn_dtheta": 8.133135901882035e-09,
+  "physical_plausibility": true,
+  "notes": "\u03b1 is change in refractive index over full annual cycle",
+  "threshold": "\u03b1 < 0.1 considered physically plausible",
+  "timestamp": "2026-03-06T17:57:17.961462"
+}
+```
+
+### Source: V48_Validation_Suite/results/parallax_results_20260306_175721.json
+```json
+{
+  "parameter": "firmament_wobble_offset",
+  "target_parallax_arcsec": 0.5,
+  "derived_offset_m": 22.02508553280622,
+  "derived_offset_km": 0.02202508553280622,
+  "derived_offset_as_fraction_of_R": 1.100428954924118e-06,
+  "firmament_height_km": 9086.0,
+  "predicted_parallax_range_arcsec": [
+    0.007932981917403941,
+    0.5
+  ],
+  "notes": "Offset is physical displacement of firmament rotation axis from geometric center",
+  "plausibility": "Offset < 1% of disc radius is physically plausible",
+  "timestamp": "2026-03-06T17:57:20.991522"
+}
+```
+
