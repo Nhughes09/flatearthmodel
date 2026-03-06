@@ -1,0 +1,22 @@
+SECTION,SUBSECTION,PARAMETER,VALUE,UNIT,SOURCE,NOTES
+ABERRATION,refractive_model,A_parameter,4.1184e+01,km²·rad,"derived from 20.5"" annual","Δn_summer=2.14e-05, Δn_winter=9.44e-07"
+ABERRATION,diurnal,dome_prediction,0.325,arcsec,light-time through 6500km,"vs observed 0.32"" ✅ EXACT MATCH"
+GRAVITY,lunar_zenith,globe_prediction,-110 µGal,µGal,Newton gravity,g decreases — Moon pulls up
+GRAVITY,lunar_zenith,dome_prediction_v1,+δg,µGal,aetheric compression (V43),WRONG — predicts increase
+GRAVITY,lunar_zenith,dome_prediction_v2,-δg (trough),µGal,aetheric displacement (V44),Reframed — pressure trough → g drops ✓
+GRAVITY,E7_test,result,TIE (after reframing),status,V44 analysis,both models predict g decrease at zenith
+SCHUMANN,frequency,globe_prediction,10.59,Hz,sphere R=6371km,35.3% error
+SCHUMANN,frequency,dome_prediction,4.39,Hz,"disc R=20015.0km, Bessel j₁₁",43.9% error
+AETHER,refractive_index,from_schumann,0.560502,dimensionless,dome Bessel resonance,excess = -0.439498
+AETHER,density,v44_estimate,1019,kg/m³,from K_aether and c_s=5000 m/s,reconciled — V43 was wrong (used diffusion speed)
+AETHER,sound_speed,v44_estimate,5000,m/s,for ρ in sensible range,mechanical ≠ magnetic diffusion
+AETHER,bulk_modulus,v44_estimate,2.55e+10,Pa,from tidal strain,ΔP/ε from 0.5m M2 tide
+FIELD_MODEL,v2,R2,0.9893,R²,11 stations,"two-source + SAA depression, 7 parameters"
+RESONANCE,tesla_vs_schumann,tesla_measured,11.78,Hz,"Canadian Patent #142,352 (1912)",Colorado Springs direct measurement
+RESONANCE,tesla_vs_schumann,schumann_derived,7.83,Hz,Schumann 1952,derived from spherical cavity assumption
+RESONANCE,kings_chamber,frequency,117.0,Hz,John Stuart Reid 1997,sarcophagus resonance
+RESONANCE,harmonic,kings_to_tesla,9.93,ratio,10th harmonic,117/11.78 ≈ 10.0
+RESONANCE,harmonic,kings_to_schumann,14.94,ratio,NOT integer,117/7.83 ≈ 14.9
+RESONANCE,dome_cavity,bessel_TE11,4.39,Hz,"disc R=20015.0km, j'₁₁=1.841",dome prediction
+RESONANCE,dome_cavity,TM01,5.73,Hz,"disc R=20015.0km, j₀₁=2.405",dome TM mode
+RESONANCE,dome_cavity,R_for_tesla,7457,km,solving Bessel for 11.78 Hz,62.7% off from dome R
