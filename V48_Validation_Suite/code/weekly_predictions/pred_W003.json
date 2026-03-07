@@ -1,0 +1,16 @@
+{
+  "id": "W003",
+  "title": "Telluric 11.78 Hz Peak Confirmation",
+  "description": "Dominant ground current resonance frequency",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161826",
+  "prediction": {
+    "value": 11.78,
+    "unit": "Hz",
+    "uncertainty": 0.05
+  },
+  "mechanism": "Disc thickness resonance T = c/(2f) = 12,717 km",
+  "data_source": "USGS SPECTRAL MT database",
+  "status": "pending",
+  "sha256": "e04ab3131b9123a31ba151adfc220ddfdcec7bc2834edf22e0c75a8f6ee7ae98"
+}

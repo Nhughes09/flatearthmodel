@@ -1,0 +1,16 @@
+{
+  "id": "W002",
+  "title": "SAA Node Separation vs CHAOS-7",
+  "description": "Current great-circle distance between African and South American cells",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161811",
+  "prediction": {
+    "value": 51.2,
+    "unit": "degrees",
+    "uncertainty": 0.3
+  },
+  "mechanism": "Vortex repulsion tracking PRED-009",
+  "data_source": "CHAOS-7.18",
+  "status": "pending",
+  "sha256": "a1d7d5cb8a54b1380158d7c4ab2c4afa4d0cbaa46b5fbf1796dce361ceeaf90e"
+}

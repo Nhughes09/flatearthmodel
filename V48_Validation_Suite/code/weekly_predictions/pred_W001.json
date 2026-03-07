@@ -1,0 +1,18 @@
+{
+  "id": "W001",
+  "title": "Huancayo (HUA) Lunar Transit Magnetic Anomaly",
+  "description": "Z-component drop during Moon zenith passage",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161778",
+  "prediction": {
+    "value": -2.1,
+    "unit": "nT",
+    "uncertainty": 0.8
+  },
+  "mechanism": "Aetheric pressure trough from lunar mass",
+  "data_source": "INTERMAGNET HUA + Skyfield ephemeris",
+  "status": "falsified",
+  "sha256": "26d9c17c7d4a9fea1c94e24ffabad11c60599f27d10949ae8d9db0f73a731c02",
+  "result_value": "3.73 nT (SNR 0.3x - within noise flow)",
+  "result_date": "2026-03-06T19:04:11.161809"
+}

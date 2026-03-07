@@ -1,0 +1,16 @@
+{
+  "id": "W007",
+  "title": "Geomagnetic Jerk Precursor Monitor",
+  "description": "Second derivative changes indicating jerk onset",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161858",
+  "prediction": {
+    "value": 0.5,
+    "unit": "nT/year\u00b2",
+    "uncertainty": 0.2
+  },
+  "mechanism": "Aetheric boundary reflection precursor",
+  "data_source": "INTERMAGNET 10-station network",
+  "status": "pending",
+  "sha256": "50d6cf976c658cc180dc7d53d5d75e3621af3a0a47b7677c8829fda10671ce3d"
+}

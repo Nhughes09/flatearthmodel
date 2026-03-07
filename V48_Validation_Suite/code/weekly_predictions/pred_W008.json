@@ -1,0 +1,16 @@
+{
+  "id": "W008",
+  "title": "Solar Wind / Pole Drift Correlation",
+  "description": "Cross-correlation coefficient for last 30 days",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161866",
+  "prediction": {
+    "value": 0.65,
+    "unit": "r",
+    "uncertainty": 0.1
+  },
+  "mechanism": "Aether flow modulation by solar wind",
+  "data_source": "NOAA OMNIWeb + pole acceleration",
+  "status": "pending",
+  "sha256": "e56802697326b469ba67be82b7d65fd5220e2230804f3638aa5b82593ebe1285"
+}

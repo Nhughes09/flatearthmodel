@@ -1,0 +1,16 @@
+{
+  "id": "W006",
+  "title": "SAA Minimum Intensity",
+  "description": "Current field strength at South American node",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161851",
+  "prediction": {
+    "value": 22180,
+    "unit": "nT",
+    "uncertainty": 20
+  },
+  "mechanism": "Field decay at \u226528 nT/year",
+  "data_source": "CHAOS-7 latest",
+  "status": "pending",
+  "sha256": "f95eed68781979a6e4ce623ab1dd76943df5aa98960ef7f8de2bb97f5b703d88"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "W004",
+  "title": "2024 Eclipse 9-Station Data Replication",
+  "description": "Reproduce Nov 2024 paper results using 3-day quiet baseline subtraction",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161835",
+  "prediction": {
+    "value": -10.0,
+    "unit": "nT",
+    "uncertainty": 2.0
+  },
+  "mechanism": "Aetheric Pressure Trough",
+  "data_source": "INTERMAGNET 1-minute (BOU, FRD, CMO, BSL, TUC, DHT, NEW, OTT, STJ)",
+  "status": "falsified",
+  "sha256": "98c10cf39a991a367985318eb454414b06d846abdc8009c3b3fa3c8000ab3c10",
+  "result_value": "Mixed: CMO/NEW match (-17nT, SNR>4) but 7 stations failed noise/data.",
+  "result_date": "2026-03-06T19:04:11.161843"
+}

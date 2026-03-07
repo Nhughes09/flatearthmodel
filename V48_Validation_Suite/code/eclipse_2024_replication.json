@@ -1,0 +1,60 @@
+{
+  "date": "2024-04-08",
+  "timestamp": "2026-03-06T19:03:38.342666",
+  "results": [
+    {
+      "station": "FRD",
+      "peak_nT": 1.400000000000091,
+      "peak_time_utc": "16:41",
+      "paper_time": "18:45 UTC",
+      "noise_nT": 3.037194193282393,
+      "snr": 0.46095175708441155,
+      "data_quality": "good"
+    },
+    {
+      "station": "CMO",
+      "peak_nT": -17.649999999999636,
+      "peak_time_utc": "19:10",
+      "paper_time": "19:15 UTC",
+      "noise_nT": 4.456589982355717,
+      "snr": 3.9604271584055373,
+      "data_quality": "good"
+    },
+    {
+      "station": "TUC",
+      "peak_nT": -16.750000000000455,
+      "peak_time_utc": "16:52",
+      "paper_time": "18:00 UTC",
+      "noise_nT": 2.1899955606246007,
+      "snr": 7.648417330683195,
+      "data_quality": "good"
+    },
+    {
+      "station": "NEW",
+      "peak_nT": -17.100000000000364,
+      "peak_time_utc": "18:41",
+      "paper_time": "18:40 UTC",
+      "noise_nT": 3.4038575887329965,
+      "snr": 5.023711936892584,
+      "data_quality": "good"
+    },
+    {
+      "station": "OTT",
+      "peak_nT": -8.0600000000004,
+      "peak_time_utc": "16:31",
+      "paper_time": "18:55 UTC",
+      "noise_nT": 4.8790627920465335,
+      "snr": 1.6519566038664601,
+      "data_quality": "good"
+    },
+    {
+      "station": "STJ",
+      "peak_nT": 3.430000000000291,
+      "peak_time_utc": "17:19",
+      "paper_time": "19:05 UTC",
+      "noise_nT": 3.3467519789482236,
+      "snr": 1.0248742726009321,
+      "data_quality": "good"
+    }
+  ]
+}

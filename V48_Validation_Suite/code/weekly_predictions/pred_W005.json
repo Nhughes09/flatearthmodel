@@ -1,0 +1,16 @@
+{
+  "id": "W005",
+  "title": "North Pole Deviation from 120\u00b0E",
+  "description": "Current offset from asymptotic meridian",
+  "week": "2026-03-06 to 2026-03-13",
+  "registered": "2026-03-06T19:04:11.161844",
+  "prediction": {
+    "value": -18.3,
+    "unit": "degrees",
+    "uncertainty": 0.2
+  },
+  "mechanism": "Exponential approach to firmament boundary",
+  "data_source": "NOAA latest pole position",
+  "status": "pending",
+  "sha256": "3ce0862e0728ca2559bec72f967c6d931a4d7f81b0ab4583844c7b05c40f74b9"
+}

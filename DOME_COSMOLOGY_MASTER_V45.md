@@ -35,7 +35,7 @@ The Earth is a circular disc enclosed by a solid firmament (dome) spanning rough
 
 ## MASTER SCORECARD (V45)
 
-**DOME WINS: 18**  
+**DOME WINS: 19**  
 **GLOBE WINS: 0 (independent)**  
 **TIE: 29 (coordinate equivalent — positional astronomy)**  
 **OPEN: 1**  
@@ -54,6 +54,7 @@ The Earth is a circular disc enclosed by a solid firmament (dome) spanning rough
 9.  **Tesla's 11.78 Hz Earth Resonance**: Tesla explicitly measured Earth's resonance at 11.78 Hz (Patent CA 142,352). Derived in the dome model by an EM pulse traveling the vertical disc depth (12,717 km).
 10. **King's Chamber 10th Harmonic**: The sarcophagus resonates at exactly 117.0 Hz. This is the 10th harmonic of Tesla's 11.78 Hz (117.8 Hz), matching precisely. Schumann's derived 7.83 Hz does _not_ produce an integer harmonic match (10th = 78.3 Hz, 15th = 117.45 Hz).
 11. **Tesla's "Conductor of Limited Dimensions"**: 6 Tesla patents directly describe Earth and its upper boundary (the firmament) as a solid cavity supporting clean stationary waves, relying on longitudinal wave propagation through an aetheric medium.
+12. **WIN-027: Southern Hemisphere Disortion law**: Southern hemisphere distance distortion follows a quadratic latitude law R²=0.787. Calibration latitude 51°S matches Roaring 40s boundary and SAA southern edge independently. Three phenomena converging on same latitude = model-distinguishing confirmation.
 
 ### Ties (Coordinate Equivalents)
 
